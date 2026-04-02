@@ -17,7 +17,7 @@ A `.env` file is included in this directory. By default it expects:
 ```env
 DATABASE_URL=postgresql://postgres:Kalyani_1998@localhost:5432/rag_db
 OLLAMA_URL=http://localhost:11434/api/generate
-MODEL_NAME=mistral
+MODEL_NAME=mistral:7b
 ```
 *Note: Make sure the `rag_db` database actually exists before running the app. You can create it via pgAdmin or `createdb rag_db`.*
 
