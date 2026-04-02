@@ -3,7 +3,7 @@ import requests
 from app.schemas import ChunkResponse
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
-MODEL_NAME = os.getenv("MODEL_NAME", "mistral")
+MODEL_NAME = os.getenv("MODEL_NAME", "mistral:7b")
 
 def generate_answer(query: str, context_chunks: list[ChunkResponse]) -> str:
     if not context_chunks:
@@ -36,7 +36,7 @@ Answer:"""
     }
 
     try:
-        response = requests.post(OLLAMA_URL, json=payload, timeout=60)
+        response = requests.post(OLLAMA_URL, json=payload, timeout=300)
         response.raise_for_status()
         data = response.json()
         return data.get("response", "").strip()
