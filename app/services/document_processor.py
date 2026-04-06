@@ -4,6 +4,7 @@ from docx import Document as DocxDocument
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 from app.models import Document, DocumentChunk
+from app.services.llm_service import get_embedding
 
 def chunk_text(text_content: str, word_chunk_size: int = 400) -> list[str]:
     words = text_content.split()
@@ -55,25 +56,16 @@ def process_and_store_document(file_path: str, file_name: str, db: Session):
             
         chunks = chunk_text(clean_text)
         for chunk in chunks:
-            # We explicitly define the tsvector via a SQL function so Postgres hashes it
-            # To do this safely, we will insert raw DB objects and then bulk update or use specific func.
+            embedding = get_embedding(chunk)
             db_chunk = DocumentChunk(
                 document_id=db_doc.id,
                 file_name=file_name,
                 page_number=page_num,
-                content=chunk
+                content=chunk,
+                content_vector=embedding if embedding else None
             )
             db.add(db_chunk)
             
-    db.commit()
-
-    # 4. Update the content_vector column for all new chunks
-    # This ensures Postgres full-text search works with English stemming
-    db.execute(text('''
-        UPDATE document_chunks 
-        SET content_vector = to_tsvector('english', content)
-        WHERE document_id = :doc_id
-    '''), {"doc_id": db_doc.id})
     db.commit()
 
     return db_doc

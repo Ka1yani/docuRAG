@@ -21,9 +21,10 @@ def get_db():
         db.close()
 
 def init_db():
-    # Make sure pg_trgm is created in the database
+    # Make sure pg_trgm and vector are created in the database
     with engine.connect() as conn:
         conn.execute(text("CREATE EXTENSION IF NOT EXISTS pg_trgm;"))
+        conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector;"))
         conn.commit()
     Base.metadata.create_all(bind=engine)
 
