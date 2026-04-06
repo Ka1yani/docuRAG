@@ -3,7 +3,22 @@ import requests
 from app.schemas import ChunkResponse
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
+OLLAMA_EMBED_URL = os.getenv("OLLAMA_EMBED_URL", "http://localhost:11434/api/embeddings")
 MODEL_NAME = os.getenv("MODEL_NAME", "mistral:7b")
+
+def get_embedding(text: str) -> list[float]:
+    payload = {
+        "model": "nomic-embed-text",
+        "prompt": text
+    }
+    try:
+        response = requests.post(OLLAMA_EMBED_URL, json=payload, timeout=300)
+        response.raise_for_status()
+        data = response.json()
+        return data.get("embedding", [])
+    except Exception as e:
+        print(f"Error getting embedding from Ollama: {e}")
+        return []
 
 def generate_answer(query: str, context_chunks: list[ChunkResponse]) -> str:
     if not context_chunks:

@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
 from sqlalchemy.sql import func
 from sqlalchemy.dialects.postgresql import TSVECTOR
+from pgvector.sqlalchemy import Vector
 from sqlalchemy.orm import relationship
 from .db import Base
 
@@ -22,7 +23,7 @@ class DocumentChunk(Base):
     page_number = Column(Integer, default=1)
     content = Column(Text, nullable=False)
     
-    # TSVector column for full-text search
-    content_vector = Column(TSVECTOR)
+    # pgvector column for semantic search
+    content_vector = Column(Vector(768))
 
     document = relationship("Document", back_populates="chunks")
