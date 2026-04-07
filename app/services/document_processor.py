@@ -62,7 +62,7 @@ def process_and_store_document(file_path: str, file_name: str, db: Session):
                 file_name=file_name,
                 page_number=page_num,
                 content=chunk,
-                content_vector=embedding if embedding else None
+                content_vector=str(embedding) if embedding else None
             )
             db.add(db_chunk)
             

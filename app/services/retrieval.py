@@ -12,9 +12,7 @@ def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_thresho
         print("Failed to embed query, returning empty results.")
         return []
         
-    # We query the database using raw SQL to leverage PostgreSQL specific functions cleanly.
-    # pgvector '<=>' calculates cosine distance. Lower distance = higher similarity.
-    # We invert it (1 - distance) for a standard "similarity score" where 1 is perfect match.
+    # DuckDB array_cosine_similarity calculates similarity natively (higher is better)
     sql_query = text("""
         SELECT 
             id,
@@ -22,10 +20,10 @@ def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_thresho
             file_name,
             page_number,
             content,
-            1 - (content_vector <=> :query_embedding) AS sim_score
+            array_cosine_similarity(CAST(content_vector AS FLOAT[768]), CAST(:query_embedding AS FLOAT[768])) AS sim_score
         FROM document_chunks
         WHERE content_vector IS NOT NULL
-        ORDER BY content_vector <=> :query_embedding ASC
+        ORDER BY sim_score DESC
         LIMIT :top_k
     """)
     
