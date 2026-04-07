@@ -21,6 +21,11 @@ app = FastAPI(title="docuRAG", version="1.0.0")
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+def make_progress_bar(percent: float, length: int = 20) -> str:
+    filled = int(length * percent / 100)
+    bar = '█' * filled + '-' * (length - filled)
+    return f"[{bar}] {percent:5.1f}%"
+
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     idem = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
@@ -69,7 +74,9 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Query cannot be empty")
         
     # 1. Retrieve Context using FTS and Trigrams
+    t0 = time.time()
     chunks = retrieve_context(request.query, db, top_k=5)
+    duckdb_time = time.time() - t0
     
     # 2. Extract Citations
     citations = []
@@ -89,7 +96,19 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
         )
         
     # 4. Generate Answer via Ollama
+    t1 = time.time()
     answer = generate_answer(request.query, chunks)
+    llm_time = time.time() - t1
+    
+    # Profiling Logs
+    total_measured = duckdb_time + llm_time
+    if total_measured > 0:
+        duck_pct = (duckdb_time / total_measured) * 100
+        llm_pct = (llm_time / total_measured) * 100
+        logger.info("=== Execution Breakdown ===")
+        logger.info(f"  DuckDB : {make_progress_bar(duck_pct)} ({duckdb_time:.2f}s)")
+        logger.info(f"  Ollama : {make_progress_bar(llm_pct)} ({llm_time:.2f}s)")
+        logger.info("============================")
     
     # Fallback to empty citations if the Local LLM says answer isn't found
     if "Answer not found in provided documents." in answer:
