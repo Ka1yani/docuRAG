@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 from app.models import Document, DocumentChunk
 from app.services.llm_service import get_embedding
+from app.logger import logger
 
 def chunk_text(text_content: str, word_chunk_size: int = 400) -> list[str]:
     words = text_content.split()
@@ -23,6 +24,7 @@ def process_and_store_document(file_path: str, file_name: str, db: Session):
     db.refresh(db_doc)
 
     _, ext = os.path.splitext(file_name.lower())
+    logger.info(f"Extracting {ext} logic for {file_name}")
     
     extracted_data = [] # list of (page_num, text)
 
@@ -45,6 +47,7 @@ def process_and_store_document(file_path: str, file_name: str, db: Session):
             text_content = f.read()
             extracted_data.append((1, text_content))
     else:
+        logger.error(f"Unsupported extraction attempted: {ext}")
         raise ValueError(f"Unsupported file extension: {ext}")
 
     # 3. Chunk and Store
@@ -67,5 +70,5 @@ def process_and_store_document(file_path: str, file_name: str, db: Session):
             db.add(db_chunk)
             
     db.commit()
-
+    logger.info(f"Completed! {file_name} split into database chunks with vector embeddings attached.")
     return db_doc

@@ -1,5 +1,7 @@
 import os
 import requests
+import time
+from app.logger import logger
 from app.schemas import ChunkResponse
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
@@ -17,7 +19,7 @@ def get_embedding(text: str) -> list[float]:
         data = response.json()
         return data.get("embedding", [])
     except Exception as e:
-        print(f"Error getting embedding from Ollama: {e}")
+        logger.error(f"Error getting embedding from Ollama: {e}")
         return []
 
 def generate_answer(query: str, context_chunks: list[ChunkResponse]) -> str:
@@ -50,11 +52,18 @@ Answer:"""
         "stream": False
     }
 
+    logger.debug(f"Sending prompt to Ollama {MODEL_NAME}. Context chunk count: {len(context_chunks)}")
+    start_time = time.time()
+    
     try:
         response = requests.post(OLLAMA_URL, json=payload, timeout=900)
         response.raise_for_status()
         data = response.json()
+        
+        elapsed_time = time.time() - start_time
+        logger.info(f"Ollama generated answer in {elapsed_time:.2f}s.")
+        
         return data.get("response", "").strip()
     except Exception as e:
-        print(f"Error calling Ollama API: {e}")
+        logger.error(f"Error calling Ollama API: {e}")
         return "An error occurred while generating the answer. Make sure Ollama is running."

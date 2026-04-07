@@ -12,3 +12,4 @@ requests
 streamlit
 duckdb-engine
 pytz
+loguru

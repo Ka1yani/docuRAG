@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 from app.schemas import ChunkResponse, Citation
 from app.services.llm_service import get_embedding
+from app.logger import logger
 
 def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_threshold: float = 0.5) -> list[ChunkResponse]:
     """
@@ -9,7 +10,7 @@ def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_thresho
     """
     embedded_query = get_embedding(query)
     if not embedded_query:
-        print("Failed to embed query, returning empty results.")
+        logger.error("Failed to embed query, returning empty results.")
         return []
         
     # DuckDB array_cosine_similarity calculates similarity natively (higher is better)
@@ -33,6 +34,10 @@ def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_thresho
         "top_k": top_k
     }).fetchall()
     
+    logger.info(f"DuckDB retrieved {len(results)} chunks for query.")
+    if results and results[0].sim_score < similarity_threshold:
+        logger.warning(f"Very low vector confidence detected! Top score: {results[0].sim_score:.4f}")
+
     retrieved_chunks = []
     for row in results:
         # Check against similarity threshold (closer to 1 is better)

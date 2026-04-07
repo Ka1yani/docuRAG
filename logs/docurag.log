@@ -1,0 +1,8 @@
+2026-04-07 15:44:48.856 | INFO     | app.main:log_requests - Req [7QHKJ0] GET /documents
+2026-04-07 15:44:53.956 | INFO     | app.main:log_requests - Req [7QHKJ0] Completed in 5.10s (Status: 200)
+2026-04-07 15:45:34.227 | INFO     | app.main:log_requests - Req [1GJKKT] GET /documents
+2026-04-07 15:45:34.243 | INFO     | app.main:log_requests - Req [1GJKKT] Completed in 0.02s (Status: 200)
+2026-04-07 15:45:36.311 | INFO     | app.main:log_requests - Req [93SJ9L] POST /ask
+2026-04-07 15:45:39.093 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 5 chunks for query.
+2026-04-07 15:50:29.559 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 290.46s.
+2026-04-07 15:50:29.563 | INFO     | app.main:log_requests - Req [93SJ9L] Completed in 293.25s (Status: 200)
