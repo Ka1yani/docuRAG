@@ -3,6 +3,11 @@ import shutil
 from fastapi import FastAPI, Depends, UploadFile, File, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
+import time
+import string
+import random
+from fastapi import Request
+from app.logger import logger
 
 from app.db import get_db, init_db
 from app.models import Document
@@ -16,9 +21,28 @@ app = FastAPI(title="docuRAG", version="1.0.0")
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+def make_progress_bar(percent: float, length: int = 20) -> str:
+    filled = int(length * percent / 100)
+    bar = '█' * filled + '-' * (length - filled)
+    return f"[{bar}] {percent:5.1f}%"
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    idem = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+    logger.info(f"Req [{idem}] {request.method} {request.url.path}")
+    start_time = time.time()
+    
+    response = await call_next(request)
+    
+    process_time = time.time() - start_time
+    logger.info(f"Req [{idem}] Completed in {process_time:.2f}s (Status: {response.status_code})")
+    
+    response.headers["X-Request-ID"] = idem
+    return response
+
 @app.on_event("startup")
 def startup_event():
-    # Initialize the database and ensure pg_trgm extension is active
+    # Initialize the database
     init_db()
 
 @app.post("/upload", status_code=201)
@@ -35,10 +59,13 @@ def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db))
         shutil.copyfileobj(file.file, buffer)
         
     try:
-        # Process and save to PostgreSQL
+        # Process and save to DuckDB
+        logger.info(f"Starting processing for file: {file.filename}")
         doc = process_and_store_document(file_path, file.filename, db)
+        logger.info(f"Successfully processed and stored {doc.file_name}")
         return {"message": "File processed successfully", "document_id": doc.id, "file_name": doc.file_name}
     except Exception as e:
+        logger.error(f"Failed to process {file.filename}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/ask", response_model=AskResponse)
@@ -47,7 +74,9 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Query cannot be empty")
         
     # 1. Retrieve Context using FTS and Trigrams
+    t0 = time.time()
     chunks = retrieve_context(request.query, db, top_k=5)
+    duckdb_time = time.time() - t0
     
     # 2. Extract Citations
     citations = []
@@ -67,7 +96,19 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
         )
         
     # 4. Generate Answer via Ollama
+    t1 = time.time()
     answer = generate_answer(request.query, chunks)
+    llm_time = time.time() - t1
+    
+    # Profiling Logs
+    total_measured = duckdb_time + llm_time
+    if total_measured > 0:
+        duck_pct = (duckdb_time / total_measured) * 100
+        llm_pct = (llm_time / total_measured) * 100
+        logger.info("=== Execution Breakdown ===")
+        logger.info(f"  DuckDB : {make_progress_bar(duck_pct)} ({duckdb_time:.2f}s)")
+        logger.info(f"  Ollama : {make_progress_bar(llm_pct)} ({llm_time:.2f}s)")
+        logger.info("============================")
     
     # Fallback to empty citations if the Local LLM says answer isn't found
     if "Answer not found in provided documents." in answer:

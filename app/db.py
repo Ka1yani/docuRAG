@@ -21,11 +21,8 @@ def get_db():
         db.close()
 
 def init_db():
-    # Make sure pg_trgm and vector are created in the database
-    with engine.connect() as conn:
-        conn.execute(text("CREATE EXTENSION IF NOT EXISTS pg_trgm;"))
-        conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector;"))
-        conn.commit()
+    # Make sure duckdb creates all tables
+
     Base.metadata.create_all(bind=engine)
 
 if __name__ == "__main__":
