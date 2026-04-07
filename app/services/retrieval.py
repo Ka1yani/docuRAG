@@ -5,7 +5,7 @@ from app.services.llm_service import get_embedding
 
 def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_threshold: float = 0.5) -> list[ChunkResponse]:
     """
-    Uses pgvector cosine distance to retrieve semantically similar chunks.
+    Uses DuckDB array_cosine_similarity to retrieve semantically similar chunks.
     """
     embedded_query = get_embedding(query)
     if not embedded_query:
@@ -27,7 +27,7 @@ def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_thresho
         LIMIT :top_k
     """)
     
-    # We cast the python list into a string which pgvector automatically parses
+    # We cast the python list into a string which DuckDB automatically parses back into an array
     results = db.execute(sql_query, {
         "query_embedding": str(embedded_query), 
         "top_k": top_k

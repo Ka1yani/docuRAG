@@ -18,7 +18,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @app.on_event("startup")
 def startup_event():
-    # Initialize the database and ensure pg_trgm extension is active
+    # Initialize the database
     init_db()
 
 @app.post("/upload", status_code=201)
@@ -35,7 +35,7 @@ def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db))
         shutil.copyfileobj(file.file, buffer)
         
     try:
-        # Process and save to PostgreSQL
+        # Process and save to DuckDB
         doc = process_and_store_document(file_path, file.filename, db)
         return {"message": "File processed successfully", "document_id": doc.id, "file_name": doc.file_name}
     except Exception as e:

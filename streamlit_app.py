@@ -6,7 +6,7 @@ API_URL = "http://localhost:8000"
 st.set_page_config(page_title="docuRAG", page_icon="📚", layout="wide")
 
 st.title("📚 docuRAG - Local Document Querying")
-st.write("Upload your documents (PDF, DOCX, TXT) and ask questions. Powered by FastAPI, PostgreSQL Full-Text Search, and Mistral (Ollama).")
+st.write("Upload your documents (PDF, DOCX, TXT) and ask questions. Powered by FastAPI, DuckDB Vector Similarity Search, and Mistral (Ollama).")
 
 # Sidebar for document management
 with st.sidebar:
@@ -65,7 +65,7 @@ if prompt := st.chat_input("Ask a question about your documents..."):
         
         with st.spinner("Searching documents and thinking..."):
             try:
-                response = requests.post(f"{API_URL}/ask", json={"query": prompt}, timeout=120)
+                response = requests.post(f"{API_URL}/ask", json={"query": prompt}, timeout=900)
                 if response.status_code == 200:
                     data = response.json()
                     answer = data.get("final_answer", "Error getting answer.")
