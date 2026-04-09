@@ -16,8 +16,18 @@ from app.services.document_processor import process_and_store_document
 from app.services.retrieval import retrieve_context
 from app.services.llm_service import generate_answer
 from app.services.cache_service import check_semantic_cache, store_semantic_cache
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="docuRAG", version="1.0.0")
+
+# Allow the Next.js frontend to communicate with this backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)

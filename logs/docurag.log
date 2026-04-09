@@ -143,3 +143,30 @@
 2026-04-09 08:23:24.738 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
 2026-04-09 08:23:24.739 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.15s!
 2026-04-09 08:23:24.740 | INFO     | app.main:log_requests - Req [HRU3G0] Completed in 2.15s (Status: 200)
+2026-04-09 21:04:31.826 | INFO     | app.main:log_requests - Req [MS7QL7] GET /documents
+2026-04-09 21:04:39.183 | INFO     | app.main:log_requests - Req [MS7QL7] Completed in 7.35s (Status: 200)
+2026-04-09 21:06:15.793 | INFO     | app.main:log_requests - Req [9087YQ] OPTIONS /ask
+2026-04-09 21:06:15.794 | INFO     | app.main:log_requests - Req [9087YQ] Completed in 0.00s (Status: 200)
+2026-04-09 21:06:15.798 | INFO     | app.main:log_requests - Req [8YBJUU] POST /ask
+2026-04-09 21:06:19.402 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-09 21:06:46.774 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 27.37s.
+2026-04-09 21:06:46.776 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-09 21:06:46.776 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.1% (0.02s)
+2026-04-09 21:06:46.777 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.9% (27.37s)
+2026-04-09 21:06:46.778 | INFO     | app.main:ask_question - ============================
+2026-04-09 21:06:46.816 | INFO     | app.main:log_requests - Req [8YBJUU] Completed in 31.02s (Status: 200)
+2026-04-09 21:08:02.993 | INFO     | app.main:log_requests - Req [BSYZ9Z] POST /ask
+2026-04-09 21:08:05.173 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-09 21:09:15.235 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 70.06s.
+2026-04-09 21:09:15.237 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-09 21:09:15.237 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.0% (0.01s)
+2026-04-09 21:09:15.238 | INFO     | app.main:ask_question -   Ollama : [███████████████████-] 100.0% (70.06s)
+2026-04-09 21:09:15.239 | INFO     | app.main:ask_question - ============================
+2026-04-09 21:09:15.271 | INFO     | app.main:log_requests - Req [BSYZ9Z] Completed in 72.28s (Status: 200)
+2026-04-09 21:10:13.553 | INFO     | app.main:log_requests - Req [QTGTIO] POST /ask
+2026-04-09 21:10:15.730 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-09 21:10:15.731 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-09 21:10:15.732 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.18s!
+2026-04-09 21:10:15.734 | INFO     | app.main:log_requests - Req [QTGTIO] Completed in 2.18s (Status: 200)
+2026-04-09 21:13:39.086 | INFO     | app.main:log_requests - Req [78GIWO] GET /documents
+2026-04-09 21:13:39.130 | INFO     | app.main:log_requests - Req [78GIWO] Completed in 0.04s (Status: 200)
