@@ -26,3 +26,14 @@ class DocumentChunk(Base):
     content_vector = Column(Text)
 
     document = relationship("Document", back_populates="chunks")
+
+class SemanticCache(Base):
+    __tablename__ = "semantic_cache"
+
+    id = Column(Integer, Sequence('semantic_cache_id_seq'), primary_key=True, index=True)
+    query_text = Column(Text, nullable=False)
+    query_vector = Column(Text, nullable=False)
+    response_text = Column(Text, nullable=False)
+    retrieved_chunks_json = Column(Text, nullable=False)
+    citations_json = Column(Text, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

@@ -124,3 +124,22 @@
 2026-04-08 23:58:06.836 | INFO     | app.main:ask_question -   Ollama : [██████████████████--]  91.6% (23.53s)
 2026-04-08 23:58:06.837 | INFO     | app.main:ask_question - ============================
 2026-04-08 23:58:06.838 | INFO     | app.main:log_requests - Req [ZSTJ97] Completed in 25.69s (Status: 200)
+2026-04-09 08:22:06.927 | INFO     | app.main:log_requests - Req [H86DIK] GET /documents
+2026-04-09 08:22:07.611 | INFO     | app.main:log_requests - Req [H86DIK] Completed in 0.68s (Status: 200)
+2026-04-09 08:22:19.012 | INFO     | app.main:log_requests - Req [5MNH6S] GET /documents
+2026-04-09 08:22:19.030 | INFO     | app.main:log_requests - Req [5MNH6S] Completed in 0.02s (Status: 200)
+2026-04-09 08:22:21.067 | INFO     | app.main:log_requests - Req [0WSBGF] POST /ask
+2026-04-09 08:22:24.383 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-09 08:23:05.508 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 41.12s.
+2026-04-09 08:23:05.509 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-09 08:23:05.510 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.0% (0.02s)
+2026-04-09 08:23:05.511 | INFO     | app.main:ask_question -   Ollama : [███████████████████-] 100.0% (41.13s)
+2026-04-09 08:23:05.512 | INFO     | app.main:ask_question - ============================
+2026-04-09 08:23:05.533 | INFO     | app.main:log_requests - Req [0WSBGF] Completed in 44.47s (Status: 200)
+2026-04-09 08:23:20.510 | INFO     | app.main:log_requests - Req [2QYKBV] GET /documents
+2026-04-09 08:23:20.525 | INFO     | app.main:log_requests - Req [2QYKBV] Completed in 0.01s (Status: 200)
+2026-04-09 08:23:22.586 | INFO     | app.main:log_requests - Req [HRU3G0] POST /ask
+2026-04-09 08:23:24.737 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-09 08:23:24.738 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-09 08:23:24.739 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.15s!
+2026-04-09 08:23:24.740 | INFO     | app.main:log_requests - Req [HRU3G0] Completed in 2.15s (Status: 200)
