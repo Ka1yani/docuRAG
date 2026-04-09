@@ -75,7 +75,7 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
         
     # 1. Retrieve Context using FTS and Trigrams
     t0 = time.time()
-    chunks = retrieve_context(request.query, db, top_k=5)
+    chunks = retrieve_context(request.query, db, top_k=3)
     duckdb_time = time.time() - t0
     
     # 2. Extract Citations
