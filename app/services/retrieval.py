@@ -4,11 +4,13 @@ from app.schemas import ChunkResponse, Citation
 from app.services.llm_service import get_embedding
 from app.logger import logger
 
-def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_threshold: float = 0.5) -> list[ChunkResponse]:
+def retrieve_context(query: str, db: Session, top_k: int = 5, similarity_threshold: float = 0.5, embedded_query: list[float] = None) -> list[ChunkResponse]:
     """
     Uses DuckDB array_cosine_similarity to retrieve semantically similar chunks.
     """
-    embedded_query = get_embedding(query)
+    if not embedded_query:
+        embedded_query = get_embedding(query)
+        
     if not embedded_query:
         logger.error("Failed to embed query, returning empty results.")
         return []

@@ -6,7 +6,7 @@ from app.schemas import ChunkResponse
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
 OLLAMA_EMBED_URL = os.getenv("OLLAMA_EMBED_URL", "http://localhost:11434/api/embeddings")
-MODEL_NAME = os.getenv("MODEL_NAME", "mistral:7b")
+MODEL_NAME = os.getenv("MODEL_NAME", "llama3.2:1b")
 
 def get_embedding(text: str) -> list[float]:
     payload = {

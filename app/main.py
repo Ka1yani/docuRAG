@@ -15,6 +15,7 @@ from app.schemas import AskRequest, AskResponse, DocumentResponse, Citation
 from app.services.document_processor import process_and_store_document
 from app.services.retrieval import retrieve_context
 from app.services.llm_service import generate_answer
+from app.services.cache_service import check_semantic_cache, store_semantic_cache
 
 app = FastAPI(title="docuRAG", version="1.0.0")
 
@@ -73,9 +74,22 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
     if not request.query.strip():
         raise HTTPException(status_code=400, detail="Query cannot be empty")
         
+    # 0. Check Enterprise Semantic Cache
+    t_cache = time.time()
+    cached_data, embedded_query = check_semantic_cache(request.query, db)
+    if cached_data[0]:
+        cache_time = time.time() - t_cache
+        logger.info(f"=== Enterprise Cache Execution ===")
+        logger.info(f"  Bypassed DuckDB & Ollama in {cache_time:.2f}s!")
+        return AskResponse(
+            final_answer=cached_data[0],
+            retrieved_results=cached_data[1],
+            citations=cached_data[2]
+        )
+        
     # 1. Retrieve Context using FTS and Trigrams
     t0 = time.time()
-    chunks = retrieve_context(request.query, db, top_k=5)
+    chunks = retrieve_context(request.query, db, top_k=3, embedded_query=embedded_query)
     duckdb_time = time.time() - t0
     
     # 2. Extract Citations
@@ -113,6 +127,10 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
     # Fallback to empty citations if the Local LLM says answer isn't found
     if "Answer not found in provided documents." in answer:
         citations = []
+    else:
+        # Cache successful semantic generation
+        if embedded_query:
+            store_semantic_cache(request.query, embedded_query, answer, chunks, citations, db)
         
     return AskResponse(
         final_answer=answer,
