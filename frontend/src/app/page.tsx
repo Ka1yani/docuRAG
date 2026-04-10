@@ -1,11 +1,5 @@
-import GlassSidebar from "@/components/GlassSidebar";
-import ChatFeed from "@/components/ChatFeed";
+import AppShell from "@/components/AppShell";
 
 export default function Home() {
-  return (
-    <>
-      <GlassSidebar />
-      <ChatFeed />
-    </>
-  );
+  return <AppShell />;
 }

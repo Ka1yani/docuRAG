@@ -2,23 +2,43 @@
 
 /* ── Premium Design Tokens ──────────────────────────────────────── */
 :root {
-  /* Glass variables */
-  --glass-bg: rgba(12, 12, 18, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-blur: 24px;
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-
-  /* Accent palette — sapphire ↔ violet ↔ neon cyan */
+  /* Common Accent palette — sapphire ↔ violet ↔ neon cyan */
   --accent-1: #6366f1;     /* indigo */
   --accent-2: #a855f7;     /* violet */
   --accent-3: #22d3ee;     /* cyan */
   --accent-glow: rgba(99, 102, 241, 0.35);
 
-  /* Surfaces */
+  /* Glass variables - Default Dark */
+  --glass-bg: rgba(12, 12, 18, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-blur: 24px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* Surfaces - Default Dark */
   --bg-deep: #060609;
   --text-primary: #e8e8ec;
   --text-secondary: #8b8b9e;
   --text-muted: #55556a;
+  --surface-1: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --bg-dots: rgba(255, 255, 255, 0.05);
+}
+
+.light {
+  /* Surfaces - Light Mode */
+  --bg-deep: #f8f9fc;
+  --text-primary: #121217;
+  --text-secondary: #4a4a5e;
+  --text-muted: #7c7c8f;
+  --surface-1: rgba(0, 0, 0, 0.03);
+  --surface-2: rgba(0, 0, 0, 0.06);
+  --bg-dots: rgba(0, 0, 0, 0.04);
+
+  /* Glass variables - Light Mode */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  --accent-glow: rgba(99, 102, 241, 0.12);
 }
 
 /* ── Base Reset ─────────────────────────────────────────────────── */

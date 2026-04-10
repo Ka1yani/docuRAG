@@ -10,11 +10,35 @@ import {
   XCircle,
   Layers3,
   Sparkles,
+  Plus,
+  MessageSquare,
+  Trash2,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { uploadDocument, getDocuments, type DocumentInfo } from "@/lib/api";
 import { cn } from "@/lib/cn";
+import type { Conversation } from "@/lib/conversations";
 
-export default function GlassSidebar() {
+interface SidebarProps {
+  conversations: Conversation[];
+  activeId: string | null;
+  onNewChat: () => void;
+  onSelectChat: (id: string) => void;
+  onDeleteChat: (id: string) => void;
+  theme: "dark" | "light";
+  onThemeToggle: () => void;
+}
+
+export default function GlassSidebar({
+  conversations,
+  activeId,
+  onNewChat,
+  onSelectChat,
+  onDeleteChat,
+  theme,
+  onThemeToggle,
+}: SidebarProps) {
   const [docs, setDocs] = useState<DocumentInfo[]>([]);
   const [uploading, setUploading] = useState(false);
   const [uploadMsg, setUploadMsg] = useState<{
@@ -22,6 +46,7 @@ export default function GlassSidebar() {
     text: string;
   } | null>(null);
   const [dragging, setDragging] = useState(false);
+  const [activeTab, setActiveTab] = useState<"chats" | "docs">("chats");
 
   const fetchDocs = useCallback(async () => {
     const d = await getDocuments();
@@ -76,113 +101,217 @@ export default function GlassSidebar() {
         <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--accent-1)] to-[var(--accent-2)]">
           <Sparkles className="h-4 w-4 text-white" />
         </div>
-        <div>
-          <h1 className="heading-display text-[15px] leading-tight tracking-tight text-white">
+        <div className="flex-1">
+          <h1 className={cn(
+            "heading-display text-[15px] leading-tight tracking-tight",
+            theme === "dark" ? "text-white" : "text-[var(--text-primary)]"
+          )}>
             DocuRAG
           </h1>
           <p className="text-[11px] text-[var(--text-muted)]">
             Document Intelligence
           </p>
         </div>
+
+        <button
+          onClick={onThemeToggle}
+          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-[var(--text-muted)] transition-all hover:bg-white/[0.05] hover:text-[var(--text-primary)]"
+        >
+          {theme === "dark" ? (
+            <Sun className="h-4 w-4" />
+          ) : (
+            <Moon className="h-4 w-4" />
+          )}
+        </button>
+      </div>
+
+      {/* ── New Chat Button ───────────────────────────────────────── */}
+      <div className="px-4 pb-3">
+        <button
+          onClick={onNewChat}
+          className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.08] bg-[var(--surface-1)] px-4 py-2.5 text-xs font-medium text-[var(--text-primary)] transition-all hover:border-[var(--accent-1)]/30 hover:bg-[var(--accent-1)]/5 hover:shadow-lg hover:shadow-[var(--accent-glow)]/10"
+        >
+          <Plus className="h-4 w-4" />
+          New Chat
+        </button>
       </div>
 
       <div className="mx-5 h-px bg-white/[0.04]" />
 
-      {/* ── Dropzone ──────────────────────────────────────────────── */}
-      <div className="px-5 pt-5">
-        <label
-          role="button"
-          tabIndex={0}
-          onDragOver={(e) => {
-            e.preventDefault();
-            setDragging(true);
-          }}
-          onDragLeave={() => setDragging(false)}
-          onDrop={onDrop}
+      {/* ── Tab Switcher ──────────────────────────────────────────── */}
+      <div className="flex px-4 pt-3 gap-1">
+        <button
+          onClick={() => setActiveTab("chats")}
           className={cn(
-            "flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl px-4 py-6 text-center transition-all",
-            dragging ? "dropzone-active" : "dropzone-idle"
+            "flex-1 rounded-lg px-3 py-1.5 text-[11px] font-medium uppercase tracking-wider transition-all",
+            activeTab === "chats"
+              ? "bg-[var(--accent-1)]/10 text-[var(--accent-3)]"
+              : "text-[var(--text-muted)] hover:text-[var(--text-secondary)]"
           )}
         >
-          {uploading ? (
-            <Loader2 className="h-6 w-6 animate-spin text-[var(--accent-1)]" />
-          ) : (
-            <FileUp className="h-6 w-6 text-[var(--text-muted)]" />
+          Chats
+        </button>
+        <button
+          onClick={() => setActiveTab("docs")}
+          className={cn(
+            "flex-1 rounded-lg px-3 py-1.5 text-[11px] font-medium uppercase tracking-wider transition-all",
+            activeTab === "docs"
+              ? "bg-[var(--accent-1)]/10 text-[var(--accent-3)]"
+              : "text-[var(--text-muted)] hover:text-[var(--text-secondary)]"
           )}
-          <span className="text-xs text-[var(--text-secondary)]">
-            {uploading
-              ? "Processing document…"
-              : "Drop PDF, DOCX, or TXT here"}
-          </span>
-          <input
-            type="file"
-            className="hidden"
-            accept=".pdf,.doc,.docx,.txt"
-            onChange={(e) => handleFiles(e.target.files)}
-          />
-        </label>
+        >
+          Documents
+        </button>
+      </div>
 
-        {/* Upload toast */}
-        <AnimatePresence>
-          {uploadMsg && (
-            <motion.div
-              key="upload-toast"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <div
+      {/* ── Content Area ──────────────────────────────────────────── */}
+      <div className="flex-1 overflow-y-auto px-3 pt-2 pb-3">
+        {activeTab === "chats" ? (
+          /* ── Conversation List ─────────────────────────────────── */
+          <div className="space-y-0.5">
+            {conversations.length === 0 && (
+              <p className="px-2 pt-3 text-xs text-[var(--text-muted)]">
+                No conversations yet.
+              </p>
+            )}
+            <AnimatePresence>
+              {conversations.map((convo, i) => (
+                <motion.div
+                  key={convo.id}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ delay: i * 0.02, duration: 0.25 }}
+                  onClick={() => onSelectChat(convo.id)}
+                  className={cn(
+                    "group flex cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm transition-all",
+                    convo.id === activeId
+                      ? "bg-[var(--accent-1)]/10 border border-[var(--accent-1)]/15"
+                      : "hover:bg-[var(--surface-1)] border border-transparent"
+                  )}
+                >
+                  <MessageSquare
+                    className={cn(
+                      "h-4 w-4 shrink-0 transition-colors",
+                      convo.id === activeId
+                        ? "text-[var(--accent-1)]"
+                        : "text-[var(--text-muted)] group-hover:text-[var(--text-secondary)]"
+                    )}
+                  />
+                  <span className="flex-1 truncate text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
+                    {convo.title}
+                  </span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDeleteChat(convo.id);
+                    }}
+                    className="hidden group-hover:flex h-6 w-6 items-center justify-center rounded-md text-[var(--text-muted)] hover:text-red-400 hover:bg-red-500/10 transition-all"
+                  >
+                    <Trash2 className="h-3 w-3" />
+                  </button>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        ) : (
+          /* ── Documents List ────────────────────────────────────── */
+          <>
+            {/* Dropzone */}
+            <div className="pt-2 pb-3">
+              <label
+                role="button"
+                tabIndex={0}
+                onDragOver={(e) => {
+                  e.preventDefault();
+                  setDragging(true);
+                }}
+                onDragLeave={() => setDragging(false)}
+                onDrop={onDrop}
                 className={cn(
-                  "mt-3 flex items-center gap-2 rounded-lg px-3 py-2 text-xs",
-                  uploadMsg.type === "ok"
-                    ? "bg-emerald-500/10 text-emerald-400"
-                    : "bg-red-500/10 text-red-400"
+                  "flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl px-4 py-5 text-center transition-all",
+                  dragging ? "dropzone-active" : "dropzone-idle"
                 )}
               >
-                {uploadMsg.type === "ok" ? (
-                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+                {uploading ? (
+                  <Loader2 className="h-5 w-5 animate-spin text-[var(--accent-1)]" />
                 ) : (
-                  <XCircle className="h-3.5 w-3.5 shrink-0" />
+                  <FileUp className="h-5 w-5 text-[var(--text-muted)]" />
                 )}
-                <span className="truncate">{uploadMsg.text}</span>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+                <span className="text-[11px] text-[var(--text-secondary)]">
+                  {uploading
+                    ? "Processing document…"
+                    : "Drop PDF, DOCX, or TXT here"}
+                </span>
+                <input
+                  type="file"
+                  className="hidden"
+                  accept=".pdf,.doc,.docx,.txt"
+                  onChange={(e) => handleFiles(e.target.files)}
+                />
+              </label>
 
-      {/* ── Document list ─────────────────────────────────────────── */}
-      <div className="mt-5 flex items-center gap-2 px-5">
-        <Layers3 className="h-3.5 w-3.5 text-[var(--text-muted)]" />
-        <span className="text-[11px] font-semibold uppercase tracking-widest text-[var(--text-muted)]">
-          Knowledge Base
-        </span>
-      </div>
+              <AnimatePresence>
+                {uploadMsg && (
+                  <motion.div
+                    key="upload-toast"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div
+                      className={cn(
+                        "mt-2 flex items-center gap-2 rounded-lg px-3 py-2 text-xs",
+                        uploadMsg.type === "ok"
+                          ? "bg-emerald-500/10 text-emerald-400"
+                          : "bg-red-500/10 text-red-400"
+                      )}
+                    >
+                      {uploadMsg.type === "ok" ? (
+                        <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+                      ) : (
+                        <XCircle className="h-3.5 w-3.5 shrink-0" />
+                      )}
+                      <span className="truncate">{uploadMsg.text}</span>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
-      <div className="mt-2 flex-1 overflow-y-auto px-3 pb-4">
-        {docs.length === 0 && (
-          <p className="px-2 pt-3 text-xs text-[var(--text-muted)]">
-            No documents ingested yet.
-          </p>
-        )}
-
-        <AnimatePresence>
-          {docs.map((doc, i) => (
-            <motion.div
-              key={doc.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.04, duration: 0.3 }}
-              className="group flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-white/[0.03]"
-            >
-              <FileText className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
-              <span className="truncate text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
-                {doc.file_name}
+            {/* File list */}
+            <div className="flex items-center gap-2 px-2 pb-2">
+              <Layers3 className="h-3 w-3 text-[var(--text-muted)]" />
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-[var(--text-muted)]">
+                Knowledge Base
               </span>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+            </div>
+
+            {docs.length === 0 && (
+              <p className="px-2 text-xs text-[var(--text-muted)]">
+                No documents ingested yet.
+              </p>
+            )}
+
+            <AnimatePresence>
+              {docs.map((doc, i) => (
+                <motion.div
+                  key={doc.id}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.04, duration: 0.3 }}
+                  className="group flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-[var(--surface-1)]"
+                >
+                  <FileText className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <span className="truncate text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
+                    {doc.file_name}
+                  </span>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </>
+        )}
       </div>
 
       {/* ── Footer ────────────────────────────────────────────────── */}

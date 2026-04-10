@@ -14,24 +14,16 @@ import {
 } from "lucide-react";
 import { askQuestion, type AskResponse, type Citation } from "@/lib/api";
 import { cn } from "@/lib/cn";
+import { uid, type Message } from "@/lib/conversations";
 
-// ── Types ──────────────────────────────────────────────────────────
-interface Message {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  citations?: Citation[];
-  timing?: { question: number; total: number };
-}
-
-// ── Helpers ────────────────────────────────────────────────────────
-function uid() {
-  return Math.random().toString(36).slice(2, 10);
+// ── Props ──────────────────────────────────────────────────────────
+interface ChatFeedProps {
+  messages: Message[];
+  onMessagesChange: (updater: (prev: Message[]) => Message[]) => void;
 }
 
 // ── Chat Component ─────────────────────────────────────────────────
-export default function ChatFeed() {
-  const [messages, setMessages] = useState<Message[]>([]);
+export default function ChatFeed({ messages, onMessagesChange }: ChatFeedProps) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
@@ -45,7 +37,7 @@ export default function ChatFeed() {
     if (!query || loading) return;
 
     const userMsg: Message = { id: uid(), role: "user", content: query };
-    setMessages((p) => [...p, userMsg]);
+    onMessagesChange((prev) => [...prev, userMsg]);
     setInput("");
     setLoading(true);
 
@@ -53,7 +45,7 @@ export default function ChatFeed() {
 
     try {
       const data: AskResponse = await askQuestion(query);
-      const elapsed = ((performance.now() - t0) / 1000);
+      const elapsed = (performance.now() - t0) / 1000;
 
       const botMsg: Message = {
         id: uid(),
@@ -62,12 +54,12 @@ export default function ChatFeed() {
         citations: data.citations,
         timing: { question: elapsed, total: elapsed },
       };
-      setMessages((p) => [...p, botMsg]);
+      onMessagesChange((prev) => [...prev, botMsg]);
     } catch (err: unknown) {
       const errText =
         err instanceof Error ? err.message : "Something went wrong";
-      setMessages((p) => [
-        ...p,
+      onMessagesChange((prev) => [
+        ...prev,
         { id: uid(), role: "assistant", content: `⚠️ ${errText}` },
       ]);
     } finally {
@@ -92,9 +84,7 @@ export default function ChatFeed() {
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 className={cn(
                   "flex gap-3 py-4",
-                  msg.role === "user"
-                    ? "justify-end"
-                    : "justify-start"
+                  msg.role === "user" ? "justify-end" : "justify-start"
                 )}
               >
                 {msg.role === "assistant" && (
@@ -108,7 +98,7 @@ export default function ChatFeed() {
                     "max-w-[720px] rounded-2xl px-5 py-3.5 text-sm leading-relaxed",
                     msg.role === "user"
                       ? "bg-gradient-to-r from-[var(--accent-1)]/20 to-[var(--accent-2)]/10 border border-[var(--accent-1)]/20 text-[var(--text-primary)]"
-                      : "bg-white/[0.03] border border-white/[0.04] text-[var(--text-primary)]"
+                      : "bg-[var(--surface-1)] border border-white/[0.04] text-[var(--text-primary)]"
                   )}
                 >
                   <div className="prose-answer whitespace-pre-wrap">
@@ -145,7 +135,7 @@ export default function ChatFeed() {
                 </div>
 
                 {msg.role === "user" && (
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/[0.08] mt-0.5">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--surface-2)] border border-white/[0.08] mt-0.5">
                     <User className="h-4 w-4 text-[var(--text-secondary)]" />
                   </div>
                 )}
@@ -203,7 +193,7 @@ export default function ChatFeed() {
                 "flex h-9 w-9 items-center justify-center rounded-lg transition-all",
                 input.trim()
                   ? "bg-gradient-to-r from-[var(--accent-1)] to-[var(--accent-2)] text-white shadow-lg shadow-[var(--accent-glow)] hover:scale-105"
-                  : "bg-white/5 text-[var(--text-muted)]"
+                  : "bg-[var(--surface-2)] text-[var(--text-muted)]"
               )}
             >
               <Send className="h-4 w-4" />
@@ -232,7 +222,7 @@ function EmptyState() {
       </div>
 
       <div className="text-center max-w-sm">
-        <h2 className="heading-display text-xl text-white mb-2">
+        <h2 className="heading-display text-xl text-[var(--text-primary)] mb-2">
           Ask your documents anything
         </h2>
         <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
