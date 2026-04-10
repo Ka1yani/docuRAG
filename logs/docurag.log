@@ -143,3 +143,149 @@
 2026-04-09 08:23:24.738 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
 2026-04-09 08:23:24.739 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.15s!
 2026-04-09 08:23:24.740 | INFO     | app.main:log_requests - Req [HRU3G0] Completed in 2.15s (Status: 200)
+2026-04-09 21:04:31.826 | INFO     | app.main:log_requests - Req [MS7QL7] GET /documents
+2026-04-09 21:04:39.183 | INFO     | app.main:log_requests - Req [MS7QL7] Completed in 7.35s (Status: 200)
+2026-04-09 21:06:15.793 | INFO     | app.main:log_requests - Req [9087YQ] OPTIONS /ask
+2026-04-09 21:06:15.794 | INFO     | app.main:log_requests - Req [9087YQ] Completed in 0.00s (Status: 200)
+2026-04-09 21:06:15.798 | INFO     | app.main:log_requests - Req [8YBJUU] POST /ask
+2026-04-09 21:06:19.402 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-09 21:06:46.774 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 27.37s.
+2026-04-09 21:06:46.776 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-09 21:06:46.776 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.1% (0.02s)
+2026-04-09 21:06:46.777 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.9% (27.37s)
+2026-04-09 21:06:46.778 | INFO     | app.main:ask_question - ============================
+2026-04-09 21:06:46.816 | INFO     | app.main:log_requests - Req [8YBJUU] Completed in 31.02s (Status: 200)
+2026-04-09 21:08:02.993 | INFO     | app.main:log_requests - Req [BSYZ9Z] POST /ask
+2026-04-09 21:08:05.173 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-09 21:09:15.235 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 70.06s.
+2026-04-09 21:09:15.237 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-09 21:09:15.237 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.0% (0.01s)
+2026-04-09 21:09:15.238 | INFO     | app.main:ask_question -   Ollama : [███████████████████-] 100.0% (70.06s)
+2026-04-09 21:09:15.239 | INFO     | app.main:ask_question - ============================
+2026-04-09 21:09:15.271 | INFO     | app.main:log_requests - Req [BSYZ9Z] Completed in 72.28s (Status: 200)
+2026-04-09 21:10:13.553 | INFO     | app.main:log_requests - Req [QTGTIO] POST /ask
+2026-04-09 21:10:15.730 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-09 21:10:15.731 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-09 21:10:15.732 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.18s!
+2026-04-09 21:10:15.734 | INFO     | app.main:log_requests - Req [QTGTIO] Completed in 2.18s (Status: 200)
+2026-04-09 21:13:39.086 | INFO     | app.main:log_requests - Req [78GIWO] GET /documents
+2026-04-09 21:13:39.130 | INFO     | app.main:log_requests - Req [78GIWO] Completed in 0.04s (Status: 200)
+2026-04-09 23:10:12.498 | INFO     | app.main:log_requests - Req [FMO247] GET /documents
+2026-04-09 23:10:21.034 | INFO     | app.main:log_requests - Req [FMO247] Completed in 8.53s (Status: 200)
+2026-04-09 23:11:09.749 | INFO     | app.main:log_requests - Req [LI8DZZ] OPTIONS /ask
+2026-04-09 23:11:09.751 | INFO     | app.main:log_requests - Req [LI8DZZ] Completed in 0.00s (Status: 200)
+2026-04-09 23:11:09.759 | INFO     | app.main:log_requests - Req [ZK9G7S] POST /ask
+2026-04-09 23:11:13.027 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-09 23:11:40.734 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 27.70s.
+2026-04-09 23:11:40.738 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-09 23:11:40.742 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.1% (0.03s)
+2026-04-09 23:11:40.744 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.9% (27.71s)
+2026-04-09 23:11:40.746 | INFO     | app.main:ask_question - ============================
+2026-04-09 23:11:40.813 | INFO     | app.main:log_requests - Req [ZK9G7S] Completed in 31.05s (Status: 200)
+2026-04-09 23:12:02.310 | INFO     | app.main:log_requests - Req [6ID1SE] GET /documents
+2026-04-09 23:12:02.335 | INFO     | app.main:log_requests - Req [6ID1SE] Completed in 0.02s (Status: 200)
+2026-04-09 23:12:02.344 | INFO     | app.main:log_requests - Req [FC2MS5] GET /documents
+2026-04-09 23:12:02.364 | INFO     | app.main:log_requests - Req [FC2MS5] Completed in 0.02s (Status: 200)
+2026-04-09 23:12:30.891 | INFO     | app.main:log_requests - Req [N9SUI5] GET /documents
+2026-04-09 23:12:30.919 | INFO     | app.main:log_requests - Req [N9SUI5] Completed in 0.02s (Status: 200)
+2026-04-09 23:12:30.961 | INFO     | app.main:log_requests - Req [XGND8K] GET /documents
+2026-04-09 23:12:30.998 | INFO     | app.main:log_requests - Req [XGND8K] Completed in 0.03s (Status: 200)
+2026-04-09 23:14:14.518 | INFO     | app.main:log_requests - Req [011ENQ] GET /documents
+2026-04-09 23:14:17.390 | INFO     | app.main:log_requests - Req [011ENQ] Completed in 2.86s (Status: 200)
+2026-04-09 23:14:17.397 | INFO     | app.main:log_requests - Req [75R176] GET /documents
+2026-04-09 23:14:17.422 | INFO     | app.main:log_requests - Req [75R176] Completed in 0.02s (Status: 200)
+2026-04-09 23:17:41.510 | INFO     | app.main:log_requests - Req [TL4113] GET /documents
+2026-04-09 23:17:41.528 | INFO     | app.main:log_requests - Req [TL4113] Completed in 0.02s (Status: 200)
+2026-04-09 23:17:51.275 | INFO     | app.main:log_requests - Req [YWGRWW] POST /ask
+2026-04-09 23:17:54.069 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-09 23:17:54.071 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-09 23:17:54.072 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.79s!
+2026-04-09 23:17:54.074 | INFO     | app.main:log_requests - Req [YWGRWW] Completed in 2.80s (Status: 200)
+2026-04-09 23:18:22.885 | INFO     | app.main:log_requests - Req [868NTM] GET /documents
+2026-04-09 23:18:22.907 | INFO     | app.main:log_requests - Req [868NTM] Completed in 0.02s (Status: 200)
+2026-04-09 23:19:08.332 | INFO     | app.main:log_requests - Req [PH9JYQ] GET /documents
+2026-04-09 23:19:08.657 | INFO     | app.main:log_requests - Req [PH9JYQ] Completed in 0.32s (Status: 200)
+2026-04-10 00:00:10.763 | INFO     | app.main:log_requests - Req [1Q64RD] GET /documents
+2026-04-10 00:00:10.782 | INFO     | app.main:log_requests - Req [1Q64RD] Completed in 0.02s (Status: 200)
+2026-04-10 00:00:10.788 | INFO     | app.main:log_requests - Req [QH37OV] GET /documents
+2026-04-10 00:00:10.796 | INFO     | app.main:log_requests - Req [QH37OV] Completed in 0.01s (Status: 200)
+2026-04-10 00:02:37.996 | INFO     | app.main:log_requests - Req [FG0DT7] GET /documents
+2026-04-10 00:02:38.008 | INFO     | app.main:log_requests - Req [FG0DT7] Completed in 0.01s (Status: 200)
+2026-04-10 00:02:38.017 | INFO     | app.main:log_requests - Req [E904K1] GET /documents
+2026-04-10 00:02:38.029 | INFO     | app.main:log_requests - Req [E904K1] Completed in 0.01s (Status: 200)
+2026-04-10 00:03:09.861 | INFO     | app.main:log_requests - Req [H5NBCS] OPTIONS /ask
+2026-04-10 00:03:09.863 | INFO     | app.main:log_requests - Req [H5NBCS] Completed in 0.00s (Status: 200)
+2026-04-10 00:03:09.869 | INFO     | app.main:log_requests - Req [1AP0VW] POST /ask
+2026-04-10 00:03:12.708 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-10 00:03:12.711 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-10 00:03:12.713 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.83s!
+2026-04-10 00:03:12.718 | INFO     | app.main:log_requests - Req [1AP0VW] Completed in 2.85s (Status: 200)
+2026-04-10 00:03:57.869 | INFO     | app.main:log_requests - Req [L2C1XX] POST /ask
+2026-04-10 00:04:00.041 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-10 00:04:00.044 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-10 00:04:00.045 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.17s!
+2026-04-10 00:04:00.049 | INFO     | app.main:log_requests - Req [L2C1XX] Completed in 2.18s (Status: 200)
+2026-04-10 00:11:42.274 | INFO     | app.main:log_requests - Req [8O8G06] GET /documents
+2026-04-10 00:11:42.296 | INFO     | app.main:log_requests - Req [8O8G06] Completed in 0.02s (Status: 200)
+2026-04-10 00:12:05.109 | INFO     | app.main:log_requests - Req [GRDRS9] GET /documents
+2026-04-10 00:12:05.122 | INFO     | app.main:log_requests - Req [GRDRS9] Completed in 0.01s (Status: 200)
+2026-04-10 00:12:05.182 | INFO     | app.main:log_requests - Req [EQBLKR] GET /documents
+2026-04-10 00:12:05.195 | INFO     | app.main:log_requests - Req [EQBLKR] Completed in 0.01s (Status: 200)
+2026-04-10 00:12:32.541 | INFO     | app.main:log_requests - Req [7JPK4U] GET /documents
+2026-04-10 00:12:32.561 | INFO     | app.main:log_requests - Req [7JPK4U] Completed in 0.02s (Status: 200)
+2026-04-10 00:12:32.573 | INFO     | app.main:log_requests - Req [A7KWNP] GET /documents
+2026-04-10 00:12:32.587 | INFO     | app.main:log_requests - Req [A7KWNP] Completed in 0.01s (Status: 200)
+2026-04-10 00:12:35.628 | INFO     | app.main:log_requests - Req [68GKSJ] GET /documents
+2026-04-10 00:12:35.640 | INFO     | app.main:log_requests - Req [68GKSJ] Completed in 0.01s (Status: 200)
+2026-04-10 00:12:35.644 | INFO     | app.main:log_requests - Req [QA411Q] GET /documents
+2026-04-10 00:12:35.663 | INFO     | app.main:log_requests - Req [QA411Q] Completed in 0.02s (Status: 200)
+2026-04-10 00:12:45.120 | INFO     | app.main:log_requests - Req [ELKVSU] GET /documents
+2026-04-10 00:12:45.139 | INFO     | app.main:log_requests - Req [ELKVSU] Completed in 0.02s (Status: 200)
+2026-04-10 00:12:45.146 | INFO     | app.main:log_requests - Req [P3EGHY] GET /documents
+2026-04-10 00:12:45.169 | INFO     | app.main:log_requests - Req [P3EGHY] Completed in 0.02s (Status: 200)
+2026-04-10 00:13:19.860 | INFO     | app.main:log_requests - Req [IC3YVU] GET /documents
+2026-04-10 00:13:19.869 | INFO     | app.main:log_requests - Req [IC3YVU] Completed in 0.01s (Status: 200)
+2026-04-10 00:13:19.876 | INFO     | app.main:log_requests - Req [HMNDIB] GET /documents
+2026-04-10 00:13:19.884 | INFO     | app.main:log_requests - Req [HMNDIB] Completed in 0.01s (Status: 200)
+2026-04-10 00:18:28.676 | INFO     | app.main:log_requests - Req [KTQJ7C] GET /documents
+2026-04-10 00:18:28.726 | INFO     | app.main:log_requests - Req [KTQJ7C] Completed in 0.05s (Status: 200)
+2026-04-10 00:18:28.735 | INFO     | app.main:log_requests - Req [7W18H6] GET /documents
+2026-04-10 00:18:28.745 | INFO     | app.main:log_requests - Req [7W18H6] Completed in 0.01s (Status: 200)
+2026-04-10 00:18:51.288 | INFO     | app.main:log_requests - Req [6R5E0O] GET /documents
+2026-04-10 00:18:51.299 | INFO     | app.main:log_requests - Req [6R5E0O] Completed in 0.01s (Status: 200)
+2026-04-10 00:19:28.096 | INFO     | app.main:log_requests - Req [1YYJTT] GET /documents
+2026-04-10 00:19:28.106 | INFO     | app.main:log_requests - Req [1YYJTT] Completed in 0.01s (Status: 200)
+2026-04-10 00:20:12.576 | INFO     | app.main:log_requests - Req [Q47H74] GET /documents
+2026-04-10 00:20:12.590 | INFO     | app.main:log_requests - Req [Q47H74] Completed in 0.01s (Status: 200)
+2026-04-10 00:21:15.164 | INFO     | app.main:log_requests - Req [WI4PB9] GET /documents
+2026-04-10 00:21:15.211 | INFO     | app.main:log_requests - Req [WI4PB9] Completed in 0.05s (Status: 200)
+2026-04-10 00:21:15.219 | INFO     | app.main:log_requests - Req [GEZEBH] GET /documents
+2026-04-10 00:21:15.230 | INFO     | app.main:log_requests - Req [GEZEBH] Completed in 0.01s (Status: 200)
+2026-04-10 00:25:58.425 | INFO     | app.main:log_requests - Req [7DRNCH] POST /upload
+2026-04-10 00:25:58.678 | INFO     | app.main:upload_document - Starting processing for file: KalashDoc.pdf
+2026-04-10 00:25:58.789 | INFO     | app.services.document_processor:process_and_store_document - Extracting .pdf logic for KalashDoc.pdf
+2026-04-10 00:25:58.912 | INFO     | app.services.document_processor:process_and_store_document - Completed! KalashDoc.pdf split into database chunks with vector embeddings attached.
+2026-04-10 00:25:58.924 | INFO     | app.main:upload_document - Successfully processed and stored KalashDoc.pdf
+2026-04-10 00:25:58.929 | INFO     | app.main:log_requests - Req [7DRNCH] Completed in 0.50s (Status: 201)
+2026-04-10 00:25:58.944 | INFO     | app.main:log_requests - Req [UG3V2Y] GET /documents
+2026-04-10 00:25:58.974 | INFO     | app.main:log_requests - Req [UG3V2Y] Completed in 0.03s (Status: 200)
+2026-04-10 00:28:09.757 | INFO     | app.main:log_requests - Req [SCPZV9] OPTIONS /ask
+2026-04-10 00:28:09.760 | INFO     | app.main:log_requests - Req [SCPZV9] Completed in 0.00s (Status: 200)
+2026-04-10 00:28:09.766 | INFO     | app.main:log_requests - Req [2LZVID] POST /ask
+2026-04-10 00:28:12.488 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-10 00:28:12.491 | WARNING  | app.services.retrieval:retrieve_context - Very low vector confidence detected! Top score: 0.4391
+2026-04-10 00:28:12.535 | INFO     | app.main:log_requests - Req [2LZVID] Completed in 2.77s (Status: 200)
+2026-04-10 00:32:03.178 | INFO     | app.main:log_requests - Req [PBXIS0] POST /upload
+2026-04-10 00:32:03.635 | INFO     | app.main:upload_document - Starting processing for file: Legal_Studies_Book_v8_XI.pdf
+2026-04-10 00:32:03.931 | INFO     | app.services.document_processor:process_and_store_document - Extracting .pdf logic for Legal_Studies_Book_v8_XI.pdf
+2026-04-10 00:36:09.250 | INFO     | app.main:log_requests - Req [DZ9LRE] POST /ask
+2026-04-10 00:36:11.478 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-10 00:36:46.936 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 35.46s.
+2026-04-10 00:36:46.939 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-10 00:36:46.942 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.1% (0.04s)
+2026-04-10 00:36:46.944 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.9% (35.46s)
+2026-04-10 00:36:46.945 | INFO     | app.main:ask_question - ============================
+2026-04-10 00:36:47.014 | INFO     | app.main:log_requests - Req [DZ9LRE] Completed in 37.76s (Status: 200)
+2026-04-10 00:46:07.800 | INFO     | app.services.document_processor:process_and_store_document - Completed! Legal_Studies_Book_v8_XI.pdf split into database chunks with vector embeddings attached.
+2026-04-10 00:46:07.809 | INFO     | app.main:upload_document - Successfully processed and stored Legal_Studies_Book_v8_XI.pdf
+2026-04-10 00:46:07.813 | INFO     | app.main:log_requests - Req [PBXIS0] Completed in 844.63s (Status: 201)

@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* ── Premium Design Tokens ──────────────────────────────────────── */
+:root {
+  /* Common Accent palette — sapphire ↔ violet ↔ neon cyan */
+  --accent-1: #6366f1;     /* indigo */
+  --accent-2: #a855f7;     /* violet */
+  --accent-3: #22d3ee;     /* cyan */
+  --accent-glow: rgba(99, 102, 241, 0.35);
+
+  /* Glass variables - Default Dark */
+  --glass-bg: rgba(12, 12, 18, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-blur: 24px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* Surfaces - Default Dark */
+  --bg-deep: #060609;
+  --text-primary: #e8e8ec;
+  --text-secondary: #8b8b9e;
+  --text-muted: #55556a;
+  --surface-1: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --bg-dots: rgba(255, 255, 255, 0.05);
+}
+
+.light {
+  /* Surfaces - Light Mode */
+  --bg-deep: #f8f9fc;
+  --text-primary: #121217;
+  --text-secondary: #4a4a5e;
+  --text-muted: #7c7c8f;
+  --surface-1: rgba(0, 0, 0, 0.03);
+  --surface-2: rgba(0, 0, 0, 0.06);
+  --bg-dots: rgba(0, 0, 0, 0.04);
+
+  /* Glass variables - Light Mode */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  --accent-glow: rgba(99, 102, 241, 0.12);
+}
+
+/* ── Base Reset ─────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Animated Gradient Background ───────────────────────────────── */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  width: 150vmax;
+  height: 150vmax;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--accent-1) 0deg,
+    var(--bg-deep) 60deg,
+    var(--accent-2) 120deg,
+    var(--bg-deep) 180deg,
+    var(--accent-3) 240deg,
+    var(--bg-deep) 300deg,
+    var(--accent-1) 360deg
+  );
+  animation: bg-spin 25s linear infinite;
+  opacity: 0.12;
+  filter: blur(80px);
+}
+
+@keyframes bg-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Noise grain overlay */
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ── Glass Panels ───────────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Progress Bar Glow ──────────────────────────────────────────── */
+.progress-glow {
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ── Typography Utility ─────────────────────────────────────────── */
+.heading-display {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* ── Markdown Prose Styling ─────────────────────────────────────── */
+.prose-answer p {
+  margin-bottom: 0.75em;
+  line-height: 1.7;
+}
+.prose-answer strong {
+  color: var(--accent-3);
+}
+.prose-answer code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* ── Upload Dropzone ────────────────────────────────────────────── */
+.dropzone-idle {
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.dropzone-idle:hover,
+.dropzone-active {
+  border-color: var(--accent-1);
+  background: rgba(99, 102, 241, 0.06);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.08);
+}
