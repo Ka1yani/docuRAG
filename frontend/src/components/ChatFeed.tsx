@@ -11,6 +11,8 @@ import {
   Zap,
   Database,
   Cpu,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { askQuestion, type AskResponse, type Citation } from "@/lib/api";
 import { cn } from "@/lib/cn";
@@ -20,10 +22,12 @@ import { uid, type Message } from "@/lib/conversations";
 interface ChatFeedProps {
   messages: Message[];
   onMessagesChange: (updater: (prev: Message[]) => Message[]) => void;
+  theme: "dark" | "light";
+  onThemeToggle: () => void;
 }
 
 // ── Chat Component ─────────────────────────────────────────────────
-export default function ChatFeed({ messages, onMessagesChange }: ChatFeedProps) {
+export default function ChatFeed({ messages, onMessagesChange, theme, onThemeToggle }: ChatFeedProps) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
@@ -68,11 +72,23 @@ export default function ChatFeed({ messages, onMessagesChange }: ChatFeedProps) 
   };
 
   return (
-    <div className="flex flex-1 flex-col p-4 pl-4">
+    <div className="flex flex-1 flex-col p-4 pl-4 relative">
+      {/* ── Theme Toggle ────────────────────────────────────────────── */}
+      <button
+        onClick={onThemeToggle}
+        className="absolute top-6 right-8 z-50 flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.03] text-[var(--text-muted)] backdrop-blur-md transition-all hover:bg-white/[0.08] hover:text-[var(--text-primary)] shadow-sm"
+      >
+        {theme === "dark" ? (
+          <Sun className="h-4 w-4" />
+        ) : (
+          <Moon className="h-4 w-4" />
+        )}
+      </button>
+
       {/* ── Chat container ──────────────────────────────────────── */}
-      <div className="glass flex flex-1 flex-col rounded-2xl overflow-hidden">
+      <div className="glass flex flex-1 flex-col rounded-2xl overflow-hidden shadow-lg relative">
         {/* Messages area */}
-        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-1">
+        <div className="flex-1 overflow-y-auto px-6 pt-14 pb-6 space-y-1">
           {messages.length === 0 && <EmptyState />}
 
           <AnimatePresence initial={false}>

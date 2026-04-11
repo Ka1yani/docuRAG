@@ -116,12 +116,12 @@ export default function AppShell() {
         onNewChat={handleNewChat}
         onSelectChat={handleSelectChat}
         onDeleteChat={handleDeleteChat}
-        theme={theme}
-        onThemeToggle={() => setTheme(theme === "dark" ? "light" : "dark")}
       />
       <ChatFeed
         messages={activeConvo?.messages ?? []}
         onMessagesChange={handleMessagesChange}
+        theme={theme}
+        onThemeToggle={() => setTheme(theme === "dark" ? "light" : "dark")}
       />
     </>
   );

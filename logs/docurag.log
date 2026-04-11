@@ -379,3 +379,13 @@
 2026-04-11 19:08:39.479 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  98.3% (12.02s)
 2026-04-11 19:08:39.481 | INFO     | app.main:ask_question - ============================
 2026-04-11 19:08:39.524 | INFO     | app.main:log_requests - Req [OSIINX] Completed in 14.39s (Status: 200)
+2026-04-11 23:17:13.117 | INFO     | app.main:log_requests - Req [0SSXNK] GET /documents
+2026-04-11 23:17:13.572 | INFO     | app.main:log_requests - Req [0SSXNK] Completed in 0.45s (Status: 200)
+2026-04-11 23:17:13.576 | INFO     | app.main:log_requests - Req [TURBPT] GET /documents
+2026-04-11 23:17:13.590 | INFO     | app.main:log_requests - Req [TURBPT] Completed in 0.01s (Status: 200)
+2026-04-11 23:19:15.516 | INFO     | app.main:log_requests - Req [UODZ6Z] GET /documents
+2026-04-11 23:19:15.532 | INFO     | app.main:log_requests - Req [UODZ6Z] Completed in 0.01s (Status: 200)
+2026-04-11 23:20:05.724 | INFO     | app.main:log_requests - Req [9APW0H] GET /documents
+2026-04-11 23:20:05.732 | INFO     | app.main:log_requests - Req [9APW0H] Completed in 0.01s (Status: 200)
+2026-04-11 23:20:05.741 | INFO     | app.main:log_requests - Req [C0FB3C] GET /documents
+2026-04-11 23:20:05.753 | INFO     | app.main:log_requests - Req [C0FB3C] Completed in 0.01s (Status: 200)

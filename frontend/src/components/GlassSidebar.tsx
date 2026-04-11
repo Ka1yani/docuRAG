@@ -13,8 +13,6 @@ import {
   Plus,
   MessageSquare,
   Trash2,
-  Sun,
-  Moon,
   FileAudio,
 } from "lucide-react";
 import { uploadDocument, getDocuments, type DocumentInfo } from "@/lib/api";
@@ -27,8 +25,6 @@ interface SidebarProps {
   onNewChat: () => void;
   onSelectChat: (id: string) => void;
   onDeleteChat: (id: string) => void;
-  theme: "dark" | "light";
-  onThemeToggle: () => void;
 }
 
 export default function GlassSidebar({
@@ -37,8 +33,6 @@ export default function GlassSidebar({
   onNewChat,
   onSelectChat,
   onDeleteChat,
-  theme,
-  onThemeToggle,
 }: SidebarProps) {
   const [docs, setDocs] = useState<DocumentInfo[]>([]);
   const [uploading, setUploading] = useState(false);
@@ -103,27 +97,13 @@ export default function GlassSidebar({
           <Sparkles className="h-4 w-4 text-white" />
         </div>
         <div className="flex-1">
-          <h1 className={cn(
-            "heading-display text-[15px] leading-tight tracking-tight",
-            theme === "dark" ? "text-white" : "text-[var(--text-primary)]"
-          )}>
+          <h1 className="heading-display text-[15px] leading-tight tracking-tight text-[var(--text-primary)]">
             DocuRAG
           </h1>
           <p className="text-[11px] text-[var(--text-muted)]">
             Document Intelligence
           </p>
         </div>
-
-        <button
-          onClick={onThemeToggle}
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-[var(--text-muted)] transition-all hover:bg-white/[0.05] hover:text-[var(--text-primary)]"
-        >
-          {theme === "dark" ? (
-            <Sun className="h-4 w-4" />
-          ) : (
-            <Moon className="h-4 w-4" />
-          )}
-        </button>
       </div>
 
       {/* ── New Chat Button ───────────────────────────────────────── */}
