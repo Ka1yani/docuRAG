@@ -58,7 +58,7 @@ def startup_event():
 
 @app.post("/upload", status_code=201)
 def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db)):
-    valid_extensions = [".pdf", ".doc", ".docx", ".txt"]
+    valid_extensions = [".pdf", ".doc", ".docx", ".txt", ".mp3", ".wav", ".m4a"]
     _, ext = os.path.splitext(file.filename.lower())
     if ext not in valid_extensions:
         raise HTTPException(status_code=400, detail=f"Unsupported file type. Valid types are: {', '.join(valid_extensions)}")

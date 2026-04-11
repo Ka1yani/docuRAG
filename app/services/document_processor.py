@@ -7,6 +7,16 @@ from app.models import Document, DocumentChunk
 from app.services.llm_service import get_embedding
 from app.logger import logger
 
+try:
+    from faster_whisper import WhisperModel
+except ImportError:
+    WhisperModel = None
+
+def format_timestamp(seconds: float) -> str:
+    mins = int(seconds // 60)
+    secs = int(seconds % 60)
+    return f"{mins:02d}:{secs:02d}"
+
 def chunk_text(text_content: str, word_chunk_size: int = 400) -> list[str]:
     words = text_content.split()
     chunks = []
@@ -42,6 +52,29 @@ def process_and_store_document(file_path: str, file_name: str, db: Session):
         for i, para in enumerate(doc.paragraphs):
             if para.text.strip():
                 extracted_data.append((i + 1, para.text))
+    elif ext in [".mp3", ".wav", ".m4a"]:
+        if WhisperModel is None:
+            raise ImportError("faster-whisper is not installed. Unable to process audio.")
+        
+        logger.info(f"Initializing Whisper for audio transcription: {file_name}")
+        # Use CPU by default. Set device="cuda" if running on a GPU.
+        # compute_type="int8" reduces memory usage for CPU.
+        model = WhisperModel("base", device="cpu", compute_type="int8")
+        
+        segments, info = model.transcribe(file_path, beam_size=5)
+        logger.info(f"Detected language '{info.language}' with probability {info.language_probability}")
+        
+        for i, segment in enumerate(segments):
+            start_str = format_timestamp(segment.start)
+            end_str = format_timestamp(segment.end)
+            text_val = segment.text.strip()
+            
+            # Format text explicitly to bias the LLM with audio flow context
+            formatted_text = f"[Audio Segment {start_str} - {end_str}]: {text_val}"
+            
+            # Use segment ordinal as the logical page number
+            extracted_data.append((i + 1, formatted_text))
+            
     elif ext == ".txt":
         with open(file_path, "r", encoding="utf-8") as f:
             text_content = f.read()

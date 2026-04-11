@@ -13,3 +13,4 @@ streamlit
 duckdb-engine
 pytz
 loguru
+faster-whisper

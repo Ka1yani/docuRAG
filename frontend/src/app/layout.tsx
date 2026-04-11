@@ -35,12 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen antialiased">
+      <body className="h-screen overflow-hidden antialiased">
         {/* Animated cosmic background */}
         <div className="animated-bg" aria-hidden="true" />
 
         {/* Application shell */}
-        <div className="relative z-10 flex min-h-screen">
+        <div className="relative z-10 flex h-full">
           {children}
         </div>
       </body>

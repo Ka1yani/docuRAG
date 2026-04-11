@@ -13,8 +13,7 @@ import {
   Plus,
   MessageSquare,
   Trash2,
-  Sun,
-  Moon,
+  FileAudio,
 } from "lucide-react";
 import { uploadDocument, getDocuments, type DocumentInfo } from "@/lib/api";
 import { cn } from "@/lib/cn";
@@ -26,8 +25,6 @@ interface SidebarProps {
   onNewChat: () => void;
   onSelectChat: (id: string) => void;
   onDeleteChat: (id: string) => void;
-  theme: "dark" | "light";
-  onThemeToggle: () => void;
 }
 
 export default function GlassSidebar({
@@ -36,8 +33,6 @@ export default function GlassSidebar({
   onNewChat,
   onSelectChat,
   onDeleteChat,
-  theme,
-  onThemeToggle,
 }: SidebarProps) {
   const [docs, setDocs] = useState<DocumentInfo[]>([]);
   const [uploading, setUploading] = useState(false);
@@ -102,27 +97,13 @@ export default function GlassSidebar({
           <Sparkles className="h-4 w-4 text-white" />
         </div>
         <div className="flex-1">
-          <h1 className={cn(
-            "heading-display text-[15px] leading-tight tracking-tight",
-            theme === "dark" ? "text-white" : "text-[var(--text-primary)]"
-          )}>
+          <h1 className="heading-display text-[15px] leading-tight tracking-tight text-[var(--text-primary)]">
             DocuRAG
           </h1>
           <p className="text-[11px] text-[var(--text-muted)]">
             Document Intelligence
           </p>
         </div>
-
-        <button
-          onClick={onThemeToggle}
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-[var(--text-muted)] transition-all hover:bg-white/[0.05] hover:text-[var(--text-primary)]"
-        >
-          {theme === "dark" ? (
-            <Sun className="h-4 w-4" />
-          ) : (
-            <Moon className="h-4 w-4" />
-          )}
-        </button>
       </div>
 
       {/* ── New Chat Button ───────────────────────────────────────── */}
@@ -240,13 +221,13 @@ export default function GlassSidebar({
                 )}
                 <span className="text-[11px] text-[var(--text-secondary)]">
                   {uploading
-                    ? "Processing document…"
-                    : "Drop PDF, DOCX, or TXT here"}
+                    ? "Processing..."
+                    : "Drop Audio, PDF, DOCX, or TXT"}
                 </span>
                 <input
                   type="file"
                   className="hidden"
-                  accept=".pdf,.doc,.docx,.txt"
+                  accept=".pdf,.doc,.docx,.txt,audio/mpeg,audio/wav,audio/x-m4a,.mp3,.wav,.m4a"
                   onChange={(e) => handleFiles(e.target.files)}
                 />
               </label>
@@ -303,7 +284,11 @@ export default function GlassSidebar({
                   transition={{ delay: i * 0.04, duration: 0.3 }}
                   className="group flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-[var(--surface-1)]"
                 >
-                  <FileText className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  {doc.file_name.toLowerCase().match(/\.(mp3|wav|m4a)$/) ? (
+                    <FileAudio className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  ) : (
+                    <FileText className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  )}
                   <span className="truncate text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
                     {doc.file_name}
                   </span>
