@@ -15,6 +15,7 @@ import {
   Trash2,
   Sun,
   Moon,
+  FileAudio,
 } from "lucide-react";
 import { uploadDocument, getDocuments, type DocumentInfo } from "@/lib/api";
 import { cn } from "@/lib/cn";
@@ -240,13 +241,13 @@ export default function GlassSidebar({
                 )}
                 <span className="text-[11px] text-[var(--text-secondary)]">
                   {uploading
-                    ? "Processing document…"
-                    : "Drop PDF, DOCX, or TXT here"}
+                    ? "Processing..."
+                    : "Drop Audio, PDF, DOCX, or TXT"}
                 </span>
                 <input
                   type="file"
                   className="hidden"
-                  accept=".pdf,.doc,.docx,.txt"
+                  accept=".pdf,.doc,.docx,.txt,audio/mpeg,audio/wav,audio/x-m4a,.mp3,.wav,.m4a"
                   onChange={(e) => handleFiles(e.target.files)}
                 />
               </label>
@@ -303,7 +304,11 @@ export default function GlassSidebar({
                   transition={{ delay: i * 0.04, duration: 0.3 }}
                   className="group flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-[var(--surface-1)]"
                 >
-                  <FileText className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  {doc.file_name.toLowerCase().match(/\.(mp3|wav|m4a)$/) ? (
+                    <FileAudio className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  ) : (
+                    <FileText className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  )}
                   <span className="truncate text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
                     {doc.file_name}
                   </span>

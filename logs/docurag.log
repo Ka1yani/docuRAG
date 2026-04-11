@@ -289,3 +289,93 @@
 2026-04-10 00:46:07.800 | INFO     | app.services.document_processor:process_and_store_document - Completed! Legal_Studies_Book_v8_XI.pdf split into database chunks with vector embeddings attached.
 2026-04-10 00:46:07.809 | INFO     | app.main:upload_document - Successfully processed and stored Legal_Studies_Book_v8_XI.pdf
 2026-04-10 00:46:07.813 | INFO     | app.main:log_requests - Req [PBXIS0] Completed in 844.63s (Status: 201)
+2026-04-10 14:00:44.454 | INFO     | app.main:log_requests - Req [NI86MH] GET /
+2026-04-10 14:00:44.468 | INFO     | app.main:log_requests - Req [NI86MH] Completed in 0.00s (Status: 404)
+2026-04-10 14:00:44.668 | INFO     | app.main:log_requests - Req [UJ9E0Q] GET /favicon.ico
+2026-04-10 14:00:44.670 | INFO     | app.main:log_requests - Req [UJ9E0Q] Completed in 0.00s (Status: 404)
+2026-04-10 14:00:50.333 | INFO     | app.main:log_requests - Req [9ZOCH8] GET /
+2026-04-10 14:00:50.336 | INFO     | app.main:log_requests - Req [9ZOCH8] Completed in 0.00s (Status: 404)
+2026-04-10 14:03:42.244 | INFO     | app.main:log_requests - Req [BBMW1V] GET /documents
+2026-04-10 14:03:52.416 | INFO     | app.main:log_requests - Req [BBMW1V] Completed in 10.16s (Status: 200)
+2026-04-10 14:03:52.423 | INFO     | app.main:log_requests - Req [G3E7LC] GET /documents
+2026-04-10 14:03:52.444 | INFO     | app.main:log_requests - Req [G3E7LC] Completed in 0.02s (Status: 200)
+2026-04-10 14:44:43.384 | INFO     | app.main:log_requests - Req [SW58TN] POST /upload
+2026-04-10 14:44:43.628 | INFO     | app.main:upload_document - Starting processing for file: How to be a successful enterpreneur.m4a
+2026-04-10 14:44:43.819 | INFO     | app.services.document_processor:process_and_store_document - Extracting .m4a logic for How to be a successful enterpreneur.m4a
+2026-04-10 14:44:43.824 | INFO     | app.services.document_processor:process_and_store_document - Initializing Whisper for audio transcription: How to be a successful enterpreneur.m4a
+2026-04-10 14:45:35.710 | INFO     | app.services.document_processor:process_and_store_document - Detected language 'en' with probability 0.9894394278526306
+2026-04-10 14:49:12.074 | INFO     | app.main:log_requests - Req [0VTLXI] GET /documents
+2026-04-10 14:49:12.127 | INFO     | app.main:log_requests - Req [0VTLXI] Completed in 0.05s (Status: 200)
+2026-04-10 14:49:12.138 | INFO     | app.main:log_requests - Req [ULZQYP] GET /documents
+2026-04-10 14:49:12.163 | INFO     | app.main:log_requests - Req [ULZQYP] Completed in 0.02s (Status: 200)
+2026-04-10 14:49:33.103 | INFO     | app.main:log_requests - Req [AY3OHA] OPTIONS /ask
+2026-04-10 14:49:33.105 | INFO     | app.main:log_requests - Req [AY3OHA] Completed in 0.00s (Status: 200)
+2026-04-10 14:49:33.111 | INFO     | app.main:log_requests - Req [GRG65J] POST /ask
+2026-04-10 14:49:35.688 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-10 14:49:48.999 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 13.31s.
+2026-04-10 14:49:49.000 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-10 14:49:49.001 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   2.8% (0.38s)
+2026-04-10 14:49:49.001 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  97.2% (13.31s)
+2026-04-10 14:49:49.002 | INFO     | app.main:ask_question - ============================
+2026-04-10 14:49:49.020 | INFO     | app.main:log_requests - Req [GRG65J] Completed in 15.91s (Status: 200)
+2026-04-10 14:51:11.561 | INFO     | app.main:log_requests - Req [QDF9UT] POST /ask
+2026-04-10 14:51:14.141 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-10 14:51:20.854 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 6.71s.
+2026-04-10 14:51:20.856 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-10 14:51:20.857 | INFO     | app.main:ask_question -   DuckDB : [█-------------------]   5.1% (0.36s)
+2026-04-10 14:51:20.858 | INFO     | app.main:ask_question -   Ollama : [██████████████████--]  94.9% (6.71s)
+2026-04-10 14:51:20.859 | INFO     | app.main:ask_question - ============================
+2026-04-10 14:51:20.899 | INFO     | app.main:log_requests - Req [QDF9UT] Completed in 9.34s (Status: 200)
+2026-04-10 14:52:12.999 | INFO     | app.main:log_requests - Req [K5NR5U] POST /ask
+2026-04-10 14:52:15.552 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-10 14:52:27.765 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 12.21s.
+2026-04-10 14:52:27.767 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-10 14:52:27.768 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   3.1% (0.38s)
+2026-04-10 14:52:27.770 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  96.9% (12.21s)
+2026-04-10 14:52:27.770 | INFO     | app.main:ask_question - ============================
+2026-04-10 14:52:27.775 | INFO     | app.main:log_requests - Req [K5NR5U] Completed in 14.77s (Status: 200)
+2026-04-10 14:53:27.267 | INFO     | app.main:log_requests - Req [06YUC7] POST /ask
+2026-04-10 14:53:29.872 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-10 14:53:36.257 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 6.38s.
+2026-04-10 14:53:36.258 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-10 14:53:36.258 | INFO     | app.main:ask_question -   DuckDB : [█-------------------]   5.8% (0.39s)
+2026-04-10 14:53:36.259 | INFO     | app.main:ask_question -   Ollama : [██████████████████--]  94.2% (6.38s)
+2026-04-10 14:53:36.259 | INFO     | app.main:ask_question - ============================
+2026-04-10 14:53:36.306 | INFO     | app.main:log_requests - Req [06YUC7] Completed in 9.04s (Status: 200)
+2026-04-10 14:56:29.833 | INFO     | app.services.document_processor:process_and_store_document - Completed! How to be a successful enterpreneur.m4a split into database chunks with vector embeddings attached.
+2026-04-10 14:56:29.917 | INFO     | app.main:upload_document - Successfully processed and stored How to be a successful enterpreneur.m4a
+2026-04-10 14:56:29.921 | INFO     | app.main:log_requests - Req [SW58TN] Completed in 706.53s (Status: 201)
+2026-04-11 19:02:32.060 | INFO     | app.main:log_requests - Req [MOP3RQ] GET /documents
+2026-04-11 19:02:32.245 | INFO     | app.main:log_requests - Req [MOP3RQ] Completed in 0.18s (Status: 200)
+2026-04-11 19:02:32.252 | INFO     | app.main:log_requests - Req [YB2OUP] GET /documents
+2026-04-11 19:02:32.265 | INFO     | app.main:log_requests - Req [YB2OUP] Completed in 0.01s (Status: 200)
+2026-04-11 19:02:49.204 | INFO     | app.main:log_requests - Req [GEWYJ5] POST /upload
+2026-04-11 19:02:49.327 | INFO     | app.main:upload_document - Starting processing for file: How the food you eat affects your brain - Mia Nacamulli.mp3
+2026-04-11 19:02:49.416 | INFO     | app.services.document_processor:process_and_store_document - Extracting .mp3 logic for How the food you eat affects your brain - Mia Nacamulli.mp3
+2026-04-11 19:02:49.417 | INFO     | app.services.document_processor:process_and_store_document - Initializing Whisper for audio transcription: How the food you eat affects your brain - Mia Nacamulli.mp3
+2026-04-11 19:02:54.983 | INFO     | app.services.document_processor:process_and_store_document - Detected language 'en' with probability 0.9913506507873535
+2026-04-11 19:05:38.175 | INFO     | app.services.document_processor:process_and_store_document - Completed! How the food you eat affects your brain - Mia Nacamulli.mp3 split into database chunks with vector embeddings attached.
+2026-04-11 19:05:38.193 | INFO     | app.main:upload_document - Successfully processed and stored How the food you eat affects your brain - Mia Nacamulli.mp3
+2026-04-11 19:05:38.194 | INFO     | app.main:log_requests - Req [GEWYJ5] Completed in 168.99s (Status: 201)
+2026-04-11 19:06:52.776 | INFO     | app.main:log_requests - Req [B5XESF] GET /documents
+2026-04-11 19:06:59.426 | INFO     | app.main:log_requests - Req [B5XESF] Completed in 6.65s (Status: 200)
+2026-04-11 19:06:59.433 | INFO     | app.main:log_requests - Req [ACLIJD] GET /documents
+2026-04-11 19:06:59.445 | INFO     | app.main:log_requests - Req [ACLIJD] Completed in 0.01s (Status: 200)
+2026-04-11 19:07:12.173 | INFO     | app.main:log_requests - Req [LPJ7S2] OPTIONS /ask
+2026-04-11 19:07:12.175 | INFO     | app.main:log_requests - Req [LPJ7S2] Completed in 0.00s (Status: 200)
+2026-04-11 19:07:12.180 | INFO     | app.main:log_requests - Req [IEO9ID] POST /ask
+2026-04-11 19:07:14.569 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-11 19:07:28.034 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 13.46s.
+2026-04-11 19:07:28.037 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-11 19:07:28.038 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   1.9% (0.26s)
+2026-04-11 19:07:28.041 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  98.1% (13.47s)
+2026-04-11 19:07:28.043 | INFO     | app.main:ask_question - ============================
+2026-04-11 19:07:28.087 | INFO     | app.main:log_requests - Req [IEO9ID] Completed in 15.91s (Status: 200)
+2026-04-11 19:08:25.134 | INFO     | app.main:log_requests - Req [OSIINX] POST /ask
+2026-04-11 19:08:27.457 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-11 19:08:39.471 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 12.01s.
+2026-04-11 19:08:39.475 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-11 19:08:39.477 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   1.7% (0.21s)
+2026-04-11 19:08:39.479 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  98.3% (12.02s)
+2026-04-11 19:08:39.481 | INFO     | app.main:ask_question - ============================
+2026-04-11 19:08:39.524 | INFO     | app.main:log_requests - Req [OSIINX] Completed in 14.39s (Status: 200)
