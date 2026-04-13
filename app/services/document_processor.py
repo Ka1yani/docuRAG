@@ -12,6 +12,11 @@ try:
 except ImportError:
     WhisperModel = None
 
+try:
+    import easyocr
+except ImportError:
+    easyocr = None
+
 def format_timestamp(seconds: float) -> str:
     mins = int(seconds // 60)
     secs = int(seconds % 60)
@@ -75,6 +80,28 @@ def process_and_store_document(file_path: str, file_name: str, db: Session):
             # Use segment ordinal as the logical page number
             extracted_data.append((i + 1, formatted_text))
             
+    elif ext in [".png", ".jpg", ".jpeg", ".webp"]:
+        if easyocr is None:
+            raise ImportError("easyocr is not installed. Unable to process image.")
+            
+        logger.info(f"Initializing EasyOCR for image extraction: {file_name}")
+        # Initialize reader natively on CPU for universal compatibility. 
+        # EasyOCR will automatically use GPU if PyTorch CUDA is bound.
+        reader = easyocr.Reader(['en'], gpu=False)
+        
+        logger.info("Reading raw text from image structural patterns...")
+        results = reader.readtext(file_path, detail=0)
+        
+        # Merge all detected text bounding boxes into a cohesive string
+        extracted_text = "\n".join(results)
+        
+        if extracted_text.strip():
+            # Apply strict semantic framing to bias the LLM contextual window
+            formatted_text = f"[Transcribed Image Content]:\n{extracted_text}"
+            extracted_data.append((1, formatted_text))
+        else:
+            logger.info("No text detected in the image.")
+
     elif ext == ".txt":
         with open(file_path, "r", encoding="utf-8") as f:
             text_content = f.read()
