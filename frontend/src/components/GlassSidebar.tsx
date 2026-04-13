@@ -16,7 +16,7 @@ import {
   FileAudio,
   Image as ImageIcon,
 } from "lucide-react";
-import { uploadDocument, getDocuments, type DocumentInfo } from "@/lib/api";
+import { uploadDocument, getDocuments, deleteDocument, type DocumentInfo } from "@/lib/api";
 import { cn } from "@/lib/cn";
 import type { Conversation } from "@/lib/conversations";
 
@@ -70,6 +70,23 @@ export default function GlassSidebar({
       } finally {
         setUploading(false);
         setTimeout(() => setUploadMsg(null), 4000);
+      }
+    },
+    [fetchDocs]
+  );
+  
+  // ── Delete handler ───────────────────────────────────────────────
+  const handleDeleteDoc = useCallback(
+    async (id: number, fileName: string) => {
+      const confirmDelete = window.confirm(`Are you sure you want to permanently delete "${fileName}" and all its vector chunks? This cannot be undone.`);
+      if (!confirmDelete) return;
+      
+      try {
+        await deleteDocument(id);
+        fetchDocs(); // Refresh the list
+      } catch (e: unknown) {
+        const msg = e instanceof Error ? e.message : "Delete failed";
+        alert(`Failed to delete document: ${msg}`);
       }
     },
     [fetchDocs]
@@ -292,9 +309,19 @@ export default function GlassSidebar({
                   ) : (
                     <FileText className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />
                   )}
-                  <span className="truncate text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
+                  <span className="flex-1 truncate text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
                     {doc.file_name}
                   </span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDeleteDoc(doc.id, doc.file_name);
+                    }}
+                    className="hidden group-hover:flex h-6 w-6 items-center justify-center rounded-md text-[var(--text-muted)] hover:text-red-400 hover:bg-red-500/10 transition-all"
+                    title="Permanently delete document"
+                  >
+                    <Trash2 className="h-3 w-3" />
+                  </button>
                 </motion.div>
               ))}
             </AnimatePresence>

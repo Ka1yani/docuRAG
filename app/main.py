@@ -10,7 +10,7 @@ from fastapi import Request
 from app.logger import logger
 
 from app.db import get_db, init_db
-from app.models import Document
+from app.models import Document, DocumentChunk
 from app.schemas import AskRequest, AskResponse, DocumentResponse, Citation
 from app.services.document_processor import process_and_store_document
 from app.services.retrieval import retrieve_context
@@ -152,3 +152,35 @@ def ask_question(request: AskRequest, db: Session = Depends(get_db)):
 def get_documents(db: Session = Depends(get_db)):
     docs = db.query(Document).order_by(Document.uploaded_at.desc()).all()
     return docs
+
+@app.delete("/documents/{document_id}")
+def delete_document(document_id: int, db: Session = Depends(get_db)):
+    # 1. Fetch document metadata
+    doc = db.query(Document).filter(Document.id == document_id).first()
+    if not doc:
+        raise HTTPException(status_code=404, detail="Document not found.")
+
+    file_name = doc.file_name
+    file_path = os.path.join(UPLOAD_DIR, file_name)
+
+    try:
+        # 2. Complete DuckDB Cascade Wipe 
+        # Delete child chunks mathematically bounding the vector RAG arrays first
+        db.query(DocumentChunk).filter(DocumentChunk.document_id == document_id).delete(synchronize_session=False)
+        db.commit() # Explicitly commit here to release the foreign key constraint in DuckDB
+        
+        # 3. Drop primary meta-record
+        db.delete(doc)
+        db.commit()
+
+        # 4. Physically remove the file to prevent server rotting
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            logger.info(f"Physically deleted {file_name} from disk.")
+            
+    except Exception as e:
+        db.rollback()
+        logger.error(f"Failed to cascade delete {file_name}: {e}")
+        raise HTTPException(status_code=500, detail=f"Database cascade deletion failed: {str(e)}")
+
+    return {"message": "Document and all associated chunks permanently deleted."}
