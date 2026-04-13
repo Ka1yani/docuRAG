@@ -452,3 +452,41 @@
 2026-04-12 20:44:19.041 | INFO     | app.main:log_requests - Req [V38Z9J] Completed in 16.73s (Status: 201)
 2026-04-12 20:44:19.054 | INFO     | app.main:log_requests - Req [ZI50GE] GET /documents
 2026-04-12 20:44:19.064 | INFO     | app.main:log_requests - Req [ZI50GE] Completed in 0.01s (Status: 200)
+2026-04-12 20:51:43.969 | INFO     | app.main:log_requests - Req [37SIDF] GET /documents
+2026-04-12 20:51:53.651 | INFO     | app.main:log_requests - Req [37SIDF] Completed in 9.68s (Status: 200)
+2026-04-12 20:51:53.662 | INFO     | app.main:log_requests - Req [6DUUH7] GET /documents
+2026-04-12 20:51:53.682 | INFO     | app.main:log_requests - Req [6DUUH7] Completed in 0.02s (Status: 200)
+2026-04-12 20:54:20.048 | INFO     | app.main:log_requests - Req [TZ7DFU] GET /documents
+2026-04-12 20:54:20.121 | INFO     | app.main:log_requests - Req [TZ7DFU] Completed in 0.06s (Status: 200)
+2026-04-12 20:54:20.148 | INFO     | app.main:log_requests - Req [YKME1Q] GET /documents
+2026-04-12 20:54:20.163 | INFO     | app.main:log_requests - Req [YKME1Q] Completed in 0.01s (Status: 200)
+2026-04-12 20:57:34.525 | INFO     | app.main:log_requests - Req [RPM9UW] GET /documents
+2026-04-12 20:57:34.549 | INFO     | app.main:log_requests - Req [RPM9UW] Completed in 0.02s (Status: 200)
+2026-04-12 20:57:34.564 | INFO     | app.main:log_requests - Req [5UR7NG] GET /documents
+2026-04-12 20:57:34.579 | INFO     | app.main:log_requests - Req [5UR7NG] Completed in 0.01s (Status: 200)
+2026-04-12 20:58:14.403 | INFO     | app.main:log_requests - Req [1YUDU1] GET /documents
+2026-04-12 20:58:14.588 | INFO     | app.main:log_requests - Req [1YUDU1] Completed in 0.18s (Status: 200)
+2026-04-12 20:58:14.593 | INFO     | app.main:log_requests - Req [2XRZ69] GET /documents
+2026-04-12 20:58:14.602 | INFO     | app.main:log_requests - Req [2XRZ69] Completed in 0.01s (Status: 200)
+2026-04-12 20:58:27.788 | INFO     | app.main:log_requests - Req [NJMEON] GET /documents
+2026-04-12 20:58:27.806 | INFO     | app.main:log_requests - Req [NJMEON] Completed in 0.02s (Status: 200)
+2026-04-12 20:58:27.817 | INFO     | app.main:log_requests - Req [W2JVVM] GET /documents
+2026-04-12 20:58:27.842 | INFO     | app.main:log_requests - Req [W2JVVM] Completed in 0.02s (Status: 200)
+2026-04-12 21:08:26.868 | INFO     | app.main:log_requests - Req [9O3MFY] GET /documents
+2026-04-12 21:08:26.891 | INFO     | app.main:log_requests - Req [9O3MFY] Completed in 0.02s (Status: 200)
+2026-04-12 21:08:26.896 | INFO     | app.main:log_requests - Req [VM4KUD] GET /documents
+2026-04-12 21:08:26.911 | INFO     | app.main:log_requests - Req [VM4KUD] Completed in 0.01s (Status: 200)
+2026-04-13 14:03:39.163 | INFO     | app.main:log_requests - Req [MJGVFB] GET /documents
+2026-04-13 14:03:49.109 | INFO     | app.main:log_requests - Req [MJGVFB] Completed in 9.94s (Status: 200)
+2026-04-13 14:03:49.121 | INFO     | app.main:log_requests - Req [EO7WFX] GET /documents
+2026-04-13 14:03:49.141 | INFO     | app.main:log_requests - Req [EO7WFX] Completed in 0.02s (Status: 200)
+2026-04-13 14:16:14.665 | INFO     | app.main:log_requests - Req [O9EF95] OPTIONS /ask
+2026-04-13 14:16:14.669 | INFO     | app.main:log_requests - Req [O9EF95] Completed in 0.00s (Status: 200)
+2026-04-13 14:16:14.915 | INFO     | app.main:log_requests - Req [16YO8K] POST /ask
+2026-04-13 14:16:23.842 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-13 14:16:59.286 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 35.44s.
+2026-04-13 14:16:59.289 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-13 14:16:59.293 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   3.1% (1.12s)
+2026-04-13 14:16:59.295 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  96.9% (35.44s)
+2026-04-13 14:16:59.297 | INFO     | app.main:ask_question - ============================
+2026-04-13 14:16:59.304 | INFO     | app.main:log_requests - Req [16YO8K] Completed in 44.38s (Status: 200)
