@@ -26,6 +26,7 @@ interface SidebarProps {
   onNewChat: () => void;
   onSelectChat: (id: string) => void;
   onDeleteChat: (id: string) => void;
+  onChatWithDocument: (doc: DocumentInfo) => void;
 }
 
 export default function GlassSidebar({
@@ -34,6 +35,7 @@ export default function GlassSidebar({
   onNewChat,
   onSelectChat,
   onDeleteChat,
+  onChatWithDocument,
 }: SidebarProps) {
   const [docs, setDocs] = useState<DocumentInfo[]>([]);
   const [uploading, setUploading] = useState(false);
@@ -297,10 +299,14 @@ export default function GlassSidebar({
               {docs.map((doc, i) => (
                 <motion.div
                   key={doc.id}
+                  onClick={() => {
+                    onChatWithDocument(doc);
+                    setActiveTab("chats");
+                  }}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.04, duration: 0.3 }}
-                  className="group flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-[var(--surface-1)]"
+                  className="group flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-[var(--surface-1)]"
                 >
                   {doc.file_name.toLowerCase().match(/\.(mp3|wav|m4a)$/) ? (
                     <FileAudio className="h-4 w-4 shrink-0 text-[var(--accent-1)] opacity-60 group-hover:opacity-100 transition-opacity" />

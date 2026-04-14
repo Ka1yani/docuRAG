@@ -63,6 +63,12 @@ export default function AppShell() {
     setActiveId(newConvo.id);
   }, []);
 
+  const handleChatWithDocument = useCallback((doc: any) => {
+    const newConvo = createConversation(doc.id, doc.file_name);
+    setConversations((prev) => [newConvo, ...prev]);
+    setActiveId(newConvo.id);
+  }, []);
+
   const handleSelectChat = useCallback((id: string) => {
     setActiveId(id);
   }, []);
@@ -116,12 +122,15 @@ export default function AppShell() {
         onNewChat={handleNewChat}
         onSelectChat={handleSelectChat}
         onDeleteChat={handleDeleteChat}
+        onChatWithDocument={handleChatWithDocument}
       />
       <ChatFeed
         messages={activeConvo?.messages ?? []}
         onMessagesChange={handleMessagesChange}
         theme={theme}
         onThemeToggle={() => setTheme(theme === "dark" ? "light" : "dark")}
+        documentId={activeConvo?.documentId}
+        documentName={activeConvo?.documentName}
       />
     </>
   );
