@@ -490,3 +490,49 @@
 2026-04-13 14:16:59.295 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  96.9% (35.44s)
 2026-04-13 14:16:59.297 | INFO     | app.main:ask_question - ============================
 2026-04-13 14:16:59.304 | INFO     | app.main:log_requests - Req [16YO8K] Completed in 44.38s (Status: 200)
+2026-04-14 00:42:04.360 | INFO     | app.main:log_requests - Req [8Z01UN] GET /documents
+2026-04-14 00:42:13.274 | INFO     | app.main:log_requests - Req [8Z01UN] Completed in 8.91s (Status: 200)
+2026-04-14 00:42:13.282 | INFO     | app.main:log_requests - Req [HK1WLL] GET /documents
+2026-04-14 00:42:13.300 | INFO     | app.main:log_requests - Req [HK1WLL] Completed in 0.02s (Status: 200)
+2026-04-14 00:47:19.536 | INFO     | app.main:log_requests - Req [ED9WFH] GET /documents
+2026-04-14 00:47:19.803 | INFO     | app.main:log_requests - Req [ED9WFH] Completed in 0.27s (Status: 200)
+2026-04-14 00:47:30.210 | INFO     | app.main:log_requests - Req [RBHHR6] GET /documents
+2026-04-14 00:47:30.220 | INFO     | app.main:log_requests - Req [RBHHR6] Completed in 0.01s (Status: 200)
+2026-04-14 00:50:02.842 | INFO     | app.main:log_requests - Req [HNMAZX] OPTIONS /documents/7
+2026-04-14 00:50:02.844 | INFO     | app.main:log_requests - Req [HNMAZX] Completed in 0.00s (Status: 200)
+2026-04-14 00:50:02.852 | INFO     | app.main:log_requests - Req [06YG8U] DELETE /documents/7
+2026-04-14 00:50:03.005 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: (_duckdb.ConstraintException) Constraint Error: Violates foreign key constraint because key "document_id: 7" is still referenced by a foreign key in a different table. If this is an unexpected constraint violation, please refer to our foreign key limitations in the documentation
+[SQL: DELETE FROM documents WHERE documents.id = $1]
+[parameters: (7,)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 00:50:03.010 | INFO     | app.main:log_requests - Req [06YG8U] Completed in 0.16s (Status: 500)
+2026-04-14 00:51:40.795 | INFO     | app.main:log_requests - Req [NUSWKO] GET /documents/7
+2026-04-14 00:51:40.799 | INFO     | app.main:log_requests - Req [NUSWKO] Completed in 0.00s (Status: 405)
+2026-04-14 00:51:40.889 | INFO     | app.main:log_requests - Req [8TGRCU] GET /favicon.ico
+2026-04-14 00:51:40.894 | INFO     | app.main:log_requests - Req [8TGRCU] Completed in 0.00s (Status: 404)
+2026-04-14 00:57:47.037 | INFO     | app.main:log_requests - Req [9X9KL7] DELETE /documents/7
+2026-04-14 00:57:47.731 | INFO     | app.main:delete_document - Physically deleted handwritten note 1.jpg from disk.
+2026-04-14 00:57:47.735 | INFO     | app.main:log_requests - Req [9X9KL7] Completed in 0.69s (Status: 200)
+2026-04-14 00:57:47.749 | INFO     | app.main:log_requests - Req [T3UP48] GET /documents
+2026-04-14 00:57:47.773 | INFO     | app.main:log_requests - Req [T3UP48] Completed in 0.02s (Status: 200)
+2026-04-14 00:58:21.255 | INFO     | app.main:log_requests - Req [N7494V] OPTIONS /documents/2
+2026-04-14 00:58:21.257 | INFO     | app.main:log_requests - Req [N7494V] Completed in 0.00s (Status: 200)
+2026-04-14 00:58:21.265 | INFO     | app.main:log_requests - Req [W9Z3TM] DELETE /documents/2
+2026-04-14 00:58:21.341 | INFO     | app.main:delete_document - Physically deleted KalashDoc.pdf from disk.
+2026-04-14 00:58:21.347 | INFO     | app.main:log_requests - Req [W9Z3TM] Completed in 0.08s (Status: 200)
+2026-04-14 00:58:21.360 | INFO     | app.main:log_requests - Req [KQBBQ8] GET /documents
+2026-04-14 00:58:21.379 | INFO     | app.main:log_requests - Req [KQBBQ8] Completed in 0.02s (Status: 200)
+2026-04-14 00:58:27.486 | INFO     | app.main:log_requests - Req [YA76W6] OPTIONS /documents/3
+2026-04-14 00:58:27.489 | INFO     | app.main:log_requests - Req [YA76W6] Completed in 0.00s (Status: 200)
+2026-04-14 00:58:27.502 | INFO     | app.main:log_requests - Req [0PZP6I] DELETE /documents/3
+2026-04-14 00:58:27.569 | INFO     | app.main:delete_document - Physically deleted Legal_Studies_Book_v8_XI.pdf from disk.
+2026-04-14 00:58:27.571 | INFO     | app.main:log_requests - Req [0PZP6I] Completed in 0.07s (Status: 200)
+2026-04-14 00:58:27.582 | INFO     | app.main:log_requests - Req [ORPUQ0] GET /documents
+2026-04-14 00:58:27.601 | INFO     | app.main:log_requests - Req [ORPUQ0] Completed in 0.02s (Status: 200)
+2026-04-14 00:58:37.084 | INFO     | app.main:log_requests - Req [333LYR] OPTIONS /documents/4
+2026-04-14 00:58:37.087 | INFO     | app.main:log_requests - Req [333LYR] Completed in 0.00s (Status: 200)
+2026-04-14 00:58:37.098 | INFO     | app.main:log_requests - Req [65GSHY] DELETE /documents/4
+2026-04-14 00:58:37.161 | INFO     | app.main:delete_document - Physically deleted How to be a successful enterpreneur.m4a from disk.
+2026-04-14 00:58:37.164 | INFO     | app.main:log_requests - Req [65GSHY] Completed in 0.06s (Status: 200)
+2026-04-14 00:58:37.173 | INFO     | app.main:log_requests - Req [0YGCHL] GET /documents
+2026-04-14 00:58:37.190 | INFO     | app.main:log_requests - Req [0YGCHL] Completed in 0.01s (Status: 200)

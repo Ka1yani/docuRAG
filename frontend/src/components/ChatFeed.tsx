@@ -24,10 +24,12 @@ interface ChatFeedProps {
   onMessagesChange: (updater: (prev: Message[]) => Message[]) => void;
   theme: "dark" | "light";
   onThemeToggle: () => void;
+  documentId?: number;
+  documentName?: string;
 }
 
 // ── Chat Component ─────────────────────────────────────────────────
-export default function ChatFeed({ messages, onMessagesChange, theme, onThemeToggle }: ChatFeedProps) {
+export default function ChatFeed({ messages, onMessagesChange, theme, onThemeToggle, documentId, documentName }: ChatFeedProps) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
@@ -48,7 +50,7 @@ export default function ChatFeed({ messages, onMessagesChange, theme, onThemeTog
     const t0 = performance.now();
 
     try {
-      const data: AskResponse = await askQuestion(query);
+      const data: AskResponse = await askQuestion(query, documentId);
       const elapsed = (performance.now() - t0) / 1000;
 
       const botMsg: Message = {
@@ -87,6 +89,16 @@ export default function ChatFeed({ messages, onMessagesChange, theme, onThemeTog
 
       {/* ── Chat container ──────────────────────────────────────── */}
       <div className="glass flex flex-1 flex-col rounded-2xl overflow-hidden shadow-lg relative">
+        {/* Tether Badge */}
+        {documentName && (
+          <div className="absolute top-0 left-0 w-full bg-[var(--accent-1)]/10 border-b border-white/[0.05] px-6 py-2.5 flex items-center gap-2 z-10 backdrop-blur-md">
+            <BookOpen className="h-3.5 w-3.5 text-[var(--accent-3)]" />
+            <span className="text-[11px] font-medium text-[var(--accent-3)] uppercase tracking-wider">
+              Chatting with: <span className="text-[var(--text-primary)] font-semibold">{documentName}</span>
+            </span>
+          </div>
+        )}
+
         {/* Messages area */}
         <div className="flex-1 overflow-y-auto px-6 pt-14 pb-6 space-y-1">
           {messages.length === 0 && <EmptyState />}
