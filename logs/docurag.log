@@ -536,3 +536,789 @@
 2026-04-14 00:58:37.164 | INFO     | app.main:log_requests - Req [65GSHY] Completed in 0.06s (Status: 200)
 2026-04-14 00:58:37.173 | INFO     | app.main:log_requests - Req [0YGCHL] GET /documents
 2026-04-14 00:58:37.190 | INFO     | app.main:log_requests - Req [0YGCHL] Completed in 0.01s (Status: 200)
+2026-04-14 13:27:15.508 | INFO     | app.main:log_requests - Req [7BNWER] GET /documents
+2026-04-14 13:27:16.125 | INFO     | app.main:log_requests - Req [7BNWER] Completed in 0.61s (Status: 200)
+2026-04-14 13:27:16.134 | INFO     | app.main:log_requests - Req [MJQSIJ] GET /documents
+2026-04-14 13:27:16.156 | INFO     | app.main:log_requests - Req [MJQSIJ] Completed in 0.02s (Status: 200)
+2026-04-14 13:28:36.873 | INFO     | app.main:log_requests - Req [44H8KI] OPTIONS /ask
+2026-04-14 13:28:36.878 | INFO     | app.main:log_requests - Req [44H8KI] Completed in 0.00s (Status: 200)
+2026-04-14 13:28:36.886 | INFO     | app.main:log_requests - Req [XM91EC] POST /ask
+2026-04-14 13:28:41.990 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 0.9601)
+2026-04-14 13:28:41.992 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-14 13:28:41.993 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 5.10s!
+2026-04-14 13:28:42.001 | INFO     | app.main:log_requests - Req [XM91EC] Completed in 5.11s (Status: 200)
+2026-04-14 13:29:09.366 | INFO     | app.main:log_requests - Req [AORDEY] POST /ask
+2026-04-14 13:29:11.568 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 0.9738)
+2026-04-14 13:29:11.572 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-14 13:29:11.573 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.20s!
+2026-04-14 13:29:11.578 | INFO     | app.main:log_requests - Req [AORDEY] Completed in 2.21s (Status: 200)
+2026-04-14 13:43:45.802 | INFO     | app.main:log_requests - Req [9TS43G] GET /documents
+2026-04-14 13:43:57.758 | INFO     | app.main:log_requests - Req [9TS43G] Completed in 11.95s (Status: 200)
+2026-04-14 13:43:57.766 | INFO     | app.main:log_requests - Req [F5FMD6] GET /documents
+2026-04-14 13:43:57.787 | INFO     | app.main:log_requests - Req [F5FMD6] Completed in 0.02s (Status: 200)
+2026-04-14 13:43:57.958 | INFO     | app.main:log_requests - Req [SU8QBS] OPTIONS /ask
+2026-04-14 13:43:57.960 | INFO     | app.main:log_requests - Req [SU8QBS] Completed in 0.00s (Status: 200)
+2026-04-14 13:43:57.967 | INFO     | app.main:log_requests - Req [JIZ3LP] POST /ask
+2026-04-14 13:44:00.879 | INFO     | app.services.cache_service:check_semantic_cache - Cache vectors matched but rejected due to Scope Isolation (DOC_6:)
+2026-04-14 13:44:01.004 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 13:44:22.730 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 21.72s.
+2026-04-14 13:44:22.732 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-14 13:44:22.737 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.5% (0.12s)
+2026-04-14 13:44:22.739 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.5% (21.73s)
+2026-04-14 13:44:22.741 | INFO     | app.main:ask_question - ============================
+2026-04-14 13:44:22.824 | INFO     | app.main:log_requests - Req [JIZ3LP] Completed in 24.85s (Status: 200)
+2026-04-14 13:48:48.958 | INFO     | app.main:log_requests - Req [H00C24] POST /ask
+2026-04-14 13:48:51.184 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 13:48:51.185 | WARNING  | app.services.retrieval:retrieve_context - Very low vector confidence detected! Top score: 0.4649
+2026-04-14 13:48:51.188 | INFO     | app.main:log_requests - Req [H00C24] Completed in 2.23s (Status: 200)
+2026-04-14 13:52:23.530 | INFO     | app.main:log_requests - Req [TR8710] GET /documents
+2026-04-14 13:52:24.235 | INFO     | app.main:log_requests - Req [TR8710] Completed in 0.70s (Status: 200)
+2026-04-14 13:52:24.242 | INFO     | app.main:log_requests - Req [S9VDPS] GET /documents
+2026-04-14 13:52:24.263 | INFO     | app.main:log_requests - Req [S9VDPS] Completed in 0.02s (Status: 200)
+2026-04-14 13:54:24.611 | INFO     | app.main:log_requests - Req [PFHGM6] GET /documents
+2026-04-14 13:54:24.632 | INFO     | app.main:log_requests - Req [PFHGM6] Completed in 0.02s (Status: 200)
+2026-04-14 13:54:24.642 | INFO     | app.main:log_requests - Req [IBLET0] GET /documents
+2026-04-14 13:54:24.662 | INFO     | app.main:log_requests - Req [IBLET0] Completed in 0.02s (Status: 200)
+2026-04-14 13:54:49.859 | INFO     | app.main:log_requests - Req [Y3SUJ8] OPTIONS /ask
+2026-04-14 13:54:49.861 | INFO     | app.main:log_requests - Req [Y3SUJ8] Completed in 0.00s (Status: 200)
+2026-04-14 13:54:49.871 | INFO     | app.main:log_requests - Req [BVP2Z7] POST /ask
+2026-04-14 13:54:53.152 | INFO     | app.services.cache_service:check_semantic_cache - Cache vectors matched but rejected due to Scope Isolation (DOC_6:)
+2026-04-14 13:54:53.228 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 13:54:53.230 | WARNING  | app.services.retrieval:retrieve_context - Very low vector confidence detected! Top score: 0.5060
+2026-04-14 13:54:53.236 | INFO     | app.main:log_requests - Req [BVP2Z7] Completed in 3.34s (Status: 200)
+2026-04-14 14:50:24.599 | INFO     | app.main:log_requests - Req [YPWMEE] POST /upload
+2026-04-14 14:50:24.625 | INFO     | app.main:upload_document - Starting processing for file: handwritten note 1.jpg
+2026-04-14 14:50:25.235 | INFO     | app.services.document_processor:process_and_store_document - Extracting .jpg logic for handwritten note 1.jpg
+2026-04-14 14:50:25.236 | INFO     | app.services.document_processor:process_and_store_document - Initializing EasyOCR for image extraction: handwritten note 1.jpg
+2026-04-14 14:50:31.544 | INFO     | app.services.document_processor:process_and_store_document - Reading raw text from image structural patterns...
+2026-04-14 14:50:36.555 | INFO     | app.services.document_processor:process_and_store_document - Completed! handwritten note 1.jpg split into database chunks with vector embeddings attached.
+2026-04-14 14:50:36.562 | INFO     | app.main:upload_document - Successfully processed and stored handwritten note 1.jpg
+2026-04-14 14:50:36.563 | INFO     | app.main:log_requests - Req [YPWMEE] Completed in 11.96s (Status: 201)
+2026-04-14 14:50:36.572 | INFO     | app.main:log_requests - Req [58FIX5] GET /documents
+2026-04-14 14:50:36.580 | INFO     | app.main:log_requests - Req [58FIX5] Completed in 0.01s (Status: 200)
+2026-04-14 14:51:31.154 | INFO     | app.main:log_requests - Req [MNUB3C] OPTIONS /ask
+2026-04-14 14:51:31.156 | INFO     | app.main:log_requests - Req [MNUB3C] Completed in 0.00s (Status: 200)
+2026-04-14 14:51:31.161 | INFO     | app.main:log_requests - Req [IUMDX2] POST /ask
+2026-04-14 14:51:33.373 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 14:51:46.855 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 13.48s.
+2026-04-14 14:51:46.857 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-14 14:51:46.858 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.5% (0.07s)
+2026-04-14 14:51:46.859 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.5% (13.48s)
+2026-04-14 14:51:46.860 | INFO     | app.main:ask_question - ============================
+2026-04-14 14:51:46.867 | INFO     | app.main:log_requests - Req [IUMDX2] Completed in 15.70s (Status: 200)
+2026-04-14 14:52:40.616 | INFO     | app.main:log_requests - Req [Q7ZRWW] POST /ask
+2026-04-14 14:52:42.796 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 14:52:49.955 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 7.16s.
+2026-04-14 14:52:49.957 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-14 14:52:49.959 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.8% (0.06s)
+2026-04-14 14:52:49.960 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.2% (7.16s)
+2026-04-14 14:52:49.960 | INFO     | app.main:ask_question - ============================
+2026-04-14 14:52:49.990 | INFO     | app.main:log_requests - Req [Q7ZRWW] Completed in 9.37s (Status: 200)
+2026-04-14 15:07:20.235 | INFO     | app.main:log_requests - Req [3HNU4V] OPTIONS /ask
+2026-04-14 15:07:20.236 | INFO     | app.main:log_requests - Req [3HNU4V] Completed in 0.00s (Status: 200)
+2026-04-14 15:07:20.244 | INFO     | app.main:log_requests - Req [YU3RCS] POST /ask
+2026-04-14 15:07:23.719 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 15:07:23.720 | WARNING  | app.services.retrieval:retrieve_context - Very low vector confidence detected! Top score: 0.4767
+2026-04-14 15:07:23.723 | INFO     | app.main:log_requests - Req [YU3RCS] Completed in 3.48s (Status: 200)
+2026-04-14 15:08:24.266 | INFO     | app.main:log_requests - Req [QSNI1Y] POST /ask
+2026-04-14 15:08:26.463 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-14 15:08:26.465 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-14 15:08:26.465 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.20s!
+2026-04-14 15:08:26.469 | INFO     | app.main:log_requests - Req [QSNI1Y] Completed in 2.20s (Status: 200)
+2026-04-14 15:08:57.994 | INFO     | app.main:log_requests - Req [TX49PJ] POST /ask
+2026-04-14 15:09:00.322 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 15:10:06.116 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 65.79s.
+2026-04-14 15:10:06.117 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-14 15:10:06.118 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.2% (0.11s)
+2026-04-14 15:10:06.120 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.8% (65.79s)
+2026-04-14 15:10:06.120 | INFO     | app.main:ask_question - ============================
+2026-04-14 15:10:06.151 | INFO     | app.main:log_requests - Req [TX49PJ] Completed in 68.16s (Status: 200)
+2026-04-14 15:11:45.116 | INFO     | app.main:log_requests - Req [20M0WJ] POST /ask
+2026-04-14 15:11:47.541 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 15:12:05.407 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 17.86s.
+2026-04-14 15:12:05.412 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-14 15:12:05.414 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.8% (0.14s)
+2026-04-14 15:12:05.416 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.2% (17.87s)
+2026-04-14 15:12:05.418 | INFO     | app.main:ask_question - ============================
+2026-04-14 15:12:05.478 | INFO     | app.main:log_requests - Req [20M0WJ] Completed in 20.36s (Status: 200)
+2026-04-14 15:13:00.302 | INFO     | app.main:log_requests - Req [5C72TU] POST /ask
+2026-04-14 15:13:02.827 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 15:13:50.578 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 47.75s.
+2026-04-14 15:13:50.582 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-14 15:13:50.584 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.3% (0.16s)
+2026-04-14 15:13:50.587 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.7% (47.75s)
+2026-04-14 15:13:50.588 | INFO     | app.main:ask_question - ============================
+2026-04-14 15:13:50.671 | INFO     | app.main:log_requests - Req [5C72TU] Completed in 50.37s (Status: 200)
+2026-04-14 15:16:54.610 | INFO     | app.main:log_requests - Req [W7LFRC] POST /ask
+2026-04-14 15:16:57.128 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-14 15:16:57.131 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-14 15:16:57.134 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.50s!
+2026-04-14 15:16:57.144 | INFO     | app.main:log_requests - Req [W7LFRC] Completed in 2.52s (Status: 200)
+2026-04-14 15:17:40.313 | INFO     | app.main:log_requests - Req [K74HFP] OPTIONS /ask
+2026-04-14 15:17:40.314 | INFO     | app.main:log_requests - Req [K74HFP] Completed in 0.00s (Status: 200)
+2026-04-14 15:17:40.319 | INFO     | app.main:log_requests - Req [491ENR] POST /ask
+2026-04-14 15:17:42.990 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-14 15:18:04.633 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 21.64s.
+2026-04-14 15:18:04.772 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-14 15:18:04.915 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   1.2% (0.26s)
+2026-04-14 15:18:04.940 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  98.8% (21.78s)
+2026-04-14 15:18:04.988 | INFO     | app.main:ask_question - ============================
+2026-04-14 15:18:05.029 | INFO     | app.main:log_requests - Req [491ENR] Completed in 24.71s (Status: 200)
+2026-04-14 15:19:12.750 | INFO     | app.main:log_requests - Req [XOR4I2] POST /ask
+2026-04-14 15:19:15.219 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-14 15:19:15.262 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-14 15:19:15.293 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.48s!
+2026-04-14 15:19:15.300 | INFO     | app.main:log_requests - Req [XOR4I2] Completed in 2.53s (Status: 200)
+2026-04-14 15:19:28.679 | INFO     | app.main:log_requests - Req [99P2OQ] POST /ask
+2026-04-14 15:19:31.119 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-14 15:19:31.121 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-14 15:19:31.122 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.44s!
+2026-04-14 15:19:31.129 | INFO     | app.main:log_requests - Req [99P2OQ] Completed in 2.45s (Status: 200)
+2026-04-15 14:06:21.251 | INFO     | app.main:log_requests - Req [7L5T6Y] GET /documents
+2026-04-15 14:06:32.160 | INFO     | app.main:log_requests - Req [7L5T6Y] Completed in 10.91s (Status: 200)
+2026-04-15 14:06:32.168 | INFO     | app.main:log_requests - Req [XXMGZV] GET /documents
+2026-04-15 14:06:32.191 | INFO     | app.main:log_requests - Req [XXMGZV] Completed in 0.02s (Status: 200)
+2026-04-15 14:07:21.965 | INFO     | app.main:log_requests - Req [552EU8] OPTIONS /ask
+2026-04-15 14:07:21.967 | INFO     | app.main:log_requests - Req [552EU8] Completed in 0.00s (Status: 200)
+2026-04-15 14:07:21.975 | INFO     | app.main:log_requests - Req [A9D2LF] POST /ask
+2026-04-15 14:07:27.052 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-15 14:07:43.045 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 15.99s.
+2026-04-15 14:07:43.055 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-15 14:07:43.061 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   1.1% (0.19s)
+2026-04-15 14:07:43.064 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  98.9% (16.00s)
+2026-04-15 14:07:43.076 | INFO     | app.main:ask_question - ============================
+2026-04-15 14:07:43.216 | INFO     | app.main:log_requests - Req [A9D2LF] Completed in 21.24s (Status: 200)
+2026-04-15 14:13:02.755 | INFO     | app.main:log_requests - Req [XOJKMJ] POST /ask
+2026-04-15 14:13:05.996 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-15 14:13:05.998 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-15 14:13:05.999 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 3.22s!
+2026-04-15 14:13:06.010 | INFO     | app.main:log_requests - Req [XOJKMJ] Completed in 3.25s (Status: 200)
+2026-04-17 15:03:18.241 | INFO     | app.main:log_requests - Req [3YB0VU] GET /
+2026-04-17 15:03:19.306 | INFO     | app.main:log_requests - Req [3YB0VU] Completed in 0.82s (Status: 404)
+2026-04-17 15:03:19.977 | INFO     | app.main:log_requests - Req [D10KME] GET /favicon.ico
+2026-04-17 15:03:20.012 | INFO     | app.main:log_requests - Req [D10KME] Completed in 0.01s (Status: 404)
+2026-04-21 23:22:22.111 | INFO     | app.main:log_requests - Req [ZG1PE2] GET /documents
+2026-04-21 23:22:30.000 | INFO     | app.main:log_requests - Req [ZG1PE2] Completed in 7.89s (Status: 200)
+2026-04-21 23:22:30.009 | INFO     | app.main:log_requests - Req [3NZ3NE] GET /documents
+2026-04-21 23:22:30.019 | INFO     | app.main:log_requests - Req [3NZ3NE] Completed in 0.01s (Status: 200)
+2026-04-21 23:22:40.610 | INFO     | app.main:log_requests - Req [3EMIX3] OPTIONS /documents/8
+2026-04-21 23:22:40.611 | INFO     | app.main:log_requests - Req [3EMIX3] Completed in 0.00s (Status: 200)
+2026-04-21 23:22:40.618 | INFO     | app.main:log_requests - Req [P9RKJ1] DELETE /documents/8
+2026-04-21 23:22:40.883 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: (_duckdb.FatalException) FATAL Error: Invalid Input Error: Failed to delete all rows from index. Only deleted 0 out of 1 rows.
+Chunk: Chunk - [3 Columns]
+- FLAT INTEGER: 1 = [ 8]
+- FLAT VARCHAR: 1 = [ handwritten note 1.jpg]
+- CONSTANT TIMESTAMP WITH TIME ZONE: 1 = [ NULL]
+
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-04-21 23:22:40.886 | INFO     | app.main:log_requests - Req [P9RKJ1] Completed in 0.27s (Status: 500)
+2026-04-21 23:22:50.572 | INFO     | app.main:log_requests - Req [NE1MCO] DELETE /documents/8
+2026-04-21 23:22:50.661 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: (_duckdb.FatalException) FATAL Error: Invalid Input Error: Failed to delete all rows from index. Only deleted 0 out of 1 rows.
+Chunk: Chunk - [3 Columns]
+- FLAT INTEGER: 1 = [ 8]
+- FLAT VARCHAR: 1 = [ handwritten note 1.jpg]
+- CONSTANT TIMESTAMP WITH TIME ZONE: 1 = [ NULL]
+
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-04-21 23:22:50.664 | INFO     | app.main:log_requests - Req [NE1MCO] Completed in 0.09s (Status: 500)
+2026-04-21 23:23:50.704 | INFO     | app.main:log_requests - Req [KBWDNF] DELETE /documents/8
+2026-04-21 23:23:50.795 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: (_duckdb.FatalException) FATAL Error: Invalid Input Error: Failed to delete all rows from index. Only deleted 0 out of 1 rows.
+Chunk: Chunk - [3 Columns]
+- FLAT INTEGER: 1 = [ 8]
+- FLAT VARCHAR: 1 = [ handwritten note 1.jpg]
+- CONSTANT TIMESTAMP WITH TIME ZONE: 1 = [ NULL]
+
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-04-21 23:23:50.798 | INFO     | app.main:log_requests - Req [KBWDNF] Completed in 0.09s (Status: 500)
+2026-04-21 23:29:48.169 | INFO     | app.main:log_requests - Req [Z4G82G] DELETE /documents/8
+2026-04-21 23:29:48.589 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: name 'text' is not defined
+2026-04-21 23:29:48.595 | INFO     | app.main:log_requests - Req [Z4G82G] Completed in 0.42s (Status: 500)
+2026-04-21 23:30:01.475 | INFO     | app.main:log_requests - Req [FHDX10] DELETE /documents/8
+2026-04-21 23:30:01.491 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: name 'text' is not defined
+2026-04-21 23:30:01.495 | INFO     | app.main:log_requests - Req [FHDX10] Completed in 0.02s (Status: 500)
+2026-04-21 23:33:33.726 | INFO     | app.main:log_requests - Req [M7EK2X] GET /documents
+2026-04-21 23:33:33.728 | INFO     | app.main:log_requests - Req [YQ53XF] GET /documents
+2026-04-21 23:33:33.729 | INFO     | app.main:log_requests - Req [09BKOI] DELETE /documents/8
+2026-04-21 23:33:33.730 | INFO     | app.main:log_requests - Req [C5TRK6] GET /documents
+2026-04-21 23:33:33.731 | INFO     | app.main:log_requests - Req [ZYQWCT] DELETE /documents/8
+2026-04-21 23:33:33.732 | INFO     | app.main:log_requests - Req [ICO53A] GET /documents
+2026-04-21 23:33:36.610 | INFO     | app.main:log_requests - Req [YQ53XF] Completed in 2.88s (Status: 200)
+2026-04-21 23:33:36.613 | INFO     | app.main:log_requests - Req [M7EK2X] Completed in 2.89s (Status: 200)
+2026-04-21 23:33:36.621 | INFO     | app.main:log_requests - Req [C5TRK6] Completed in 2.89s (Status: 200)
+2026-04-21 23:33:36.627 | INFO     | app.main:log_requests - Req [ICO53A] Completed in 2.89s (Status: 200)
+2026-04-21 23:33:36.903 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: (_duckdb.FatalException) FATAL Error: Invalid Input Error: Failed to delete all rows from index. Only deleted 0 out of 1 rows.
+Chunk: Chunk - [3 Columns]
+- FLAT INTEGER: 1 = [ 8]
+- FLAT VARCHAR: 1 = [ handwritten note 1.jpg]
+- CONSTANT TIMESTAMP WITH TIME ZONE: 1 = [ NULL]
+
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-04-21 23:33:36.950 | ERROR    | app.main:delete_document - Failed to cascade delete handwritten note 1.jpg: (_duckdb.TransactionException) TransactionContext Error: Conflict on tuple deletion!
+[SQL: DELETE FROM documents WHERE id = $1]
+[parameters: (8,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-21 23:33:37.220 | INFO     | app.main:log_requests - Req [ZYQWCT] Completed in 3.49s (Status: 500)
+2026-04-21 23:33:37.221 | INFO     | app.main:log_requests - Req [09BKOI] Completed in 3.49s (Status: 500)
+2026-04-21 23:34:20.857 | INFO     | app.main:log_requests - Req [FF05LX] OPTIONS /documents/8
+2026-04-21 23:34:20.860 | INFO     | app.main:log_requests - Req [FF05LX] Completed in 0.00s (Status: 200)
+2026-04-21 23:34:20.869 | INFO     | app.main:log_requests - Req [RBIIQB] DELETE /documents/8
+2026-04-21 23:36:45.978 | INFO     | app.main:log_requests - Req [TM6OL4] DELETE /documents/8
+2026-04-21 23:36:46.305 | INFO     | app.main:delete_document - Physically deleted handwritten note 1.jpg from disk.
+2026-04-21 23:36:46.310 | INFO     | app.main:log_requests - Req [TM6OL4] Completed in 0.33s (Status: 200)
+2026-04-21 23:36:46.322 | INFO     | app.main:log_requests - Req [0K8BFF] GET /documents
+2026-04-21 23:36:46.342 | INFO     | app.main:log_requests - Req [0K8BFF] Completed in 0.02s (Status: 200)
+2026-04-21 23:37:02.278 | INFO     | app.main:log_requests - Req [X4GRY4] POST /upload
+2026-04-21 23:37:02.296 | INFO     | app.main:upload_document - Starting processing for file: handwritten note 1.jpg
+2026-04-21 23:37:02.352 | INFO     | app.services.document_processor:process_and_store_document - Extracting .jpg logic for handwritten note 1.jpg
+2026-04-21 23:37:02.353 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 for image extraction: handwritten note 1.jpg
+2026-04-21 23:37:02.355 | INFO     | app.services.document_processor:_load_deepseek_model - Cold-booting DeepSeek-OCR-2 into CPU Memory. This may take a while...
+2026-04-21 23:37:07.007 | ERROR    | app.main:upload_document - Failed to process handwritten note 1.jpg: This modeling file requires the following packages that were not found in your environment: matplotlib. Run `pip install matplotlib`
+2026-04-21 23:37:07.014 | INFO     | app.main:log_requests - Req [X4GRY4] Completed in 4.73s (Status: 500)
+2026-04-21 23:37:42.656 | INFO     | app.main:log_requests - Req [WV4HYF] GET /documents
+2026-04-21 23:37:42.707 | INFO     | app.main:log_requests - Req [WV4HYF] Completed in 0.05s (Status: 200)
+2026-04-21 23:37:42.714 | INFO     | app.main:log_requests - Req [DRBXIE] GET /documents
+2026-04-21 23:37:42.726 | INFO     | app.main:log_requests - Req [DRBXIE] Completed in 0.01s (Status: 200)
+2026-04-21 23:38:38.732 | INFO     | app.main:log_requests - Req [UHZY5F] OPTIONS /ask
+2026-04-21 23:38:38.734 | INFO     | app.main:log_requests - Req [UHZY5F] Completed in 0.00s (Status: 200)
+2026-04-21 23:38:38.742 | INFO     | app.main:log_requests - Req [MGBUCH] POST /ask
+2026-04-21 23:38:42.842 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:38:46.928 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:38:46.930 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-21 23:38:46.934 | INFO     | app.main:log_requests - Req [MGBUCH] Completed in 8.19s (Status: 200)
+2026-04-21 23:39:21.270 | INFO     | app.main:log_requests - Req [E8G0J8] POST /ask
+2026-04-21 23:39:25.342 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:39:29.406 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:39:29.408 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-21 23:39:29.412 | INFO     | app.main:log_requests - Req [E8G0J8] Completed in 8.14s (Status: 200)
+2026-04-21 23:39:54.445 | INFO     | app.main:log_requests - Req [ZXR5ID] POST /ask
+2026-04-21 23:39:58.556 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:40:02.637 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:40:02.639 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-21 23:40:02.642 | INFO     | app.main:log_requests - Req [ZXR5ID] Completed in 8.20s (Status: 200)
+2026-04-21 23:40:38.487 | INFO     | app.main:log_requests - Req [HGHDP3] POST /ask
+2026-04-21 23:40:42.535 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:40:46.627 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:40:46.628 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-21 23:40:46.632 | INFO     | app.main:log_requests - Req [HGHDP3] Completed in 8.14s (Status: 200)
+2026-04-21 23:46:05.041 | INFO     | app.main:log_requests - Req [M2FFT4] OPTIONS /documents/9
+2026-04-21 23:46:05.044 | INFO     | app.main:log_requests - Req [M2FFT4] Completed in 0.00s (Status: 200)
+2026-04-21 23:46:05.052 | INFO     | app.main:log_requests - Req [VY6JWN] DELETE /documents/9
+2026-04-21 23:46:05.090 | INFO     | app.main:delete_document - Physically deleted handwritten note 1.jpg from disk.
+2026-04-21 23:46:05.093 | INFO     | app.main:log_requests - Req [VY6JWN] Completed in 0.04s (Status: 200)
+2026-04-21 23:46:05.102 | INFO     | app.main:log_requests - Req [8S6CL6] GET /documents
+2026-04-21 23:46:05.116 | INFO     | app.main:log_requests - Req [8S6CL6] Completed in 0.01s (Status: 200)
+2026-04-21 23:46:11.558 | INFO     | app.main:log_requests - Req [908MYV] GET /documents
+2026-04-21 23:46:11.572 | INFO     | app.main:log_requests - Req [908MYV] Completed in 0.01s (Status: 200)
+2026-04-21 23:46:11.582 | INFO     | app.main:log_requests - Req [OXPY66] GET /documents
+2026-04-21 23:46:11.597 | INFO     | app.main:log_requests - Req [OXPY66] Completed in 0.01s (Status: 200)
+2026-04-21 23:46:24.803 | INFO     | app.main:log_requests - Req [91AYUN] POST /upload
+2026-04-21 23:46:24.841 | INFO     | app.main:upload_document - Starting processing for file: handwritten 2.png
+2026-04-21 23:46:24.870 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for handwritten 2.png
+2026-04-21 23:46:24.876 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 for image extraction: handwritten 2.png
+2026-04-21 23:46:24.880 | INFO     | app.services.document_processor:_load_deepseek_model - Cold-booting DeepSeek-OCR-2 into CPU Memory. This may take a while...
+2026-04-21 23:46:25.660 | ERROR    | app.main:upload_document - Failed to process handwritten 2.png: This modeling file requires the following packages that were not found in your environment: matplotlib. Run `pip install matplotlib`
+2026-04-21 23:46:25.669 | INFO     | app.main:log_requests - Req [91AYUN] Completed in 0.86s (Status: 500)
+2026-04-21 23:46:35.233 | INFO     | app.main:log_requests - Req [W5PIQH] GET /documents
+2026-04-21 23:46:35.251 | INFO     | app.main:log_requests - Req [W5PIQH] Completed in 0.02s (Status: 200)
+2026-04-21 23:46:35.258 | INFO     | app.main:log_requests - Req [LHFXKM] GET /documents
+2026-04-21 23:46:35.273 | INFO     | app.main:log_requests - Req [LHFXKM] Completed in 0.01s (Status: 200)
+2026-04-21 23:47:41.612 | INFO     | app.main:log_requests - Req [VBIPVA] POST /ask
+2026-04-21 23:47:45.682 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:47:49.762 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:47:49.764 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-21 23:47:49.769 | INFO     | app.main:log_requests - Req [VBIPVA] Completed in 8.15s (Status: 200)
+2026-04-21 23:48:03.516 | INFO     | app.main:log_requests - Req [AZVQCA] POST /ask
+2026-04-21 23:48:07.574 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:48:11.673 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-21 23:48:11.675 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-21 23:48:11.679 | INFO     | app.main:log_requests - Req [AZVQCA] Completed in 8.16s (Status: 200)
+2026-04-21 23:49:35.803 | INFO     | app.main:log_requests - Req [P9M9GG] GET /debug/chunks
+2026-04-21 23:49:35.819 | INFO     | app.main:log_requests - Req [P9M9GG] Completed in 0.01s (Status: 200)
+2026-04-21 23:50:08.056 | INFO     | app.main:log_requests - Req [RM8OU8] GET /debug/chunks
+2026-04-21 23:50:08.063 | INFO     | app.main:log_requests - Req [RM8OU8] Completed in 0.01s (Status: 200)
+2026-04-21 23:50:23.639 | INFO     | app.main:log_requests - Req [ZA8MIV] GET /documents
+2026-04-21 23:50:23.747 | INFO     | app.main:log_requests - Req [ZA8MIV] Completed in 0.11s (Status: 200)
+2026-04-21 23:50:40.659 | INFO     | app.main:log_requests - Req [BTJP11] GET /debug/chunks
+2026-04-21 23:50:40.664 | INFO     | app.main:log_requests - Req [BTJP11] Completed in 0.00s (Status: 200)
+2026-04-21 23:59:33.498 | INFO     | app.main:log_requests - Req [FHJFGF] GET /documents
+2026-04-21 23:59:33.997 | INFO     | app.main:log_requests - Req [FHJFGF] Completed in 0.50s (Status: 200)
+2026-04-21 23:59:34.004 | INFO     | app.main:log_requests - Req [R20E7V] GET /documents
+2026-04-21 23:59:34.022 | INFO     | app.main:log_requests - Req [R20E7V] Completed in 0.01s (Status: 200)
+2026-04-21 23:59:38.547 | INFO     | app.main:log_requests - Req [KW9WRD] OPTIONS /documents/10
+2026-04-21 23:59:38.550 | INFO     | app.main:log_requests - Req [KW9WRD] Completed in 0.00s (Status: 200)
+2026-04-21 23:59:38.556 | INFO     | app.main:log_requests - Req [YMPUHO] DELETE /documents/10
+2026-04-21 23:59:38.625 | INFO     | app.main:delete_document - Physically deleted handwritten 2.png from disk.
+2026-04-21 23:59:38.629 | INFO     | app.main:log_requests - Req [YMPUHO] Completed in 0.07s (Status: 200)
+2026-04-21 23:59:38.639 | INFO     | app.main:log_requests - Req [LE7JUT] GET /documents
+2026-04-21 23:59:38.653 | INFO     | app.main:log_requests - Req [LE7JUT] Completed in 0.01s (Status: 200)
+2026-04-21 23:59:48.605 | INFO     | app.main:log_requests - Req [TVOWEH] POST /upload
+2026-04-21 23:59:48.624 | INFO     | app.main:upload_document - Starting processing for file: handwritten 2.png
+2026-04-21 23:59:48.657 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for handwritten 2.png
+2026-04-21 23:59:48.658 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 for image extraction: handwritten 2.png
+2026-04-21 23:59:48.659 | INFO     | app.services.document_processor:_load_deepseek_model - Cold-booting DeepSeek-OCR-2 into CPU Memory. This may take a while...
+2026-04-22 00:00:14.524 | ERROR    | app.main:upload_document - Failed to process handwritten 2.png: cannot import name 'LlamaFlashAttention2' from 'transformers.models.llama.modeling_llama' (C:\Users\admin\OneDrive\Documents\Rasayan Labs Tasks\code\docuRAG\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py)
+2026-04-22 00:00:14.534 | INFO     | app.main:log_requests - Req [TVOWEH] Completed in 25.93s (Status: 500)
+2026-04-22 00:00:25.417 | INFO     | app.main:log_requests - Req [JZZ8LM] POST /upload
+2026-04-22 00:00:25.430 | INFO     | app.main:upload_document - Starting processing for file: handwritten 2.png
+2026-04-22 00:00:25.496 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for handwritten 2.png
+2026-04-22 00:00:25.497 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 for image extraction: handwritten 2.png
+2026-04-22 00:00:25.498 | INFO     | app.services.document_processor:_load_deepseek_model - Cold-booting DeepSeek-OCR-2 into CPU Memory. This may take a while...
+2026-04-22 00:00:26.185 | ERROR    | app.main:upload_document - Failed to process handwritten 2.png: cannot import name 'LlamaFlashAttention2' from 'transformers.models.llama.modeling_llama' (C:\Users\admin\OneDrive\Documents\Rasayan Labs Tasks\code\docuRAG\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py)
+2026-04-22 00:00:26.191 | INFO     | app.main:log_requests - Req [JZZ8LM] Completed in 0.77s (Status: 500)
+2026-04-22 00:00:58.003 | INFO     | app.main:log_requests - Req [76JL1Y] POST /upload
+2026-04-22 00:00:58.047 | INFO     | app.main:upload_document - Starting processing for file: handwritten note 1.jpg
+2026-04-22 00:00:58.071 | INFO     | app.services.document_processor:process_and_store_document - Extracting .jpg logic for handwritten note 1.jpg
+2026-04-22 00:00:58.072 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 for image extraction: handwritten note 1.jpg
+2026-04-22 00:00:58.073 | INFO     | app.services.document_processor:_load_deepseek_model - Cold-booting DeepSeek-OCR-2 into CPU Memory. This may take a while...
+2026-04-22 00:00:58.889 | ERROR    | app.main:upload_document - Failed to process handwritten note 1.jpg: cannot import name 'LlamaFlashAttention2' from 'transformers.models.llama.modeling_llama' (C:\Users\admin\OneDrive\Documents\Rasayan Labs Tasks\code\docuRAG\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py)
+2026-04-22 00:00:58.896 | INFO     | app.main:log_requests - Req [76JL1Y] Completed in 0.89s (Status: 500)
+2026-04-22 00:08:41.878 | INFO     | app.main:log_requests - Req [AVICOX] POST /upload
+2026-04-22 00:08:41.898 | INFO     | app.main:upload_document - Starting processing for file: handwritten 2.png
+2026-04-22 00:08:42.434 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for handwritten 2.png
+2026-04-22 00:08:42.436 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 for image extraction: handwritten 2.png
+2026-04-22 00:08:42.439 | INFO     | app.services.document_processor:_load_deepseek_model - Cold-booting DeepSeek-OCR-2 into CPU Memory. This may take a while...
+2026-04-22 00:08:49.271 | ERROR    | app.main:upload_document - Failed to process handwritten 2.png: cannot import name 'is_torch_fx_available' from 'transformers.utils.import_utils' (C:\Users\admin\OneDrive\Documents\Rasayan Labs Tasks\code\docuRAG\.venv\Lib\site-packages\transformers\utils\import_utils.py)
+2026-04-22 00:08:49.280 | INFO     | app.main:log_requests - Req [AVICOX] Completed in 7.40s (Status: 500)
+2026-04-22 00:13:55.227 | INFO     | app.main:log_requests - Req [989326] POST /upload
+2026-04-22 00:13:55.249 | INFO     | app.main:upload_document - Starting processing for file: invoice1.png
+2026-04-22 00:14:05.046 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for invoice1.png
+2026-04-22 00:14:05.047 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 for image extraction: invoice1.png
+2026-04-22 00:14:05.048 | INFO     | app.services.document_processor:_load_deepseek_model - Cold-booting DeepSeek-OCR-2 into CPU Memory. This may take a while...
+2026-04-22 00:17:06.427 | INFO     | app.main:log_requests - Req [TWPWQV] GET /documents
+2026-04-22 00:17:06.602 | INFO     | app.main:log_requests - Req [TWPWQV] Completed in 0.17s (Status: 200)
+2026-04-22 00:17:06.615 | INFO     | app.main:log_requests - Req [KOP6ZI] GET /documents
+2026-04-22 00:17:06.649 | INFO     | app.main:log_requests - Req [KOP6ZI] Completed in 0.03s (Status: 200)
+2026-04-22 00:17:15.840 | INFO     | app.main:log_requests - Req [HG2CBT] OPTIONS /documents/12
+2026-04-22 00:17:15.844 | INFO     | app.main:log_requests - Req [HG2CBT] Completed in 0.00s (Status: 200)
+2026-04-22 00:17:15.855 | INFO     | app.main:log_requests - Req [46FER9] DELETE /documents/12
+2026-04-22 00:17:15.922 | INFO     | app.main:delete_document - Physically deleted handwritten 2.png from disk.
+2026-04-22 00:17:15.924 | INFO     | app.main:log_requests - Req [46FER9] Completed in 0.07s (Status: 200)
+2026-04-22 00:17:15.934 | INFO     | app.main:log_requests - Req [ANLMDT] GET /documents
+2026-04-22 00:17:15.954 | INFO     | app.main:log_requests - Req [ANLMDT] Completed in 0.02s (Status: 200)
+2026-04-22 00:17:21.888 | INFO     | app.main:log_requests - Req [WLUNUF] OPTIONS /documents/11
+2026-04-22 00:17:21.890 | INFO     | app.main:log_requests - Req [WLUNUF] Completed in 0.00s (Status: 200)
+2026-04-22 00:17:21.897 | INFO     | app.main:log_requests - Req [UUGEWC] DELETE /documents/11
+2026-04-22 00:17:21.944 | INFO     | app.main:log_requests - Req [UUGEWC] Completed in 0.05s (Status: 200)
+2026-04-22 00:17:21.954 | INFO     | app.main:log_requests - Req [VFO9MI] GET /documents
+2026-04-22 00:17:21.972 | INFO     | app.main:log_requests - Req [VFO9MI] Completed in 0.02s (Status: 200)
+2026-04-22 00:17:50.985 | INFO     | app.main:log_requests - Req [CXFL3H] OPTIONS /ask
+2026-04-22 00:17:50.986 | INFO     | app.main:log_requests - Req [CXFL3H] Completed in 0.00s (Status: 200)
+2026-04-22 00:17:50.994 | INFO     | app.main:log_requests - Req [QHDPSH] POST /ask
+2026-04-22 00:17:55.077 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-22 00:17:59.165 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-22 00:17:59.166 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-22 00:17:59.170 | INFO     | app.main:log_requests - Req [QHDPSH] Completed in 8.17s (Status: 200)
+2026-04-22 00:18:57.107 | INFO     | app.main:log_requests - Req [SVNK89] POST /ask
+2026-04-22 00:19:01.206 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-22 00:19:05.265 | ERROR    | app.services.llm_service:get_embedding - Error getting embedding from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-04-22 00:19:05.266 | ERROR    | app.services.retrieval:retrieve_context - Failed to embed query, returning empty results.
+2026-04-22 00:19:05.271 | INFO     | app.main:log_requests - Req [SVNK89] Completed in 8.16s (Status: 200)
+2026-04-22 11:23:06.100 | INFO     | app.main:log_requests - Req [OWQ0IA] GET /documents
+2026-04-22 11:23:11.968 | INFO     | app.main:log_requests - Req [OWQ0IA] Completed in 5.87s (Status: 200)
+2026-04-22 11:23:11.971 | INFO     | app.main:log_requests - Req [MGQI4O] GET /documents
+2026-04-22 11:23:11.979 | INFO     | app.main:log_requests - Req [MGQI4O] Completed in 0.01s (Status: 200)
+2026-04-22 11:23:27.350 | INFO     | app.main:log_requests - Req [P3VMBC] OPTIONS /documents/15
+2026-04-22 11:23:27.352 | INFO     | app.main:log_requests - Req [P3VMBC] Completed in 0.00s (Status: 200)
+2026-04-22 11:23:27.358 | INFO     | app.main:log_requests - Req [GEAUES] DELETE /documents/15
+2026-04-22 11:23:27.415 | INFO     | app.main:delete_document - Physically deleted invoice1.png from disk.
+2026-04-22 11:23:27.417 | INFO     | app.main:log_requests - Req [GEAUES] Completed in 0.06s (Status: 200)
+2026-04-22 11:23:27.423 | INFO     | app.main:log_requests - Req [B62F3T] GET /documents
+2026-04-22 11:23:27.433 | INFO     | app.main:log_requests - Req [B62F3T] Completed in 0.01s (Status: 200)
+2026-04-22 11:23:30.071 | INFO     | app.main:log_requests - Req [U3NG17] OPTIONS /documents/14
+2026-04-22 11:23:30.073 | INFO     | app.main:log_requests - Req [U3NG17] Completed in 0.00s (Status: 200)
+2026-04-22 11:23:30.080 | INFO     | app.main:log_requests - Req [R2N5VU] DELETE /documents/14
+2026-04-22 11:23:30.112 | INFO     | app.main:log_requests - Req [R2N5VU] Completed in 0.03s (Status: 200)
+2026-04-22 11:23:30.120 | INFO     | app.main:log_requests - Req [2WTYN9] GET /documents
+2026-04-22 11:23:30.128 | INFO     | app.main:log_requests - Req [2WTYN9] Completed in 0.01s (Status: 200)
+2026-04-22 11:23:33.132 | INFO     | app.main:log_requests - Req [LQK95A] OPTIONS /documents/13
+2026-04-22 11:23:33.133 | INFO     | app.main:log_requests - Req [LQK95A] Completed in 0.00s (Status: 200)
+2026-04-22 11:23:33.137 | INFO     | app.main:log_requests - Req [A21PAR] DELETE /documents/13
+2026-04-22 11:23:33.158 | INFO     | app.main:delete_document - Physically deleted handwritten note 1.jpg from disk.
+2026-04-22 11:23:33.160 | INFO     | app.main:log_requests - Req [A21PAR] Completed in 0.02s (Status: 200)
+2026-04-22 11:23:33.166 | INFO     | app.main:log_requests - Req [2HCRSG] GET /documents
+2026-04-22 11:23:33.174 | INFO     | app.main:log_requests - Req [2HCRSG] Completed in 0.01s (Status: 200)
+2026-04-22 12:16:06.135 | INFO     | app.main:log_requests - Req [IT3ZTW] POST /upload
+2026-04-22 12:16:06.142 | INFO     | app.main:upload_document - Starting processing for file: test_document.png
+2026-04-22 12:16:10.405 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for test_document.png
+2026-04-22 12:16:10.406 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: test_document.png
+2026-04-22 12:16:12.853 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 12:16:12.854 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 12:16:12.854 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 12:16:12.854 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 12:16:16.956 | ERROR    | app.main:upload_document - Failed to process test_document.png: cannot import name 'LlamaFlashAttention2' from 'transformers.models.llama.modeling_llama' (C:\Users\admin\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\transformers\models\llama\modeling_llama.py)
+2026-04-22 12:16:16.959 | INFO     | app.main:log_requests - Req [IT3ZTW] Completed in 10.82s (Status: 500)
+2026-04-22 12:29:56.328 | INFO     | app.main:log_requests - Req [V6H2J2] GET /documents
+2026-04-22 12:29:56.732 | INFO     | app.main:log_requests - Req [V6H2J2] Completed in 0.40s (Status: 200)
+2026-04-22 12:29:56.737 | INFO     | app.main:log_requests - Req [X7BMGZ] GET /documents
+2026-04-22 12:29:56.752 | INFO     | app.main:log_requests - Req [X7BMGZ] Completed in 0.01s (Status: 200)
+2026-04-22 12:29:58.573 | INFO     | app.main:log_requests - Req [RBXQZW] GET /documents
+2026-04-22 12:29:58.588 | INFO     | app.main:log_requests - Req [RBXQZW] Completed in 0.01s (Status: 200)
+2026-04-22 12:29:58.604 | INFO     | app.main:log_requests - Req [R4Z6L1] GET /documents
+2026-04-22 12:29:58.618 | INFO     | app.main:log_requests - Req [R4Z6L1] Completed in 0.01s (Status: 200)
+2026-04-22 12:30:17.882 | INFO     | app.main:log_requests - Req [676ALR] POST /upload
+2026-04-22 12:30:17.895 | INFO     | app.main:upload_document - Starting processing for file: invoice1.png
+2026-04-22 12:30:17.930 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for invoice1.png
+2026-04-22 12:30:17.931 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: invoice1.png
+2026-04-22 12:30:21.772 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 12:30:21.773 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 12:30:21.774 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 12:30:21.774 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 12:30:28.354 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 12:31:08.634 | INFO     | app.services.document_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (float32).
+2026-04-22 12:31:08.664 | INFO     | app.services.document_processor:process_and_store_document - Running DeepSeek-OCR-2 inference on image...
+2026-04-22 12:31:08.678 | WARNING  | app.services.document_processor:process_and_store_document - Grounding prompt failed, falling back to Free OCR: [WinError 3] The system cannot find the path specified: ''
+2026-04-22 12:31:08.680 | ERROR    | app.services.document_processor:process_and_store_document - DeepSeek-OCR-2 extraction completely failed: [WinError 3] The system cannot find the path specified: ''
+2026-04-22 12:31:08.682 | INFO     | app.services.document_processor:process_and_store_document - No text detected in the image.
+2026-04-22 12:31:08.944 | INFO     | app.services.document_processor:process_and_store_document - Completed! invoice1.png split into database chunks with vector embeddings attached.
+2026-04-22 12:31:09.160 | INFO     | app.main:upload_document - Successfully processed and stored invoice1.png
+2026-04-22 12:31:09.227 | INFO     | app.main:log_requests - Req [676ALR] Completed in 51.34s (Status: 201)
+2026-04-22 12:31:09.406 | INFO     | app.main:log_requests - Req [SY1AZ7] GET /documents
+2026-04-22 12:31:09.579 | INFO     | app.main:log_requests - Req [SY1AZ7] Completed in 0.17s (Status: 200)
+2026-04-22 12:31:47.344 | INFO     | app.main:log_requests - Req [8G4KV1] OPTIONS /ask
+2026-04-22 12:31:47.346 | INFO     | app.main:log_requests - Req [8G4KV1] Completed in 0.00s (Status: 200)
+2026-04-22 12:31:47.354 | INFO     | app.main:log_requests - Req [K511N3] POST /ask
+2026-04-22 12:31:53.463 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-22 12:32:04.296 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 10.82s.
+2026-04-22 12:32:04.298 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-22 12:32:04.299 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   1.9% (0.21s)
+2026-04-22 12:32:04.299 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  98.1% (10.82s)
+2026-04-22 12:32:04.299 | INFO     | app.main:ask_question - ============================
+2026-04-22 12:32:04.307 | INFO     | app.main:log_requests - Req [K511N3] Completed in 16.95s (Status: 200)
+2026-04-22 13:21:12.476 | INFO     | app.main:log_requests - Req [BPW8D9] POST /upload
+2026-04-22 13:21:12.484 | INFO     | app.main:upload_document - Starting processing for file: test_document.png
+2026-04-22 13:21:16.024 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for test_document.png
+2026-04-22 13:21:16.024 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: test_document.png
+2026-04-22 13:21:18.588 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 13:21:18.588 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 13:21:18.589 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 13:21:18.589 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 13:21:19.634 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 13:21:52.581 | INFO     | app.services.document_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (float32).
+2026-04-22 13:21:52.604 | INFO     | app.services.document_processor:process_and_store_document - Running DeepSeek-OCR-2 inference on image...
+2026-04-22 13:21:52.623 | WARNING  | app.services.document_processor:process_and_store_document - Grounding prompt failed, falling back to Free OCR: [WinError 3] The system cannot find the path specified: ''
+2026-04-22 13:21:52.624 | ERROR    | app.services.document_processor:process_and_store_document - DeepSeek-OCR-2 extraction completely failed: [WinError 3] The system cannot find the path specified: ''
+2026-04-22 13:21:52.624 | WARNING  | app.services.document_processor:process_and_store_document - [DeepSeek-OCR-2] No text detected in the image — empty extraction.
+2026-04-22 13:21:52.983 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 13:21:52.986 | INFO     | app.services.document_processor:process_and_store_document - Completed! test_document.png → 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-22 13:21:53.916 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 13:21:54.057 | INFO     | app.main:upload_document - Successfully processed and stored test_document.png
+2026-04-22 13:21:54.092 | INFO     | app.main:log_requests - Req [BPW8D9] Completed in 41.62s (Status: 201)
+2026-04-22 13:26:24.240 | INFO     | app.main:log_requests - Req [4IQ2Z4] GET /documents
+2026-04-22 13:26:28.936 | INFO     | app.main:log_requests - Req [4IQ2Z4] Completed in 4.70s (Status: 200)
+2026-04-22 13:26:28.941 | INFO     | app.main:log_requests - Req [SZBT73] GET /documents
+2026-04-22 13:26:28.953 | INFO     | app.main:log_requests - Req [SZBT73] Completed in 0.01s (Status: 200)
+2026-04-22 13:27:07.888 | INFO     | app.main:log_requests - Req [EMY86I] OPTIONS /ask
+2026-04-22 13:27:07.890 | INFO     | app.main:log_requests - Req [EMY86I] Completed in 0.00s (Status: 200)
+2026-04-22 13:27:07.894 | INFO     | app.main:log_requests - Req [HV9B4P] POST /ask
+2026-04-22 13:27:11.239 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-22 13:27:22.099 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 10.86s.
+2026-04-22 13:27:22.102 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-22 13:27:22.103 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.8% (0.09s)
+2026-04-22 13:27:22.104 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.2% (10.86s)
+2026-04-22 13:27:22.105 | INFO     | app.main:ask_question - ============================
+2026-04-22 13:27:22.110 | INFO     | app.main:log_requests - Req [HV9B4P] Completed in 14.22s (Status: 200)
+2026-04-22 13:31:55.167 | INFO     | app.main:log_requests - Req [FDFD7X] GET /documents
+2026-04-22 13:31:55.321 | INFO     | app.main:log_requests - Req [FDFD7X] Completed in 0.15s (Status: 200)
+2026-04-22 13:31:55.327 | INFO     | app.main:log_requests - Req [31DSOS] GET /documents
+2026-04-22 13:31:55.336 | INFO     | app.main:log_requests - Req [31DSOS] Completed in 0.01s (Status: 200)
+2026-04-22 13:32:35.020 | INFO     | app.main:log_requests - Req [LGIU2D] GET /documents
+2026-04-22 13:32:35.044 | INFO     | app.main:log_requests - Req [LGIU2D] Completed in 0.02s (Status: 200)
+2026-04-22 13:32:35.055 | INFO     | app.main:log_requests - Req [3AAX9U] GET /documents
+2026-04-22 13:32:35.109 | INFO     | app.main:log_requests - Req [3AAX9U] Completed in 0.05s (Status: 200)
+2026-04-22 13:32:39.004 | INFO     | app.main:log_requests - Req [NLE3VF] POST /ask
+2026-04-22 13:32:41.826 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-22 13:32:57.468 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 15.64s.
+2026-04-22 13:32:57.474 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-22 13:32:57.477 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.9% (0.14s)
+2026-04-22 13:32:57.480 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.1% (15.64s)
+2026-04-22 13:32:57.484 | INFO     | app.main:ask_question - ============================
+2026-04-22 13:32:57.575 | INFO     | app.main:log_requests - Req [NLE3VF] Completed in 18.57s (Status: 200)
+2026-04-22 13:33:30.482 | INFO     | app.main:log_requests - Req [DEXQG6] POST /ask
+2026-04-22 13:33:32.755 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-22 13:33:53.571 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 20.81s.
+2026-04-22 13:33:53.575 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-22 13:33:53.580 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.5% (0.11s)
+2026-04-22 13:33:53.582 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.5% (20.82s)
+2026-04-22 13:33:53.586 | INFO     | app.main:ask_question - ============================
+2026-04-22 13:33:53.630 | INFO     | app.main:log_requests - Req [DEXQG6] Completed in 23.15s (Status: 200)
+2026-04-22 13:39:46.671 | INFO     | app.main:log_requests - Req [KAV7BW] OPTIONS /ask
+2026-04-22 13:39:46.673 | INFO     | app.main:log_requests - Req [KAV7BW] Completed in 0.00s (Status: 200)
+2026-04-22 13:39:46.681 | INFO     | app.main:log_requests - Req [OJIG3K] POST /ask
+2026-04-22 13:39:49.436 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-22 13:39:49.438 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-22 13:39:49.439 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.75s!
+2026-04-22 13:39:49.442 | INFO     | app.main:log_requests - Req [OJIG3K] Completed in 2.76s (Status: 200)
+2026-04-22 13:43:12.915 | INFO     | app.main:log_requests - Req [NHMNLQ] POST /ask
+2026-04-22 13:43:15.299 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-22 13:43:42.507 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 27.21s.
+2026-04-22 13:43:42.509 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-22 13:43:42.510 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.5% (0.14s)
+2026-04-22 13:43:42.511 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.5% (27.21s)
+2026-04-22 13:43:42.511 | INFO     | app.main:ask_question - ============================
+2026-04-22 13:43:42.813 | INFO     | app.main:log_requests - Req [NHMNLQ] Completed in 29.90s (Status: 200)
+2026-04-22 13:57:45.617 | INFO     | app.main:log_requests - Req [COL98S] OPTIONS /documents/17
+2026-04-22 13:57:45.622 | INFO     | app.main:log_requests - Req [COL98S] Completed in 0.00s (Status: 200)
+2026-04-22 13:57:45.630 | INFO     | app.main:log_requests - Req [S5MJ7U] DELETE /documents/17
+2026-04-22 13:57:46.200 | INFO     | app.main:delete_document - Physically deleted invoice1.png from disk.
+2026-04-22 13:57:46.211 | INFO     | app.main:log_requests - Req [S5MJ7U] Completed in 0.58s (Status: 200)
+2026-04-22 13:57:46.223 | INFO     | app.main:log_requests - Req [Q521DY] GET /documents
+2026-04-22 13:57:46.244 | INFO     | app.main:log_requests - Req [Q521DY] Completed in 0.02s (Status: 200)
+2026-04-22 13:57:50.117 | INFO     | app.main:log_requests - Req [4W6E14] OPTIONS /documents/18
+2026-04-22 13:57:50.121 | INFO     | app.main:log_requests - Req [4W6E14] Completed in 0.00s (Status: 200)
+2026-04-22 13:57:50.132 | INFO     | app.main:log_requests - Req [0UR923] DELETE /documents/18
+2026-04-22 13:57:50.225 | INFO     | app.main:delete_document - Physically deleted test_document.png from disk.
+2026-04-22 13:57:50.228 | INFO     | app.main:log_requests - Req [0UR923] Completed in 0.09s (Status: 200)
+2026-04-22 13:57:50.241 | INFO     | app.main:log_requests - Req [YEPXGD] GET /documents
+2026-04-22 13:57:50.254 | INFO     | app.main:log_requests - Req [YEPXGD] Completed in 0.01s (Status: 200)
+2026-04-22 13:57:54.356 | INFO     | app.main:log_requests - Req [X5GQWO] OPTIONS /documents/16
+2026-04-22 13:57:54.358 | INFO     | app.main:log_requests - Req [X5GQWO] Completed in 0.00s (Status: 200)
+2026-04-22 13:57:54.369 | INFO     | app.main:log_requests - Req [DPJV82] DELETE /documents/16
+2026-04-22 13:57:54.448 | INFO     | app.main:log_requests - Req [DPJV82] Completed in 0.08s (Status: 200)
+2026-04-22 13:57:54.457 | INFO     | app.main:log_requests - Req [PF5M9J] GET /documents
+2026-04-22 13:57:54.469 | INFO     | app.main:log_requests - Req [PF5M9J] Completed in 0.01s (Status: 200)
+2026-04-22 13:57:59.069 | INFO     | app.main:log_requests - Req [GEZHFW] POST /upload
+2026-04-22 13:57:59.105 | INFO     | app.main:upload_document - Starting processing for file: invoice1.png
+2026-04-22 13:57:59.156 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for invoice1.png
+2026-04-22 13:57:59.161 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: invoice1.png
+2026-04-22 13:58:07.066 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 13:58:07.067 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 13:58:07.068 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 13:58:07.068 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 13:58:24.762 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 14:00:05.368 | INFO     | app.services.document_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (float32).
+2026-04-22 14:00:05.417 | INFO     | app.services.document_processor:process_and_store_document - Running DeepSeek-OCR-2 inference on image...
+2026-04-22 14:00:06.489 | WARNING  | app.services.document_processor:process_and_store_document - Grounding prompt failed, falling back to Free OCR: Torch not compiled with CUDA enabled
+2026-04-22 14:00:06.695 | ERROR    | app.services.document_processor:process_and_store_document - DeepSeek-OCR-2 extraction completely failed: Torch not compiled with CUDA enabled
+2026-04-22 14:00:06.712 | WARNING  | app.services.document_processor:process_and_store_document - [DeepSeek-OCR-2] No text detected in the image -- empty extraction.
+2026-04-22 14:00:07.094 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 14:00:07.099 | INFO     | app.services.document_processor:process_and_store_document - Completed! invoice1.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-22 14:00:07.100 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 14:00:07.522 | INFO     | app.main:upload_document - Successfully processed and stored invoice1.png
+2026-04-22 14:00:07.643 | INFO     | app.main:log_requests - Req [GEZHFW] Completed in 128.57s (Status: 201)
+2026-04-22 14:00:08.140 | INFO     | app.main:log_requests - Req [0AHXK9] GET /documents
+2026-04-22 14:00:08.425 | INFO     | app.main:log_requests - Req [0AHXK9] Completed in 0.28s (Status: 200)
+2026-04-22 16:45:18.122 | INFO     | app.main:log_requests - Req [JY6FLA] OPTIONS /documents/19
+2026-04-22 16:45:18.124 | INFO     | app.main:log_requests - Req [JY6FLA] Completed in 0.00s (Status: 200)
+2026-04-22 16:45:18.128 | INFO     | app.main:log_requests - Req [77F70N] DELETE /documents/19
+2026-04-22 16:45:18.575 | INFO     | app.main:delete_document - Physically deleted invoice1.png from disk.
+2026-04-22 16:45:18.577 | INFO     | app.main:log_requests - Req [77F70N] Completed in 0.45s (Status: 200)
+2026-04-22 16:45:18.583 | INFO     | app.main:log_requests - Req [3N5CSE] GET /documents
+2026-04-22 16:45:18.594 | INFO     | app.main:log_requests - Req [3N5CSE] Completed in 0.01s (Status: 200)
+2026-04-22 16:45:27.109 | INFO     | app.main:log_requests - Req [ALAXL6] GET /documents
+2026-04-22 16:45:27.120 | INFO     | app.main:log_requests - Req [ALAXL6] Completed in 0.01s (Status: 200)
+2026-04-22 16:45:27.127 | INFO     | app.main:log_requests - Req [RQDW0L] GET /documents
+2026-04-22 16:45:27.142 | INFO     | app.main:log_requests - Req [RQDW0L] Completed in 0.01s (Status: 200)
+2026-04-22 16:46:14.609 | INFO     | app.main:log_requests - Req [NIB0ZU] GET /documents
+2026-04-22 16:46:14.973 | INFO     | app.main:log_requests - Req [NIB0ZU] Completed in 0.36s (Status: 200)
+2026-04-22 16:46:14.976 | INFO     | app.main:log_requests - Req [FGM25G] GET /documents
+2026-04-22 16:46:14.989 | INFO     | app.main:log_requests - Req [FGM25G] Completed in 0.01s (Status: 200)
+2026-04-22 16:46:20.522 | INFO     | app.main:log_requests - Req [AMI743] POST /upload
+2026-04-22 16:46:20.535 | INFO     | app.main:upload_document - Starting processing for file: invoice1.png
+2026-04-22 16:46:20.562 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for invoice1.png
+2026-04-22 16:46:20.563 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: invoice1.png
+2026-04-22 16:46:25.703 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 16:46:25.704 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 16:46:25.705 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 16:46:25.705 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 16:46:28.687 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #1] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 16:46:28.688 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #2] torch.autocast('cuda') -> redirected to CPU/float32
+2026-04-22 16:46:41.474 | INFO     | app.main:log_requests - Req [93R11T] GET /documents
+2026-04-22 16:46:41.553 | INFO     | app.main:log_requests - Req [93R11T] Completed in 0.05s (Status: 200)
+2026-04-22 16:46:41.617 | INFO     | app.main:log_requests - Req [LO5FQS] GET /documents
+2026-04-22 16:46:41.656 | INFO     | app.main:log_requests - Req [LO5FQS] Completed in 0.01s (Status: 200)
+2026-04-22 16:47:23.123 | INFO     | app.services.document_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (float32).
+2026-04-22 16:47:23.149 | INFO     | app.services.document_processor:process_and_store_document - Running DeepSeek-OCR-2 inference on image...
+2026-04-22 16:47:24.296 | WARNING  | app.services.document_processor:process_and_store_document - Grounding prompt failed, falling back to Free OCR: Torch not compiled with CUDA enabled
+2026-04-22 16:47:24.449 | ERROR    | app.services.document_processor:process_and_store_document - DeepSeek-OCR-2 extraction completely failed: Torch not compiled with CUDA enabled
+2026-04-22 16:47:24.461 | WARNING  | app.services.document_processor:process_and_store_document - [DeepSeek-OCR-2] No text detected in the image -- empty extraction.
+2026-04-22 16:47:24.805 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 16:47:24.806 | INFO     | app.services.document_processor:process_and_store_document - Completed! invoice1.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-22 16:47:24.807 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 16:47:25.376 | INFO     | app.main:upload_document - Successfully processed and stored invoice1.png
+2026-04-22 16:47:25.614 | INFO     | app.main:log_requests - Req [AMI743] Completed in 65.09s (Status: 201)
+2026-04-22 16:47:30.436 | INFO     | app.main:log_requests - Req [9FPIHD] OPTIONS /ask
+2026-04-22 16:47:30.469 | INFO     | app.main:log_requests - Req [9FPIHD] Completed in 0.03s (Status: 200)
+2026-04-22 16:47:30.488 | INFO     | app.main:log_requests - Req [1IM5L8] POST /ask
+2026-04-22 16:47:35.558 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-22 16:47:35.580 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-22 16:47:35.581 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 4.93s!
+2026-04-22 16:47:35.611 | INFO     | app.main:log_requests - Req [1IM5L8] Completed in 5.12s (Status: 200)
+2026-04-22 16:47:54.559 | INFO     | app.main:log_requests - Req [2UVLGF] POST /ask
+2026-04-22 16:47:56.906 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-22 16:48:11.132 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 14.22s.
+2026-04-22 16:48:11.134 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-22 16:48:11.135 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   1.3% (0.19s)
+2026-04-22 16:48:11.135 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  98.7% (14.23s)
+2026-04-22 16:48:11.136 | INFO     | app.main:ask_question - ============================
+2026-04-22 16:48:11.140 | INFO     | app.main:log_requests - Req [2UVLGF] Completed in 16.58s (Status: 200)
+2026-04-22 22:15:30.687 | INFO     | app.main:log_requests - Req [UA5ZP2] GET /documents
+2026-04-22 22:15:35.771 | INFO     | app.main:log_requests - Req [UA5ZP2] Completed in 5.08s (Status: 200)
+2026-04-22 22:15:35.777 | INFO     | app.main:log_requests - Req [7SL9XG] GET /documents
+2026-04-22 22:15:35.785 | INFO     | app.main:log_requests - Req [7SL9XG] Completed in 0.01s (Status: 200)
+2026-04-22 22:15:39.119 | INFO     | app.main:log_requests - Req [B3O8RT] OPTIONS /documents/20
+2026-04-22 22:15:39.121 | INFO     | app.main:log_requests - Req [B3O8RT] Completed in 0.00s (Status: 200)
+2026-04-22 22:15:39.125 | INFO     | app.main:log_requests - Req [R8BDHR] DELETE /documents/20
+2026-04-22 22:15:39.163 | INFO     | app.main:delete_document - Physically deleted invoice1.png from disk.
+2026-04-22 22:15:39.164 | INFO     | app.main:log_requests - Req [R8BDHR] Completed in 0.04s (Status: 200)
+2026-04-22 22:15:39.170 | INFO     | app.main:log_requests - Req [I7PXYQ] GET /documents
+2026-04-22 22:15:39.178 | INFO     | app.main:log_requests - Req [I7PXYQ] Completed in 0.01s (Status: 200)
+2026-04-22 22:22:51.652 | INFO     | app.main:log_requests - Req [Y1NAKY] POST /upload
+2026-04-22 22:22:51.662 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice.png
+2026-04-22 22:22:51.690 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice.png
+2026-04-22 22:22:51.691 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: BankInvoice.png
+2026-04-22 22:23:33.078 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 22:23:33.078 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 22:23:33.078 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 22:23:33.079 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 22:23:42.393 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #1] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 22:23:42.393 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #2] torch.autocast('cuda') -> disabled (no-op on CPU)
+2026-04-22 22:24:30.050 | INFO     | app.services.document_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (float32).
+2026-04-22 22:24:30.120 | INFO     | app.services.document_processor:process_and_store_document - Running DeepSeek-OCR-2 inference on image...
+2026-04-22 22:24:30.860 | WARNING  | app.services.document_processor:process_and_store_document - Grounding prompt failed, falling back to Free OCR: Torch not compiled with CUDA enabled
+2026-04-22 22:24:30.974 | ERROR    | app.services.document_processor:process_and_store_document - DeepSeek-OCR-2 extraction completely failed: Torch not compiled with CUDA enabled
+2026-04-22 22:24:30.989 | WARNING  | app.services.document_processor:process_and_store_document - [DeepSeek-OCR-2] No text detected in the image -- empty extraction.
+2026-04-22 22:24:31.304 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 22:24:31.304 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-22 22:24:31.305 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 22:24:31.712 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice.png
+2026-04-22 22:24:31.820 | INFO     | app.main:log_requests - Req [Y1NAKY] Completed in 100.17s (Status: 201)
+2026-04-22 22:24:31.961 | INFO     | app.main:log_requests - Req [4J30GV] GET /documents
+2026-04-22 22:24:32.177 | INFO     | app.main:log_requests - Req [4J30GV] Completed in 0.22s (Status: 200)
+2026-04-22 22:25:09.840 | INFO     | app.main:log_requests - Req [OZK4HD] OPTIONS /documents/21
+2026-04-22 22:25:09.846 | INFO     | app.main:log_requests - Req [OZK4HD] Completed in 0.01s (Status: 200)
+2026-04-22 22:25:09.859 | INFO     | app.main:log_requests - Req [YA4EOQ] DELETE /documents/21
+2026-04-22 22:25:10.080 | INFO     | app.main:delete_document - Physically deleted BankInvoice.png from disk.
+2026-04-22 22:25:10.081 | INFO     | app.main:log_requests - Req [YA4EOQ] Completed in 0.22s (Status: 200)
+2026-04-22 22:25:10.086 | INFO     | app.main:log_requests - Req [LZJOJC] GET /documents
+2026-04-22 22:25:10.095 | INFO     | app.main:log_requests - Req [LZJOJC] Completed in 0.01s (Status: 200)
+2026-04-22 22:47:14.462 | INFO     | app.main:log_requests - Req [3EI2XX] GET /documents
+2026-04-22 22:47:19.203 | INFO     | app.main:log_requests - Req [3EI2XX] Completed in 4.74s (Status: 200)
+2026-04-22 22:47:19.207 | INFO     | app.main:log_requests - Req [6NT59Q] GET /documents
+2026-04-22 22:47:19.213 | INFO     | app.main:log_requests - Req [6NT59Q] Completed in 0.01s (Status: 200)
+2026-04-22 22:47:43.425 | INFO     | app.main:log_requests - Req [N039TR] POST /upload
+2026-04-22 22:47:43.436 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice.png
+2026-04-22 22:47:43.480 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice.png
+2026-04-22 22:47:43.481 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: BankInvoice.png
+2026-04-22 22:47:47.051 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 22:47:47.051 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 22:47:47.052 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 22:47:47.052 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 22:47:48.511 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #1] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 22:47:48.512 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #2] torch.autocast('cuda') -> disabled (no-op on CPU)
+2026-04-22 22:48:50.120 | INFO     | app.services.document_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (float32).
+2026-04-22 22:48:50.199 | INFO     | app.services.document_processor:process_and_store_document - Running DeepSeek-OCR-2 inference on image...
+2026-04-22 22:48:50.937 | WARNING  | app.services.document_processor:process_and_store_document - Grounding prompt failed, falling back to Free OCR: Torch not compiled with CUDA enabled
+2026-04-22 22:48:50.994 | ERROR    | app.services.document_processor:process_and_store_document - DeepSeek-OCR-2 extraction completely failed: Torch not compiled with CUDA enabled
+2026-04-22 22:48:50.997 | WARNING  | app.services.document_processor:process_and_store_document - [DeepSeek-OCR-2] No text detected in the image -- empty extraction.
+2026-04-22 22:48:51.146 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 22:48:51.147 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-22 22:48:51.147 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 22:48:51.364 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice.png
+2026-04-22 22:48:51.445 | INFO     | app.main:log_requests - Req [N039TR] Completed in 68.02s (Status: 201)
+2026-04-22 22:48:51.536 | INFO     | app.main:log_requests - Req [EXEKYC] GET /documents
+2026-04-22 22:48:51.689 | INFO     | app.main:log_requests - Req [EXEKYC] Completed in 0.15s (Status: 200)
+2026-04-22 22:52:47.890 | INFO     | app.main:log_requests - Req [06EZL8] OPTIONS /documents/22
+2026-04-22 22:52:47.893 | INFO     | app.main:log_requests - Req [06EZL8] Completed in 0.00s (Status: 200)
+2026-04-22 22:52:47.898 | INFO     | app.main:log_requests - Req [5NNCU3] DELETE /documents/22
+2026-04-22 22:52:48.492 | INFO     | app.main:delete_document - Physically deleted BankInvoice.png from disk.
+2026-04-22 22:52:48.494 | INFO     | app.main:log_requests - Req [5NNCU3] Completed in 0.59s (Status: 200)
+2026-04-22 22:52:48.500 | INFO     | app.main:log_requests - Req [OXPUDN] GET /documents
+2026-04-22 22:52:48.511 | INFO     | app.main:log_requests - Req [OXPUDN] Completed in 0.01s (Status: 200)
+2026-04-22 22:53:12.036 | INFO     | app.main:log_requests - Req [EQGUTA] GET /documents
+2026-04-22 22:53:12.045 | INFO     | app.main:log_requests - Req [EQGUTA] Completed in 0.01s (Status: 200)
+2026-04-22 22:53:12.052 | INFO     | app.main:log_requests - Req [3G8FGR] GET /documents
+2026-04-22 22:53:12.064 | INFO     | app.main:log_requests - Req [3G8FGR] Completed in 0.01s (Status: 200)
+2026-04-22 22:53:16.614 | INFO     | app.main:log_requests - Req [X8IE1Q] POST /upload
+2026-04-22 22:53:16.628 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice.png
+2026-04-22 22:53:16.662 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice.png
+2026-04-22 22:53:16.664 | INFO     | app.services.document_processor:process_and_store_document - Initializing DeepSeek-OCR-2 VLM for image extraction: BankInvoice.png
+2026-04-22 22:53:20.644 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 22:53:20.645 | INFO     | app.services.document_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/float32)...
+2026-04-22 22:53:20.646 | INFO     | app.services.document_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 22:53:20.646 | INFO     | app.services.document_processor:_load_deepseek_model - ============================================================
+2026-04-22 22:53:22.278 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #1] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 22:53:22.279 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #2] torch.autocast('cuda') -> disabled (no-op on CPU)
+2026-04-22 22:53:22.279 | INFO     | app.services.document_processor:_load_deepseek_model - [MONKEY PATCH #3] torch.Tensor.cuda() -> no-op (tensors stay on CPU)
+2026-04-22 22:54:31.355 | INFO     | app.services.document_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (bfloat16).
+2026-04-22 22:54:31.428 | INFO     | app.services.document_processor:process_and_store_document - Running DeepSeek-OCR-2 inference on image...
+2026-04-22 22:54:32.172 | WARNING  | app.services.document_processor:process_and_store_document - Grounding prompt failed, falling back to Free OCR: 'DynamicCache' object has no attribute 'seen_tokens'
+2026-04-22 22:54:32.277 | ERROR    | app.services.document_processor:process_and_store_document - DeepSeek-OCR-2 extraction completely failed: 'DynamicCache' object has no attribute 'seen_tokens'
+2026-04-22 22:54:32.282 | WARNING  | app.services.document_processor:process_and_store_document - [DeepSeek-OCR-2] No text detected in the image -- empty extraction.
+2026-04-22 22:54:32.451 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 22:54:32.452 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-22 22:54:32.453 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 22:54:32.618 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice.png
+2026-04-22 22:54:32.659 | INFO     | app.main:log_requests - Req [X8IE1Q] Completed in 76.04s (Status: 201)
+2026-04-22 22:54:32.707 | INFO     | app.main:log_requests - Req [C03ZPB] GET /documents
+2026-04-22 22:54:32.819 | INFO     | app.main:log_requests - Req [C03ZPB] Completed in 0.11s (Status: 200)
+2026-04-22 23:44:47.526 | INFO     | app.main:log_requests - Req [KD1B6F] GET /documents
+2026-04-22 23:44:48.039 | INFO     | app.main:log_requests - Req [KD1B6F] Completed in 0.51s (Status: 200)
+2026-04-22 23:44:48.043 | INFO     | app.main:log_requests - Req [LM9SOG] GET /documents
+2026-04-22 23:44:48.055 | INFO     | app.main:log_requests - Req [LM9SOG] Completed in 0.01s (Status: 200)
+2026-04-22 23:44:56.007 | INFO     | app.main:log_requests - Req [P0X3JA] OPTIONS /documents/23
+2026-04-22 23:44:56.009 | INFO     | app.main:log_requests - Req [P0X3JA] Completed in 0.00s (Status: 200)
+2026-04-22 23:44:56.013 | INFO     | app.main:log_requests - Req [U5V9AY] DELETE /documents/23
+2026-04-22 23:44:56.052 | INFO     | app.main:delete_document - Physically deleted BankInvoice.png from disk.
+2026-04-22 23:44:56.054 | INFO     | app.main:log_requests - Req [U5V9AY] Completed in 0.04s (Status: 200)
+2026-04-22 23:44:56.061 | INFO     | app.main:log_requests - Req [AE0FR9] GET /documents
+2026-04-22 23:44:56.069 | INFO     | app.main:log_requests - Req [AE0FR9] Completed in 0.01s (Status: 200)
+2026-04-22 23:53:11.083 | INFO     | app.main:log_requests - Req [BVTM99] GET /documents
+2026-04-22 23:53:11.403 | INFO     | app.main:log_requests - Req [BVTM99] Completed in 0.32s (Status: 200)
+2026-04-22 23:53:11.406 | INFO     | app.main:log_requests - Req [1KTHUX] GET /documents
+2026-04-22 23:53:11.416 | INFO     | app.main:log_requests - Req [1KTHUX] Completed in 0.01s (Status: 200)
+2026-04-22 23:53:12.101 | INFO     | app.main:log_requests - Req [ODU1NU] GET /documents
+2026-04-22 23:53:12.109 | INFO     | app.main:log_requests - Req [ODU1NU] Completed in 0.01s (Status: 200)
+2026-04-22 23:53:12.118 | INFO     | app.main:log_requests - Req [EWXHV5] GET /documents
+2026-04-22 23:53:12.127 | INFO     | app.main:log_requests - Req [EWXHV5] Completed in 0.01s (Status: 200)
+2026-04-22 23:53:16.046 | INFO     | app.main:log_requests - Req [SIH9NC] POST /upload
+2026-04-22 23:53:16.058 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice.png
+2026-04-22 23:53:16.088 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice.png
+2026-04-22 23:53:16.089 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Initializing DeepSeek-OCR-2 VLM for: BankInvoice.png
+2026-04-22 23:53:20.109 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - ============================================================
+2026-04-22 23:53:20.109 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/bfloat16)...
+2026-04-22 23:53:20.110 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 23:53:20.110 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - ============================================================
+2026-04-22 23:53:22.159 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - [MONKEY PATCH #1] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 23:53:22.160 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - [MONKEY PATCH #2] torch.autocast('cuda') -> disabled (no-op on CPU)
+2026-04-22 23:53:22.161 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - [MONKEY PATCH #3] torch.Tensor.cuda() -> no-op (tensors stay on CPU)
+2026-04-22 23:55:54.050 | INFO     | app.main:log_requests - Req [QMWGYU] GET /documents
+2026-04-22 23:55:57.482 | INFO     | app.main:log_requests - Req [QMWGYU] Completed in 3.43s (Status: 200)
+2026-04-22 23:55:57.486 | INFO     | app.main:log_requests - Req [0J8QJL] GET /documents
+2026-04-22 23:55:57.496 | INFO     | app.main:log_requests - Req [0J8QJL] Completed in 0.01s (Status: 200)
+2026-04-22 23:56:00.935 | INFO     | app.main:log_requests - Req [LTKDZG] OPTIONS /documents/24
+2026-04-22 23:56:00.936 | INFO     | app.main:log_requests - Req [LTKDZG] Completed in 0.00s (Status: 200)
+2026-04-22 23:56:00.940 | INFO     | app.main:log_requests - Req [9W1J7J] DELETE /documents/24
+2026-04-22 23:56:00.968 | INFO     | app.main:delete_document - Physically deleted BankInvoice.png from disk.
+2026-04-22 23:56:00.970 | INFO     | app.main:log_requests - Req [9W1J7J] Completed in 0.03s (Status: 200)
+2026-04-22 23:56:00.977 | INFO     | app.main:log_requests - Req [KYK3B5] GET /documents
+2026-04-22 23:56:00.983 | INFO     | app.main:log_requests - Req [KYK3B5] Completed in 0.01s (Status: 200)
+2026-04-22 23:56:15.784 | INFO     | app.main:log_requests - Req [DJEQM6] POST /upload
+2026-04-22 23:56:15.795 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice_1.png
+2026-04-22 23:56:15.813 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice_1.png
+2026-04-22 23:56:15.814 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Initializing DeepSeek-OCR-2 VLM for: BankInvoice_1.png
+2026-04-22 23:56:19.780 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - ============================================================
+2026-04-22 23:56:19.781 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - BOOTING DeepSeek-OCR-2 Vision Language Model (CPU/bfloat16)...
+2026-04-22 23:56:19.782 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - This is a one-time heavy load. Subsequent images will be instant.
+2026-04-22 23:56:19.783 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - ============================================================
+2026-04-22 23:56:21.388 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - [MONKEY PATCH #1] Injected LlamaFlashAttention2 stub (CPU bypass for transformers >= 4.50)
+2026-04-22 23:56:21.389 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - [MONKEY PATCH #2] torch.autocast('cuda') -> disabled (no-op on CPU)
+2026-04-22 23:56:21.389 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - [MONKEY PATCH #3] torch.Tensor.cuda() -> no-op (tensors stay on CPU)
+2026-04-22 23:57:43.858 | INFO     | app.services.documentProcessors.image_processor:_load_deepseek_model - DeepSeek-OCR-2 loaded successfully on CPU (bfloat16).
+2026-04-22 23:57:43.892 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Running DeepSeek-OCR-2 inference on image...
+2026-04-22 23:57:44.754 | WARNING  | app.services.documentProcessors.image_processor:_run_inference - [ImageProcessor] Grounding prompt failed, falling back to Free OCR: 'DynamicCache' object has no attribute 'seen_tokens'
+2026-04-22 23:57:44.844 | ERROR    | app.services.documentProcessors.image_processor:_run_inference - [ImageProcessor] DeepSeek-OCR-2 extraction completely failed: 'DynamicCache' object has no attribute 'seen_tokens'
+2026-04-22 23:57:44.848 | WARNING  | app.services.documentProcessors.image_processor:extract - [ImageProcessor] No text detected in the image -- empty extraction.
+2026-04-22 23:57:45.062 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 23:57:45.063 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice_1.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-22 23:57:45.063 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-22 23:57:45.195 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice_1.png
+2026-04-22 23:57:45.241 | INFO     | app.main:log_requests - Req [DJEQM6] Completed in 89.46s (Status: 201)
+2026-04-22 23:57:45.319 | INFO     | app.main:log_requests - Req [9B2QM4] GET /documents
+2026-04-22 23:57:45.415 | INFO     | app.main:log_requests - Req [9B2QM4] Completed in 0.10s (Status: 200)
+2026-04-22 23:58:14.258 | INFO     | app.main:log_requests - Req [W6BS92] OPTIONS /documents/25
+2026-04-22 23:58:14.264 | INFO     | app.main:log_requests - Req [W6BS92] Completed in 0.00s (Status: 200)
+2026-04-22 23:58:14.269 | INFO     | app.main:log_requests - Req [XV41UB] DELETE /documents/25
+2026-04-22 23:58:14.338 | INFO     | app.main:delete_document - Physically deleted BankInvoice_1.png from disk.
+2026-04-22 23:58:14.340 | INFO     | app.main:log_requests - Req [XV41UB] Completed in 0.07s (Status: 200)
+2026-04-22 23:58:14.346 | INFO     | app.main:log_requests - Req [PMA3CU] GET /documents
+2026-04-22 23:58:14.351 | INFO     | app.main:log_requests - Req [PMA3CU] Completed in 0.00s (Status: 200)
