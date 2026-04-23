@@ -1322,3 +1322,400 @@ Chunk: Chunk - [3 Columns]
 2026-04-22 23:58:14.340 | INFO     | app.main:log_requests - Req [XV41UB] Completed in 0.07s (Status: 200)
 2026-04-22 23:58:14.346 | INFO     | app.main:log_requests - Req [PMA3CU] GET /documents
 2026-04-22 23:58:14.351 | INFO     | app.main:log_requests - Req [PMA3CU] Completed in 0.00s (Status: 200)
+2026-04-23 10:46:28.293 | INFO     | app.main:log_requests - Req [41Y7FS] GET /documents
+2026-04-23 10:46:34.249 | INFO     | app.main:log_requests - Req [41Y7FS] Completed in 5.95s (Status: 200)
+2026-04-23 10:46:34.257 | INFO     | app.main:log_requests - Req [1OY3AQ] GET /documents
+2026-04-23 10:46:34.285 | INFO     | app.main:log_requests - Req [1OY3AQ] Completed in 0.02s (Status: 200)
+2026-04-23 10:46:50.369 | INFO     | app.main:log_requests - Req [YYB4OJ] POST /upload
+2026-04-23 10:46:50.377 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice_1.png
+2026-04-23 10:46:50.407 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice_1.png
+2026-04-23 10:46:50.408 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Processing: BankInvoice_1.png
+2026-04-23 10:46:54.496 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Docker/DeepSeek-OCR-2 is not available, skipping
+2026-04-23 10:46:56.534 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Using Ollama/deepseek-ocr
+2026-04-23 10:46:56.535 | INFO     | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr] Trying grounding prompt (1/2)...
+2026-04-23 10:46:58.622 | ERROR    | app.services.documentProcessors.ocr_backends.ollama_backend:_chat - [Ollama/deepseek-ocr] Chat error: 404 Client Error: Not Found for url: http://localhost:11434/api/chat
+2026-04-23 10:46:58.623 | WARNING  | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr] Grounding prompt returned empty
+2026-04-23 10:46:58.623 | INFO     | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr] Trying simple prompt (2/2)...
+2026-04-23 10:47:00.672 | ERROR    | app.services.documentProcessors.ocr_backends.ollama_backend:_chat - [Ollama/deepseek-ocr] Chat error: 404 Client Error: Not Found for url: http://localhost:11434/api/chat
+2026-04-23 10:47:00.672 | WARNING  | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr] Simple prompt returned empty
+2026-04-23 10:47:00.672 | WARNING  | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Ollama/deepseek-ocr returned empty text
+2026-04-23 10:47:00.673 | ERROR    | app.services.documentProcessors.image_processor:extract - [ImageProcessor] All OCR backends failed -- no text extracted
+2026-04-23 10:47:00.674 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 10:47:00.674 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice_1.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-23 10:47:00.674 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 10:47:00.677 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice_1.png
+2026-04-23 10:47:00.678 | INFO     | app.main:log_requests - Req [YYB4OJ] Completed in 10.31s (Status: 201)
+2026-04-23 10:47:00.684 | INFO     | app.main:log_requests - Req [QVMVQ9] GET /documents
+2026-04-23 10:47:00.689 | INFO     | app.main:log_requests - Req [QVMVQ9] Completed in 0.00s (Status: 200)
+2026-04-23 10:47:11.971 | INFO     | app.main:log_requests - Req [JPN522] OPTIONS /documents/26
+2026-04-23 10:47:11.972 | INFO     | app.main:log_requests - Req [JPN522] Completed in 0.00s (Status: 200)
+2026-04-23 10:47:11.976 | INFO     | app.main:log_requests - Req [XW8Q3T] DELETE /documents/26
+2026-04-23 10:47:12.010 | INFO     | app.main:delete_document - Physically deleted BankInvoice_1.png from disk.
+2026-04-23 10:47:12.012 | INFO     | app.main:log_requests - Req [XW8Q3T] Completed in 0.04s (Status: 200)
+2026-04-23 10:47:12.020 | INFO     | app.main:log_requests - Req [D3TYMK] GET /documents
+2026-04-23 10:47:12.030 | INFO     | app.main:log_requests - Req [D3TYMK] Completed in 0.01s (Status: 200)
+2026-04-23 10:52:23.343 | INFO     | app.main:log_requests - Req [LZJ5NZ] GET /documents
+2026-04-23 10:52:23.596 | INFO     | app.main:log_requests - Req [LZJ5NZ] Completed in 0.25s (Status: 200)
+2026-04-23 10:52:23.601 | INFO     | app.main:log_requests - Req [XKCXAN] GET /documents
+2026-04-23 10:52:23.618 | INFO     | app.main:log_requests - Req [XKCXAN] Completed in 0.02s (Status: 200)
+2026-04-23 10:52:34.430 | INFO     | app.main:log_requests - Req [8ZUY7C] POST /upload
+2026-04-23 10:52:34.438 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice_1.png
+2026-04-23 10:52:34.470 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice_1.png
+2026-04-23 10:52:34.472 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Processing: BankInvoice_1.png
+2026-04-23 10:52:38.533 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Docker/DeepSeek-OCR-2 is not available, skipping
+2026-04-23 10:52:40.582 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Using Ollama/deepseek-ocr:3b
+2026-04-23 10:52:40.583 | INFO     | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr:3b] Trying grounding prompt (1/2)...
+2026-04-23 10:52:44.104 | ERROR    | app.services.documentProcessors.ocr_backends.ollama_backend:_chat - [Ollama/deepseek-ocr:3b] Chat error: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+2026-04-23 10:52:44.106 | WARNING  | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr:3b] Grounding prompt returned empty
+2026-04-23 10:52:44.106 | INFO     | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr:3b] Trying simple prompt (2/2)...
+2026-04-23 10:52:47.627 | ERROR    | app.services.documentProcessors.ocr_backends.ollama_backend:_chat - [Ollama/deepseek-ocr:3b] Chat error: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+2026-04-23 10:52:47.627 | WARNING  | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr:3b] Simple prompt returned empty
+2026-04-23 10:52:47.628 | WARNING  | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Ollama/deepseek-ocr:3b returned empty text
+2026-04-23 10:52:47.628 | ERROR    | app.services.documentProcessors.image_processor:extract - [ImageProcessor] All OCR backends failed -- no text extracted
+2026-04-23 10:52:47.629 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 10:52:47.629 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice_1.png -> 0 total chunks with vector embeddings saved to DuckDB.
+2026-04-23 10:52:47.629 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 10:52:47.631 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice_1.png
+2026-04-23 10:52:47.632 | INFO     | app.main:log_requests - Req [8ZUY7C] Completed in 13.20s (Status: 201)
+2026-04-23 10:52:47.639 | INFO     | app.main:log_requests - Req [8FN5BS] GET /documents
+2026-04-23 10:52:47.645 | INFO     | app.main:log_requests - Req [8FN5BS] Completed in 0.00s (Status: 200)
+2026-04-23 10:53:26.491 | INFO     | app.main:log_requests - Req [YKWM6M] OPTIONS /documents/27
+2026-04-23 10:53:26.492 | INFO     | app.main:log_requests - Req [YKWM6M] Completed in 0.00s (Status: 200)
+2026-04-23 10:53:26.496 | INFO     | app.main:log_requests - Req [CNX12Q] DELETE /documents/27
+2026-04-23 10:53:26.533 | INFO     | app.main:delete_document - Physically deleted BankInvoice_1.png from disk.
+2026-04-23 10:53:26.534 | INFO     | app.main:log_requests - Req [CNX12Q] Completed in 0.04s (Status: 200)
+2026-04-23 10:53:26.541 | INFO     | app.main:log_requests - Req [LZXQN2] GET /documents
+2026-04-23 10:53:26.548 | INFO     | app.main:log_requests - Req [LZXQN2] Completed in 0.01s (Status: 200)
+2026-04-23 10:58:30.748 | INFO     | app.main:log_requests - Req [8G52I9] GET /documents
+2026-04-23 10:58:34.087 | INFO     | app.main:log_requests - Req [8G52I9] Completed in 3.34s (Status: 200)
+2026-04-23 10:58:34.090 | INFO     | app.main:log_requests - Req [36VXZ9] GET /documents
+2026-04-23 10:58:34.105 | INFO     | app.main:log_requests - Req [36VXZ9] Completed in 0.01s (Status: 200)
+2026-04-23 10:58:45.777 | INFO     | app.main:log_requests - Req [7C8XT1] GET /documents
+2026-04-23 10:58:45.845 | INFO     | app.main:log_requests - Req [7C8XT1] Completed in 0.07s (Status: 200)
+2026-04-23 10:58:45.881 | INFO     | app.main:log_requests - Req [GGDH1H] GET /documents
+2026-04-23 10:58:45.905 | INFO     | app.main:log_requests - Req [GGDH1H] Completed in 0.01s (Status: 200)
+2026-04-23 10:58:53.709 | INFO     | app.main:log_requests - Req [WOBZ9I] POST /upload
+2026-04-23 10:58:53.731 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice_1.png
+2026-04-23 10:58:53.841 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice_1.png
+2026-04-23 10:58:53.845 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Processing: BankInvoice_1.png
+2026-04-23 10:58:58.010 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Docker/DeepSeek-OCR-2 is not available, skipping
+2026-04-23 10:59:00.065 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Using Ollama/deepseek-ocr:3b
+2026-04-23 10:59:00.066 | INFO     | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr:3b] Trying grounding prompt (1/2)...
+2026-04-23 11:00:59.621 | INFO     | app.services.documentProcessors.image_processor:_format_output - ============================================================
+2026-04-23 11:00:59.625 | INFO     | app.services.documentProcessors.image_processor:_format_output - [ImageProcessor] RAW EXTRACTION (Ollama/deepseek-ocr:3b)
+2026-04-23 11:00:59.627 | INFO     | app.services.documentProcessors.image_processor:_format_output -   Characters: 1938  |  Words: 161
+2026-04-23 11:00:59.628 | INFO     | app.services.documentProcessors.image_processor:_format_output - ------------------------------------------------------------
+2026-04-23 11:00:59.628 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 001 | <|ref|>title<|/ref|><|det|>[[603, 49, 931, 105]]<|/det|>
+2026-04-23 11:00:59.629 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 002 | # INVOICE 
+2026-04-23 11:00:59.630 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 003 | 
+2026-04-23 11:00:59.630 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 004 | <|ref|>text<|/ref|><|det|>[[80, 72, 333, 147]]<|/det|>
+2026-04-23 11:00:59.630 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 005 | XX
+2026-04-23 11:00:59.631 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 006 | X CONSTRUCTION 
+2026-04-23 11:00:59.631 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 007 | 
+2026-04-23 11:00:59.632 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 008 | <|ref|>text<|/ref|><|det|>[[612, 131, 931, 176]]<|/det|>
+2026-04-23 11:00:59.633 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 009 | Invoice No : #CON-2028-001
+2026-04-23 11:00:59.633 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 010 | Invoice Date : September 21, 2028 
+2026-04-23 11:00:59.634 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 011 | 
+2026-04-23 11:00:59.635 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 012 | <|ref|>text<|/ref|><|det|>[[52, 230, 866, 323]]<|/det|>
+2026-04-23 11:00:59.635 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 013 | Seller : X Construction Bill To : ABC Company
+2026-04-23 11:00:59.635 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 014 | Address : 873 Liberty Street, Las Vegas Address : 123 Main Street Cityville
+2026-04-23 11:00:59.636 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 015 | Mail : xconstruction@mail.com Mail : abc@mail.com
+2026-04-23 11:00:59.637 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 016 | Phone : +1 312-692-0767 Phone : +1 312-483-8673 
+2026-04-23 11:00:59.637 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 017 | 
+2026-04-23 11:00:59.638 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 018 | <|ref|>table<|/ref|><|det|>[[62, 387, 931, 536]]<|/det|>
+2026-04-23 11:00:59.638 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 019 | <table><tr><td>No.</td><td>Description</td><td>Quantity</td><td>Item Price</td><td>Total</td></tr><tr><td>1</td><td>Foundation Work</td><td>10 Days</td><td>$100</td><td>$1,000</td></tr><tr><td>2</td><td>Steel Structure Installation</td><td>5 Weeks</td><td>$2,000</td><td>$10,000</td></tr><tr><td>3</td><td>Concrete Material</td><td>200 Cubics</td><td>$50</td><td>$10,000</td></tr><tr><td>4</td><td>Structural Steel Material</td><td>10 Tons</td><td>$500</td><td>$5,000</td></tr></table>
+2026-04-23 11:00:59.640 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 020 | 
+2026-04-23 11:00:59.640 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 021 | <|ref|>table<|/ref|><|det|>[[585, 537, 931, 622]]<|/det|>
+2026-04-23 11:00:59.641 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 022 | <table><tr><td>Subtotal</td><td>$26,000</td></tr><tr><td>Tax (10%)</td><td>$2,600</td></tr><tr><td>Grand Total</td><td>$28,600</td></tr></table>
+2026-04-23 11:00:59.642 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 023 | 
+2026-04-23 11:00:59.642 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 024 | <|ref|>sub_title<|/ref|><|det|>[[62, 693, 129, 709]]<|/det|>
+2026-04-23 11:00:59.642 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 025 | ## Notes: 
+2026-04-23 11:00:59.642 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 026 | 
+2026-04-23 11:00:59.643 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 027 | <|ref|>text<|/ref|><|det|>[[82, 715, 607, 733]]<|/det|>
+2026-04-23 11:00:59.643 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 028 | 1. Payment is due within 30 days from the date of the invoice. 
+2026-04-23 11:00:59.644 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 029 | 
+2026-04-23 11:00:59.644 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 030 | <|ref|>text<|/ref|><|det|>[[82, 739, 548, 757]]<|/det|>
+2026-04-23 11:00:59.644 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 031 | 2. Please make payment to the following bank account 
+2026-04-23 11:00:59.645 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 032 | 
+2026-04-23 11:00:59.645 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 033 | <|ref|>text<|/ref|><|det|>[[106, 771, 401, 788]]<|/det|>
+2026-04-23 11:00:59.646 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 034 | Bank Name : Bank XYZ 
+2026-04-23 11:00:59.646 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 035 | 
+2026-04-23 11:00:59.647 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 036 | <|ref|>text<|/ref|><|det|>[[106, 794, 434, 812]]<|/det|>
+2026-04-23 11:00:59.648 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 037 | Account Number : 123-456-789 
+2026-04-23 11:00:59.648 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 038 | 
+2026-04-23 11:00:59.649 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 039 | <|ref|>text<|/ref|><|det|>[[106, 819, 447, 836]]<|/det|>
+2026-04-23 11:00:59.649 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 040 | Account Holder : X Construction 
+2026-04-23 11:00:59.650 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 041 | 
+2026-04-23 11:00:59.650 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 042 | <|ref|>text<|/ref|><|det|>[[369, 905, 628, 923]]<|/det|>
+2026-04-23 11:00:59.650 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 043 | Thank You for Your Business
+2026-04-23 11:00:59.651 | INFO     | app.services.documentProcessors.image_processor:_format_output - ============================================================
+2026-04-23 11:00:59.652 | INFO     | app.services.document_processor:process_and_store_document - [CHUNKING] Page/Segment 1: Split into 1 chunk(s)
+2026-04-23 11:00:59.653 | INFO     | app.services.document_processor:process_and_store_document - ------------------------------------------------------------
+2026-04-23 11:00:59.653 | INFO     | app.services.document_processor:process_and_store_document -   CHUNK 1 (Page 1, Index 1/1)
+2026-04-23 11:00:59.653 | INFO     | app.services.document_processor:process_and_store_document -   Words: 165 | Chars: 1970
+2026-04-23 11:00:59.654 | INFO     | app.services.document_processor:process_and_store_document -   Preview: [Transcribed Image Content (Ollama/deepseek-ocr:3b)]: <|ref|>title<|/ref|><|det|>[[603, 49, 931, 105]]<|/det|> # INVOICE <|ref|>text<|/ref|><|det|>[[80, 72, 333, 147]]<|/det|> XX X CONSTRUCTION <|ref|...
+2026-04-23 11:01:06.219 | INFO     | app.services.document_processor:process_and_store_document -   Embedding: Generated (768 dims)
+2026-04-23 11:01:06.297 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 11:01:06.298 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice_1.png -> 1 total chunks with vector embeddings saved to DuckDB.
+2026-04-23 11:01:06.299 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 11:01:06.313 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice_1.png
+2026-04-23 11:01:06.329 | INFO     | app.main:log_requests - Req [WOBZ9I] Completed in 132.62s (Status: 201)
+2026-04-23 11:01:06.675 | INFO     | app.main:log_requests - Req [IIMFTL] GET /documents
+2026-04-23 11:01:06.689 | INFO     | app.main:log_requests - Req [IIMFTL] Completed in 0.01s (Status: 200)
+2026-04-23 11:10:59.441 | INFO     | app.main:log_requests - Req [MFI69W] OPTIONS /ask
+2026-04-23 11:10:59.443 | INFO     | app.main:log_requests - Req [MFI69W] Completed in 0.00s (Status: 200)
+2026-04-23 11:10:59.448 | INFO     | app.main:log_requests - Req [JDAT1U] POST /ask
+2026-04-23 11:11:02.277 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 11:11:14.287 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 12.01s.
+2026-04-23 11:11:14.289 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 11:11:14.290 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.8% (0.09s)
+2026-04-23 11:11:14.290 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.2% (12.01s)
+2026-04-23 11:11:14.291 | INFO     | app.main:ask_question - ============================
+2026-04-23 11:11:14.296 | INFO     | app.main:log_requests - Req [JDAT1U] Completed in 14.85s (Status: 200)
+2026-04-23 11:35:12.594 | INFO     | app.main:log_requests - Req [ZYOLMP] GET /documents
+2026-04-23 11:35:13.806 | INFO     | app.main:log_requests - Req [ZYOLMP] Completed in 1.21s (Status: 200)
+2026-04-23 11:35:13.809 | INFO     | app.main:log_requests - Req [VF0A1O] GET /documents
+2026-04-23 11:35:13.820 | INFO     | app.main:log_requests - Req [VF0A1O] Completed in 0.01s (Status: 200)
+2026-04-23 11:35:20.957 | INFO     | app.main:log_requests - Req [GCRMV0] OPTIONS /documents/28
+2026-04-23 11:35:20.958 | INFO     | app.main:log_requests - Req [GCRMV0] Completed in 0.00s (Status: 200)
+2026-04-23 11:35:20.963 | INFO     | app.main:log_requests - Req [6A2AE8] DELETE /documents/28
+2026-04-23 11:35:21.001 | INFO     | app.main:delete_document - Physically deleted BankInvoice_1.png from disk.
+2026-04-23 11:35:21.003 | INFO     | app.main:log_requests - Req [6A2AE8] Completed in 0.04s (Status: 200)
+2026-04-23 11:35:21.009 | INFO     | app.main:log_requests - Req [F2UPGW] GET /documents
+2026-04-23 11:35:21.017 | INFO     | app.main:log_requests - Req [F2UPGW] Completed in 0.01s (Status: 200)
+2026-04-23 11:35:53.156 | INFO     | app.main:log_requests - Req [2XCI16] POST /upload
+2026-04-23 11:35:53.186 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice_1.png (Type: document)
+2026-04-23 11:35:53.216 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice_1.png
+2026-04-23 11:35:53.217 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Processing: BankInvoice_1.png as document
+2026-04-23 11:35:57.314 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Docker/DeepSeek-OCR-2 is not available, skipping
+2026-04-23 11:35:59.378 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Using Ollama/deepseek-ocr:3b
+2026-04-23 11:35:59.380 | INFO     | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr:3b] Trying prompt: '<|grounding|>Convert the document to markdown.' (1/2)...
+2026-04-23 11:38:03.676 | INFO     | app.services.documentProcessors.image_processor:_format_output - ============================================================
+2026-04-23 11:38:03.691 | INFO     | app.services.documentProcessors.image_processor:_format_output - [ImageProcessor] RAW EXTRACTION (Ollama/deepseek-ocr:3b)
+2026-04-23 11:38:03.692 | INFO     | app.services.documentProcessors.image_processor:_format_output -   Characters: 1938  |  Words: 161
+2026-04-23 11:38:03.693 | INFO     | app.services.documentProcessors.image_processor:_format_output - ------------------------------------------------------------
+2026-04-23 11:38:03.694 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 001 | <|ref|>title<|/ref|><|det|>[[603, 49, 931, 105]]<|/det|>
+2026-04-23 11:38:03.694 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 002 | # INVOICE 
+2026-04-23 11:38:03.695 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 003 | 
+2026-04-23 11:38:03.695 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 004 | <|ref|>text<|/ref|><|det|>[[80, 72, 333, 147]]<|/det|>
+2026-04-23 11:38:03.696 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 005 | XX
+2026-04-23 11:38:03.696 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 006 | X CONSTRUCTION 
+2026-04-23 11:38:03.696 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 007 | 
+2026-04-23 11:38:03.696 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 008 | <|ref|>text<|/ref|><|det|>[[612, 131, 931, 176]]<|/det|>
+2026-04-23 11:38:03.697 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 009 | Invoice No : #CON-2028-001
+2026-04-23 11:38:03.697 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 010 | Invoice Date : September 21, 2028 
+2026-04-23 11:38:03.698 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 011 | 
+2026-04-23 11:38:03.699 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 012 | <|ref|>text<|/ref|><|det|>[[52, 230, 866, 323]]<|/det|>
+2026-04-23 11:38:03.699 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 013 | Seller : X Construction Bill To : ABC Company
+2026-04-23 11:38:03.700 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 014 | Address : 873 Liberty Street, Las Vegas Address : 123 Main Street Cityville
+2026-04-23 11:38:03.700 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 015 | Mail : xconstruction@mail.com Mail : abc@mail.com
+2026-04-23 11:38:03.701 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 016 | Phone : +1 312-692-0767 Phone : +1 312-483-8673 
+2026-04-23 11:38:03.701 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 017 | 
+2026-04-23 11:38:03.701 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 018 | <|ref|>table<|/ref|><|det|>[[62, 387, 931, 536]]<|/det|>
+2026-04-23 11:38:03.702 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 019 | <table><tr><td>No.</td><td>Description</td><td>Quantity</td><td>Item Price</td><td>Total</td></tr><tr><td>1</td><td>Foundation Work</td><td>10 Days</td><td>$100</td><td>$1,000</td></tr><tr><td>2</td><td>Steel Structure Installation</td><td>5 Weeks</td><td>$2,000</td><td>$10,000</td></tr><tr><td>3</td><td>Concrete Material</td><td>200 Cubics</td><td>$50</td><td>$10,000</td></tr><tr><td>4</td><td>Structural Steel Material</td><td>10 Tons</td><td>$500</td><td>$5,000</td></tr></table>
+2026-04-23 11:38:03.703 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 020 | 
+2026-04-23 11:38:03.704 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 021 | <|ref|>table<|/ref|><|det|>[[585, 537, 931, 622]]<|/det|>
+2026-04-23 11:38:03.704 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 022 | <table><tr><td>Subtotal</td><td>$26,000</td></tr><tr><td>Tax (10%)</td><td>$2,600</td></tr><tr><td>Grand Total</td><td>$28,600</td></tr></table>
+2026-04-23 11:38:03.705 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 023 | 
+2026-04-23 11:38:03.705 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 024 | <|ref|>sub_title<|/ref|><|det|>[[62, 693, 129, 709]]<|/det|>
+2026-04-23 11:38:03.705 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 025 | ## Notes: 
+2026-04-23 11:38:03.706 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 026 | 
+2026-04-23 11:38:03.706 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 027 | <|ref|>text<|/ref|><|det|>[[82, 715, 607, 733]]<|/det|>
+2026-04-23 11:38:03.706 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 028 | 1. Payment is due within 30 days from the date of the invoice. 
+2026-04-23 11:38:03.707 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 029 | 
+2026-04-23 11:38:03.707 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 030 | <|ref|>text<|/ref|><|det|>[[82, 739, 548, 757]]<|/det|>
+2026-04-23 11:38:03.707 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 031 | 2. Please make payment to the following bank account 
+2026-04-23 11:38:03.708 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 032 | 
+2026-04-23 11:38:03.708 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 033 | <|ref|>text<|/ref|><|det|>[[106, 771, 401, 788]]<|/det|>
+2026-04-23 11:38:03.708 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 034 | Bank Name : Bank XYZ 
+2026-04-23 11:38:03.709 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 035 | 
+2026-04-23 11:38:03.710 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 036 | <|ref|>text<|/ref|><|det|>[[106, 794, 434, 812]]<|/det|>
+2026-04-23 11:38:03.710 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 037 | Account Number : 123-456-789 
+2026-04-23 11:38:03.710 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 038 | 
+2026-04-23 11:38:03.711 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 039 | <|ref|>text<|/ref|><|det|>[[106, 819, 447, 836]]<|/det|>
+2026-04-23 11:38:03.711 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 040 | Account Holder : X Construction 
+2026-04-23 11:38:03.711 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 041 | 
+2026-04-23 11:38:03.712 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 042 | <|ref|>text<|/ref|><|det|>[[369, 905, 628, 923]]<|/det|>
+2026-04-23 11:38:03.712 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 043 | Thank You for Your Business
+2026-04-23 11:38:03.712 | INFO     | app.services.documentProcessors.image_processor:_format_output - ============================================================
+2026-04-23 11:38:03.714 | INFO     | app.services.document_processor:process_and_store_document - [CHUNKING] Page/Segment 1: Split into 1 chunk(s)
+2026-04-23 11:38:03.715 | INFO     | app.services.document_processor:process_and_store_document - ------------------------------------------------------------
+2026-04-23 11:38:03.715 | INFO     | app.services.document_processor:process_and_store_document -   CHUNK 1 (Page 1, Index 1/1)
+2026-04-23 11:38:03.716 | INFO     | app.services.document_processor:process_and_store_document -   Words: 165 | Chars: 1970
+2026-04-23 11:38:03.716 | INFO     | app.services.document_processor:process_and_store_document -   Preview: [Transcribed Image Content (Ollama/deepseek-ocr:3b)]: <|ref|>title<|/ref|><|det|>[[603, 49, 931, 105]]<|/det|> # INVOICE <|ref|>text<|/ref|><|det|>[[80, 72, 333, 147]]<|/det|> XX X CONSTRUCTION <|ref|...
+2026-04-23 11:38:09.652 | INFO     | app.services.document_processor:process_and_store_document -   Embedding: Generated (768 dims)
+2026-04-23 11:38:09.846 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 11:38:09.847 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice_1.png -> 1 total chunks with vector embeddings saved to DuckDB.
+2026-04-23 11:38:09.847 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 11:38:09.865 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice_1.png
+2026-04-23 11:38:09.877 | INFO     | app.main:log_requests - Req [2XCI16] Completed in 136.72s (Status: 201)
+2026-04-23 11:38:10.006 | INFO     | app.main:log_requests - Req [70HDX4] GET /documents
+2026-04-23 11:38:10.049 | INFO     | app.main:log_requests - Req [70HDX4] Completed in 0.04s (Status: 200)
+2026-04-23 11:38:51.226 | INFO     | app.main:log_requests - Req [P6PVBF] OPTIONS /ask
+2026-04-23 11:38:51.227 | INFO     | app.main:log_requests - Req [P6PVBF] Completed in 0.00s (Status: 200)
+2026-04-23 11:38:51.234 | INFO     | app.main:log_requests - Req [DTISNY] POST /ask
+2026-04-23 11:38:53.587 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 11:39:08.147 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 14.55s.
+2026-04-23 11:39:08.150 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 11:39:08.150 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.8% (0.12s)
+2026-04-23 11:39:08.151 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.2% (14.56s)
+2026-04-23 11:39:08.152 | INFO     | app.main:ask_question - ============================
+2026-04-23 11:39:08.159 | INFO     | app.main:log_requests - Req [DTISNY] Completed in 16.92s (Status: 200)
+2026-04-23 11:39:23.239 | INFO     | app.main:log_requests - Req [BVZZN0] OPTIONS /documents/29
+2026-04-23 11:39:23.239 | INFO     | app.main:log_requests - Req [BVZZN0] Completed in 0.00s (Status: 200)
+2026-04-23 11:39:23.245 | INFO     | app.main:log_requests - Req [4OE5EN] DELETE /documents/29
+2026-04-23 11:39:23.295 | INFO     | app.main:delete_document - Physically deleted BankInvoice_1.png from disk.
+2026-04-23 11:39:23.297 | INFO     | app.main:log_requests - Req [4OE5EN] Completed in 0.05s (Status: 200)
+2026-04-23 11:39:23.302 | INFO     | app.main:log_requests - Req [YKJ8D9] GET /documents
+2026-04-23 11:39:23.309 | INFO     | app.main:log_requests - Req [YKJ8D9] Completed in 0.01s (Status: 200)
+2026-04-23 11:41:10.417 | INFO     | app.main:log_requests - Req [P2T2ZP] GET /documents
+2026-04-23 11:41:10.944 | INFO     | app.main:log_requests - Req [P2T2ZP] Completed in 0.53s (Status: 200)
+2026-04-23 11:41:10.947 | INFO     | app.main:log_requests - Req [BVXPAJ] GET /documents
+2026-04-23 11:41:10.954 | INFO     | app.main:log_requests - Req [BVXPAJ] Completed in 0.01s (Status: 200)
+2026-04-23 11:41:22.523 | INFO     | app.main:log_requests - Req [T8L3OI] GET /documents
+2026-04-23 11:41:22.534 | INFO     | app.main:log_requests - Req [T8L3OI] Completed in 0.01s (Status: 200)
+2026-04-23 11:41:22.541 | INFO     | app.main:log_requests - Req [1E8BA1] GET /documents
+2026-04-23 11:41:22.558 | INFO     | app.main:log_requests - Req [1E8BA1] Completed in 0.01s (Status: 200)
+2026-04-23 11:41:34.891 | INFO     | app.main:log_requests - Req [OAQXKE] GET /documents
+2026-04-23 11:41:34.897 | INFO     | app.main:log_requests - Req [OAQXKE] Completed in 0.01s (Status: 200)
+2026-04-23 11:41:34.910 | INFO     | app.main:log_requests - Req [UFLELL] GET /documents
+2026-04-23 11:41:34.918 | INFO     | app.main:log_requests - Req [UFLELL] Completed in 0.01s (Status: 200)
+2026-04-23 11:41:42.534 | INFO     | app.main:log_requests - Req [VI9JTK] GET /documents
+2026-04-23 11:41:42.561 | INFO     | app.main:log_requests - Req [VI9JTK] Completed in 0.03s (Status: 200)
+2026-04-23 11:41:42.575 | INFO     | app.main:log_requests - Req [7K0HKD] GET /documents
+2026-04-23 11:41:42.600 | INFO     | app.main:log_requests - Req [7K0HKD] Completed in 0.02s (Status: 200)
+2026-04-23 11:45:09.349 | INFO     | app.main:log_requests - Req [FHRS00] POST /upload
+2026-04-23 11:45:09.362 | INFO     | app.main:upload_document - Starting processing for file: BankInvoice_1.png
+2026-04-23 11:45:10.661 | INFO     | app.services.document_processor:process_and_store_document - Extracting .png logic for BankInvoice_1.png
+2026-04-23 11:45:10.662 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Processing: BankInvoice_1.png
+2026-04-23 11:45:14.704 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Docker/DeepSeek-OCR-2 is not available, skipping
+2026-04-23 11:45:16.746 | INFO     | app.services.documentProcessors.image_processor:extract - [ImageProcessor] Using Ollama/deepseek-ocr:3b
+2026-04-23 11:45:16.748 | INFO     | app.services.documentProcessors.ocr_backends.ollama_backend:extract_text - [Ollama/deepseek-ocr:3b] Trying grounding prompt (1/2)...
+2026-04-23 11:47:02.619 | INFO     | app.services.documentProcessors.image_processor:_format_output - ============================================================
+2026-04-23 11:47:02.623 | INFO     | app.services.documentProcessors.image_processor:_format_output - [ImageProcessor] RAW EXTRACTION (Ollama/deepseek-ocr:3b)
+2026-04-23 11:47:02.626 | INFO     | app.services.documentProcessors.image_processor:_format_output -   Characters: 1119  |  Words: 183
+2026-04-23 11:47:02.626 | INFO     | app.services.documentProcessors.image_processor:_format_output - ------------------------------------------------------------
+2026-04-23 11:47:02.627 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 001 |  Do not output HTML or Markdown.
+2026-04-23 11:47:02.627 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 002 | 
+2026-04-23 11:47:02.627 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 003 | ---
+2026-04-23 11:47:02.627 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 004 | 
+2026-04-23 11:47:02.628 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 005 | **Invoice**
+2026-04-23 11:47:02.628 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 006 | 
+2026-04-23 11:47:02.629 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 007 | **Invoice No** : #CON-2028-001  
+2026-04-23 11:47:02.629 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 008 | **Invoice Date** : September 21, 2028  
+2026-04-23 11:47:02.630 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 009 | 
+2026-04-23 11:47:02.631 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 010 | **Seller** : X Construction  
+2026-04-23 11:47:02.632 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 011 | **Address** : 873 Liberty Street, Las Vegas  
+2026-04-23 11:47:02.633 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 012 | **Mail** : xconstruction@mail.com  
+2026-04-23 11:47:02.634 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 013 | **Phone** : +1 312-692-0767  
+2026-04-23 11:47:02.635 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 014 | 
+2026-04-23 11:47:02.635 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 015 | **Bill To** : ABC Company  
+2026-04-23 11:47:02.636 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 016 | **Address** : 123 Main Street Cityville  
+2026-04-23 11:47:02.637 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 017 | **Mail** : abc@mail.com  
+2026-04-23 11:47:02.638 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 018 | **Phone** : +1 312-483-8673  
+2026-04-23 11:47:02.640 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 019 | 
+2026-04-23 11:47:02.640 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 020 | ---
+2026-04-23 11:47:02.641 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 021 | 
+2026-04-23 11:47:02.642 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 022 | | No. | Description | Quantity | Item Price | Total  |
+2026-04-23 11:47:02.643 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 023 | |-----|-------------|----------|------------|--------|
+2026-04-23 11:47:02.643 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 024 | | 1   | Foundation Work | 10 Days | $100       | $1,000 |
+2026-04-23 11:47:02.644 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 025 | | 2   | Steel Structure Installation | 5 Weeks | $2,000     | $10,000 |
+2026-04-23 11:47:02.644 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 026 | | 3   | Concrete Material | 200 Cubics | $50        | $10,000 |
+2026-04-23 11:47:02.645 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 027 | | 4   | Structural Steel Material | 10 Tons | $500       | $5,000 |
+2026-04-23 11:47:02.646 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 028 | 
+2026-04-23 11:47:02.648 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 029 | | Subtotal | $26,000 |
+2026-04-23 11:47:02.648 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 030 | |----------|--------|
+2026-04-23 11:47:02.652 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 031 | | Tax (10%) | $2,600 |
+2026-04-23 11:47:02.653 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 032 | | Grand Total | $28,600 |
+2026-04-23 11:47:02.654 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 033 | 
+2026-04-23 11:47:02.654 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 034 | ---
+2026-04-23 11:47:02.656 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 035 | 
+2026-04-23 11:47:02.656 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 036 | **Notes:**
+2026-04-23 11:47:02.656 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 037 | 
+2026-04-23 11:47:02.657 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 038 | 1. Payment is due within 30 days from the date of the invoice.
+2026-04-23 11:47:02.657 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 039 | 2. Please make payment to the following bank account
+2026-04-23 11:47:02.658 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 040 | 
+2026-04-23 11:47:02.659 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 041 | Bank Name : Bank XYZ  
+2026-04-23 11:47:02.659 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 042 | Account Number : 123-456-789  
+2026-04-23 11:47:02.660 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 043 | Account Holder : X Construction  
+2026-04-23 11:47:02.661 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 044 | 
+2026-04-23 11:47:02.662 | INFO     | app.services.documentProcessors.image_processor:_format_output -   OCR Line 045 | Thank You for Your Business
+2026-04-23 11:47:02.662 | INFO     | app.services.documentProcessors.image_processor:_format_output - ============================================================
+2026-04-23 11:47:02.664 | INFO     | app.services.document_processor:process_and_store_document - [CHUNKING] Page/Segment 1: Split into 1 chunk(s)
+2026-04-23 11:47:02.665 | INFO     | app.services.document_processor:process_and_store_document - ------------------------------------------------------------
+2026-04-23 11:47:02.666 | INFO     | app.services.document_processor:process_and_store_document -   CHUNK 1 (Page 1, Index 1/1)
+2026-04-23 11:47:02.667 | INFO     | app.services.document_processor:process_and_store_document -   Words: 187 | Chars: 1101
+2026-04-23 11:47:02.667 | INFO     | app.services.document_processor:process_and_store_document -   Preview: [Transcribed Image Content (Ollama/deepseek-ocr:3b)]: Do not output HTML or Markdown. --- **Invoice** **Invoice No** : #CON-2028-001 **Invoice Date** : September 21, 2028 **Seller** : X Construction *...
+2026-04-23 11:47:06.377 | INFO     | app.services.document_processor:process_and_store_document -   Embedding: Generated (768 dims)
+2026-04-23 11:47:06.445 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 11:47:06.446 | INFO     | app.services.document_processor:process_and_store_document - Completed! BankInvoice_1.png -> 1 total chunks with vector embeddings saved to DuckDB.
+2026-04-23 11:47:06.446 | INFO     | app.services.document_processor:process_and_store_document - ============================================================
+2026-04-23 11:47:06.456 | INFO     | app.main:upload_document - Successfully processed and stored BankInvoice_1.png
+2026-04-23 11:47:06.468 | INFO     | app.main:log_requests - Req [FHRS00] Completed in 117.12s (Status: 201)
+2026-04-23 11:47:06.500 | INFO     | app.main:log_requests - Req [3GM291] GET /documents
+2026-04-23 11:47:06.583 | INFO     | app.main:log_requests - Req [3GM291] Completed in 0.08s (Status: 200)
+2026-04-23 11:48:03.258 | INFO     | app.main:log_requests - Req [W7E2JS] POST /ask
+2026-04-23 11:48:05.532 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 11:48:27.069 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 21.53s.
+2026-04-23 11:48:27.071 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 11:48:27.071 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.4% (0.09s)
+2026-04-23 11:48:27.072 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.6% (21.54s)
+2026-04-23 11:48:27.072 | INFO     | app.main:ask_question - ============================
+2026-04-23 11:48:27.106 | INFO     | app.main:log_requests - Req [W7E2JS] Completed in 23.85s (Status: 200)
+2026-04-23 11:49:35.898 | INFO     | app.main:log_requests - Req [LCQUG3] OPTIONS /ask
+2026-04-23 11:49:35.902 | INFO     | app.main:log_requests - Req [LCQUG3] Completed in 0.00s (Status: 200)
+2026-04-23 11:49:35.906 | INFO     | app.main:log_requests - Req [ZPTV7F] POST /ask
+2026-04-23 11:49:38.157 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 11:49:50.049 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 11.89s.
+2026-04-23 11:49:50.050 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 11:49:50.051 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.7% (0.08s)
+2026-04-23 11:49:50.051 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.3% (11.89s)
+2026-04-23 11:49:50.052 | INFO     | app.main:ask_question - ============================
+2026-04-23 11:49:50.066 | INFO     | app.main:log_requests - Req [ZPTV7F] Completed in 14.16s (Status: 200)
+2026-04-23 11:50:48.034 | INFO     | app.main:log_requests - Req [YH6ZF5] POST /ask
+2026-04-23 11:50:50.166 | INFO     | app.services.cache_service:check_semantic_cache - [ENTERPRISE CACHE HIT] Similar query found! (Score: 1.0000)
+2026-04-23 11:50:50.167 | INFO     | app.main:ask_question - === Enterprise Cache Execution ===
+2026-04-23 11:50:50.168 | INFO     | app.main:ask_question -   Bypassed DuckDB & Ollama in 2.13s!
+2026-04-23 11:50:50.169 | INFO     | app.main:log_requests - Req [YH6ZF5] Completed in 2.13s (Status: 200)
+2026-04-23 11:51:12.076 | INFO     | app.main:log_requests - Req [2I7Z3S] POST /ask
+2026-04-23 11:51:14.299 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 11:51:30.580 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 16.28s.
+2026-04-23 11:51:30.581 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 11:51:30.582 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.4% (0.06s)
+2026-04-23 11:51:30.582 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.6% (16.28s)
+2026-04-23 11:51:30.583 | INFO     | app.main:ask_question - ============================
+2026-04-23 11:51:30.601 | INFO     | app.main:log_requests - Req [2I7Z3S] Completed in 18.52s (Status: 200)
+2026-04-23 11:56:41.569 | INFO     | app.main:log_requests - Req [K5LSFX] POST /ask
+2026-04-23 11:56:44.653 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 11:57:12.821 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 28.17s.
+2026-04-23 11:57:12.823 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 11:57:12.824 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.4% (0.12s)
+2026-04-23 11:57:12.824 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.6% (28.17s)
+2026-04-23 11:57:12.825 | INFO     | app.main:ask_question - ============================
+2026-04-23 11:57:12.855 | INFO     | app.main:log_requests - Req [K5LSFX] Completed in 31.27s (Status: 200)
+2026-04-23 11:58:38.491 | INFO     | app.main:log_requests - Req [POKI79] POST /ask
+2026-04-23 11:58:40.734 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 11:58:55.093 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 14.36s.
+2026-04-23 11:58:55.095 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 11:58:55.096 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.5% (0.08s)
+2026-04-23 11:58:55.097 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.5% (14.36s)
+2026-04-23 11:58:55.098 | INFO     | app.main:ask_question - ============================
+2026-04-23 11:58:55.105 | INFO     | app.main:log_requests - Req [POKI79] Completed in 16.61s (Status: 200)
+2026-04-23 12:00:00.023 | INFO     | app.main:log_requests - Req [BWXPK7] OPTIONS /ask
+2026-04-23 12:00:00.024 | INFO     | app.main:log_requests - Req [BWXPK7] Completed in 0.00s (Status: 200)
+2026-04-23 12:00:00.027 | INFO     | app.main:log_requests - Req [6M7VWO] POST /ask
+2026-04-23 12:00:02.288 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 12:00:18.199 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 15.91s.
+2026-04-23 12:00:18.200 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 12:00:18.201 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.6% (0.10s)
+2026-04-23 12:00:18.202 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.4% (15.91s)
+2026-04-23 12:00:18.202 | INFO     | app.main:ask_question - ============================
+2026-04-23 12:00:18.206 | INFO     | app.main:log_requests - Req [6M7VWO] Completed in 18.18s (Status: 200)
+2026-04-23 12:01:50.604 | INFO     | app.main:log_requests - Req [76XQSO] POST /ask
+2026-04-23 12:01:52.854 | INFO     | app.services.retrieval:retrieve_context - DuckDB retrieved 3 chunks for query.
+2026-04-23 12:02:07.170 | INFO     | app.services.llm_service:generate_answer - Ollama generated answer in 14.32s.
+2026-04-23 12:02:07.172 | INFO     | app.main:ask_question - === Execution Breakdown ===
+2026-04-23 12:02:07.173 | INFO     | app.main:ask_question -   DuckDB : [--------------------]   0.5% (0.07s)
+2026-04-23 12:02:07.185 | INFO     | app.main:ask_question -   Ollama : [███████████████████-]  99.5% (14.32s)
+2026-04-23 12:02:07.185 | INFO     | app.main:ask_question - ============================
+2026-04-23 12:02:07.189 | INFO     | app.main:log_requests - Req [76XQSO] Completed in 16.58s (Status: 200)
